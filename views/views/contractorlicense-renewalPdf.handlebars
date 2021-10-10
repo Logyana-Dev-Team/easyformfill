@@ -1,0 +1,1860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Easy Form Fill</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+ 
+  <style>
+   *{
+      font-family: 'Noto Sans', sans-serif; font-size: 12px; padding-right:70px;
+  }
+    @media print {
+        /*NOT DISPLAY*/
+       footer, #navbar, #home,.printPage
+        {
+        display: none;
+        }
+        /*DISPLAY*/
+        #printable {
+            display: block;
+        }
+    }
+      /*@media print {
+        html,body {
+        display: none; /* This code will hide whole pages */
+        /*content:"for example";
+        }
+        }
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      background-color: #1B4F72 ;
+      height: 70px;
+      color: white;
+    }
+    footer{
+        /* position: fixed; */
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #1B4F72;
+        color: white;
+        text-align: center;
+        height: 100px;
+    }
+   
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    
+    
+    /* Set gray background color and 100% height */
+    /* .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+    } */
+    
+    /* Set black background color, white text and some padding */
+    
+    .formfill-h2{
+        text-decoration: underline;
+        color: white;
+    }
+    
+    .copy,.facebookicon{
+        font-size: 15px;
+        margin-top: 30px;
+    }
+    .facebookicon{
+        font-size:15px;color:white;
+        text-decoration: none;
+    }
+    .btn-next{
+        background-color: #1B4F72 ;
+        color: white;
+        border-radius: 15px;
+        text-decoration: none;
+            margin-left: 100px;
+    }
+    .wireman-btn{
+        border: none;
+        background: none;
+        cursor: pointer;
+        color:#1B4F72;
+    }
+    .banner-image{
+        background-image: url("img/enquiry6.jpg");
+    }
+    .form-span{
+        color:  rgb(240, 210, 40);
+        text-decoration-color: rgb(240, 210, 40);
+        font-weight: bold;
+    }
+    .home{
+        color: rgb(240, 210, 40);
+        font-size: 20px;
+        text-decoration: none;
+        text-align: center;
+    }
+    .loginicon{
+        color: rgb(255, 255, 255);
+        font-size: 20px;
+        text-decoration: none;
+        text-align: center;
+    }
+    .next-btn{
+        width:70% ;
+        border-radius: 30px;
+        background-color: #1B4F72;;
+    }
+    a:hover{
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+}
+a{
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+}
+form { display: block; page-break-after: always; }
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;} 
+    }
+    .city-table td{
+        border: none;
+    }
+  </style>
+</head>
+<body >
+
+
+
+
+<div class="container" style="height: 60%;">
+    <!-- WIREMAN INDEX -->
+       <form class="form-horizontal" method="POST" role="form" id="index"> 
+              
+             
+            <p class="text-center">(Index for renewal with supervisor and owner one person)</p>
+            <p class="text-center">विद्युत ठेकेदार अनुज्ञप्ती नूतनीकरणासाठी तपासणी सूची सन {{user.licensePeriodFrom}} ते {{user.licensePeriodTo}}  </p>
+           
+             <div class="container">
+                
+                     <div class="row content">
+                    <table style="width:75%">
+                
+                        <tbody>
+                            <tr>
+                                <td>  <p>संस्थेचे नाव:- {{user.firmName}}  </p></td>
+                                <td></td>
+                                <td class="text-center" style="margin-left: 100px;"> <p>म.ठे.क्र:- {{user.firmRegNo}} </p></td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+                   
+          
+            <div class="container">
+  <table class="table table-bordered"style="width:75%">
+                <thead class="text-center">
+                    <tr>
+                        <th>क्र.</th>
+                        <th>चेक  लिस्ट</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                    <tbody>
+                    <tr>
+                        <td>१ </td>
+                        <td> मूळ अनुज्ञप्ती </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>२</td>	
+                        <td>मूळ विद्युत पर्यवेक्षक प्रमाणपत्र व झेरॉक्स प्रत</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>३</td>
+                        <td> नमुना 'एस' पूर्ण पणे टंकलिखित मेगर परीक्षण अहवाल</td>
+                        <td></td>
+                    </tr>
+                     <tr>
+                        <td>४</td>
+                        <td> नमुना 'टी' पूर्णपणे टंकलिखित अर्थ टेस्टर परीक्षण अहवाल </td>
+                        <td></td>
+                    </tr>
+                     <tr>
+                        <td>५</td>
+                        <td>नमुना 'एम' मधील विद्युत पर्यवेक्षक तारतंत्री व शिकाऊ उमेदवार यांची अध्ययावत   मूळ नोंदवही व तिच्या दोन छायाप्रती</td>
+                        <td></td>
+                    </tr><tr>
+                        <td>६</td>
+                        <td>नमुना 'यु' विद्युत ठेकेदार अनुज्ञप्ती नूतनीकरण करीत मालक व विद्युत पर्यवेक्षक यांच्या नमुना स्वाक्षरी व छायाचित्र <br> मोबाईल नं व ई-मेल साक्षांकित </td>
+                        <td></td>
+                    </tr>
+                     <tr>
+                        <td>७</td>
+                        <td> नमुना 'व्ही' विद्युत पर्यवेक्षकाचे प्रतिज्ञापत्र पूर्णतः टंकलिखित प्रतिज्ञापत्र   (१०० मुद्रांक कागदावर नोटरी / कार्यकारी <br> दंडाधिकारी यांच्या समोर )</td>
+                        <td></td>
+                    </tr> 
+                    <tr>
+                        <td>८</td>
+                        <td> नमुना 'डब्लु'  'एक्स' 'वाय' 'झेड' जो लागू असलेला मालक/पर्यवेक्षक यांनी    पूर्णतः टंकलिखित प्रतिज्ञापत्र (१०० मुद्रांक <br> कागदावर नोटरी / कार्यकारी   दंडाधिकारी यांच्या समोर)</td>
+                        <td></td>
+                    </tr>
+                     <tr>
+                        <td>९</td>
+                        <td>अनुज्ञप्ती नूतनीकरण शुल्क रु . २०००किंवा २५०० भरलेली मूळ पावती 					
+</td>
+                        <td></td>
+                    </tr>
+                     <tr>
+                        <td>१०</td>
+                        <td>विद्युत पर्यवेक्षक अनुज्ञप्ती नूतनीकरण करण्यासाठी अर्ज करण्याच्या वेळी ६०  वर्षा पेक्षा अधिक वयाचा असल्यामुळे <br> अर्जासोबत नोंदणी कृत वैद्यकीय व्यावसायिकाने दिलेले शारीरिक प्रमाणपत्र </td>
+                        <td></td>
+                    </tr>
+                     <tr>
+                        <td>११</td>
+                        <td> मागील तीन वर्षात केलेल्या विद्युत कामांची यादी नमुना 'क्यू' कंत्राट नोंदवही </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>१२</td>
+                        <td> विद्युत पर्यवेक्षक बदलला असल्यास :- सचिव अनुज्ञापक मंडळ मुंबई यांचे मान्यता पत्र व परवाना प्रमाणपत्राची झेरॉक्स प्रत   </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>१३</td>
+                        <td> मुखत्यारक म्हणून नियुक्ती केली असल्यास व त्यास सचिव अनुज्ञापक मंडळ मुंबई यांनी मान्यता दिली असल्यास त्या पत्राची  प्रत  </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>१४</td>
+                        <td>पत्ता बद्दल असल्यास :-  सचिव अनुज्ञापक मंडळ मुंबई यांचे  मान्यता पत्र </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                                    <td>१५</td>
+                        <td> हजेरी पटातील जुन्या नूतनीकरण नंतर वाढ झालेल्या सर्व परवानाधारक पर्यवेक्षक  व तारतंत्री यांच्या परवानाच्या छायाप्रती <br> तसेच अभियंत्याच्या पदवी/पदविका प्रमाणपत्राच्या साक्षांकित छायाप्रती </td>
+                        <td></td>
+                    </tr>
+<tr>
+                        <td>१६</td>
+                        <td> कामगार नोंदवही मध्ये कार्यरत असलेल्या शिकाऊ कामगार  एन सी टी व्ही टी / एम सी वि सी यांच्या प्रमाणपत्राची साक्षांकित छायाप्रती</td>
+                        <td></td>
+                    </tr>
+                   
+                    
+                    </tbody>
+                </table>
+                
+            </div>
+            <p>नूतनीकरणासाठी शिफारस आहे </p>
+              <div class="form-row align-items-center">
+               <table class="table text-center city-table">
+                
+                    <tbody>
+                        <tr>
+                            <td><p > शाखा/सहा.अभियंता  <br>विदुत निरीक्षण विभाग,<br>{{user.city1}}</p> </td>
+                            <td></td>
+                             <td><p>सहाय्यक विद्दुत निरीक्षक, <br> विदुत निरीक्षण विभाग,<br>{{user.city2}} </p></td>
+                             <td><p >विद्युत निरीक्षक  <br>विदुत निरीक्षण विभाग,<br>{{user.city3}} </p></td>
+                        </tr>
+                      
+                    </tbody>
+                </table>
+
+              </div>
+    </div>
+         
+             <div class="col-md-12 text-center">
+                <a href="/new-contractor-letter"> <button  type="submit"class="btn btn-lg btn-primary printPage next-btn" >Next</button></a>
+               {{!-- <button  type="submit"class="btn btn-lg btn-primary printPage next-btn" >Next</button> --}}
+            </div>
+    </form>
+</div>
+
+
+<div class="container" style="height: 60%;">
+    <!-- WIREMAN INDEX -->
+       <form class="form-horizontal" method="POST" role="form" id="index"> 
+              
+              
+            <p class="text-center">(Index for renewal with supervisor and owner two person)</p>
+            <p class="text-center">विद्युत ठेकेदार अनुज्ञप्ती नूतनीकरणासाठी तपासणी सूची सन {{user.licensePeriodFrom}} ते {{user.licensePeriodTo}}  </p>
+            
+             <div class="container">
+                    <div class="row content">
+                        <table style="width:75%">
+                
+                        <tbody>
+                            <tr>
+                                <td>  <p>संस्थेचे नाव:- {{user.firmName}}  </p></td>
+                                <td></td>
+                                <td class="text-center" style="margin-left: 100px;"> <p>म.ठे.क्र:- {{user.firmRegNo}} </p></td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+             </div>
+          
+            <div class="container">
+            <table class="table table-bordered"style="width:75%">
+                <thead class="text-center">
+                    <tr>
+                        <th>क्र.</th>
+                        <th>चेक  लिस्ट</th>
+                       <th></th>
+                    </tr>
+                </thead>
+                    <tbody>
+                    <tr>
+                        <td>१ </td>
+                        <td> मूळ अनुज्ञप्ती </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>२</td>	
+                        <td>मूळ विद्युत पर्यवेक्षक प्रमाणपत्र व झेरॉक्स प्रत</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>३</td>
+                        <td> नमुना 'एस' पूर्ण पणे टंकलिखित मेगर परीक्षण अहवाल</td>
+                        <td></td>
+                    </tr>
+                     <tr>
+                        <td>४</td>
+                        <td> नमुना 'टी' पूर्णपणे टंकलिखित अर्थ टेस्टर परीक्षण अहवाल </td>
+                        <td></td>
+                    </tr>
+                     <tr>
+                        <td>५</td>
+                        <td>नमुना 'एम' मधील विद्युत पर्यवेक्षक तारतंत्री व शिकाऊ उमेदवार यांची अध्ययावत मूळ नोंदवही व तिच्या दोन छायाप्रती</td>
+                        <td></td>
+                    </tr><tr>
+                        <td>६</td>
+                        <td>नमुना 'यु' विद्युत ठेकेदार अनुज्ञप्ती नूतनीकरण करीत मालक व विद्युत पर्यवेक्षक यांच्या नमुना स्वाक्षरी व छायाचित्र मोबाईल नं व ई-मेल साक्षांकित </td>
+                        <td></td>
+                    </tr>
+                     <tr>
+                        <td>७</td>
+                        <td> नमुना 'व्ही' विद्युत पर्यवेक्षकाचे प्रतिज्ञापत्र पूर्णतः टंकलिखित प्रतिज्ञापत्र   (१०० मुद्रांक कागदावर नोटरी / कार्यकारी दंडाधिकारी यांच्या समोर )</td>
+                        <td></td>
+                    </tr> 
+                    <tr>
+                        <td>८</td>
+                        <td> नमुना 'डब्लु'  'एक्स' 'वाय' 'झेड' जो लागू असलेला मालक/पर्यवेक्षक यांनी    पूर्णतः टंकलिखित प्रतिज्ञापत्र (१०० मुद्रांक कागदावर नोटरी / कार्यकारी   दंडाधिकारी यांच्या समोर)</td>
+                        <td></td>
+                    </tr>
+                     <tr>
+                        <td>९</td>
+                        <td>अनुज्ञप्ती नूतनीकरण शुल्क रु . २०००किंवा २५०० भरलेली मूळ पावती 					
+</td>
+                        <td></td>
+                    </tr>
+                     <tr>
+                        <td>१०</td>
+                        <td>विद्युत पर्यवेक्षक अनुज्ञप्ती नूतनीकरण करण्यासाठी अर्ज करण्याच्या वेळी ६०  वर्षा पेक्षा अधिक वयाचा असल्यामुळे अर्जासोबत नोंदणी कृत वैद्यकीय व्यावसायिकाने दिलेले शारीरिक प्रमाणपत्र </td>
+                        <td></td>
+                    </tr>
+                     <tr>
+                        <td>११</td>
+                        <td> मागील तीन वर्षात केलेल्या विद्युत कामांची यादी नमुना 'क्यू' कंत्राट नोंदवही </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>१२</td>
+                        <td> विद्युत पर्यवेक्षक बदलला असल्यास :- सचिव अनुज्ञापक मंडळ मुंबई यांचे मान्यता पत्र व परवाना प्रमाणपत्राची झेरॉक्स प्रत   </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>१३</td>
+                        <td> मुखत्यारक म्हणून नियुक्ती केली असल्यास व त्यास सचिव अनुज्ञापक मंडळ मुंबई यांनी मान्यता दिली असल्यास त्या पत्राची  प्रत  </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>१४</td>
+                        <td>पत्ता बद्दल असल्यास :-  सचिव अनुज्ञापक मंडळ मुंबई यांचे  मान्यता पत्र </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>१५</td>
+                        <td> हजेरी पटातील जुन्या नूतनीकरण नंतर वाढ झालेल्या सर्व परवानाधारक पर्यवेक्षक  व तारतंत्री यांच्या परवानाच्या छायाप्रती तसेच अभियंत्याच्या पदवी/पदविका प्रमाणपत्राच्या साक्षांकित छायाप्रती </td>
+                        <td></td>
+                    </tr>
+<tr>
+                        <td>१६</td>
+                        <td> कामगार नोंदवही मध्ये कार्यरत असलेल्या शिकाऊ कामगार  एन सी टी व्ही टी / एम सी वि सी यांच्या प्रमाणपत्राची साक्षांकित छायाप्रती</td>
+                        <td></td>
+                    </tr>
+                   
+                    
+                    </tbody>
+                </table>
+                
+            </div>
+             <p>नूतनीकरणासाठी शिफारस आहे </p>
+            <p>विद्युत निरीक्षक कार्यालय जावक ------------------दिनांक------------------  </p>
+              <div class="form-row align-items-center">
+               <table class="table text-center city-table">
+                
+                    <tbody>
+                        <tr>
+                           
+                             <td><p>सहाय्यक विद्दुत निरीक्षक, <br> विदुत निरीक्षण विभाग,<br>{{user.city1}} </p></td>
+                             <td></td>
+                             <td><p >विद्युत निरीक्षक  <br>विदुत निरीक्षण विभाग,<br>{{user.city3}} </p></td>
+                        </tr>
+                      
+                    </tbody>
+                </table>
+
+              </div>
+                <div class="form-row align-items-center">
+               <table class="table text-center city-table">
+                
+                    <tbody>
+                        <tr>
+                            <td><p > शाखा/सहा.अभियंता  <br>{{user.city1}}, प्रादेशिक विद्युत निरीक्षण मंडळ,<br> {{user.city1}}</p> </td>
+                   
+                             <td><p> सहा. अधीक्षक अभियंता,{{user.city1}},<br> प्रादेशिक विद्युत निरीक्षण मंडळ,{{user.city1}} </p></td>
+                             <td><p >अधीक्षक अभियंता   <br>{{user.city1}}, प्रादेशिक विद्युत निरीक्षण मंडळ,<br>{{user.city1}} </p></td>
+                        </tr>
+                      
+                    </tbody>
+                </table>
+
+              </div>
+    </form>
+</div>
+
+<div class="container" style="width: 100%;">
+    <!-- WIREMAN LETTER -->
+   <form class="form-horizontal" method="POST" role="form" id="letter">
+       <div class="container">
+                    <table class="table text-center city-table">
+                
+                        <tbody>
+                            <tr>
+                                <td> </td>
+                                <td></td>
+                                <td class="text-center" style="margin-left: 100px;"> 
+                    <p style="text-indent: 15em; ">श्री./श्रीमती: <input type="text" name="uname" value="{{user.uname}}"   style="border: none; " required/> </p>
+                
+                    <p style="text-indent: 15em; ">पत्ता: {{user.uaddress}}</p>
+                     <p style="text-indent: 15em; ">मोबाईल : {{user.mobile}} </p>
+                    <p style="text-indent: 15em; ">दिनांक: {{user.date}}</p></td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+                <p>प्रति,</p>
+                <p style="text-indent: 5em; ">विद्युत निरीक्षक,
+                <p style="text-indent: 5em; ">विद्युत निरीक्षण कार्यालय {{user.office_city}}</p>
+               
+                <p class="text-center" style="text-indent: 5em; ">विषय : विद्दुत ठेकेदार अनुज्ञप्ती नूतनीकरण करून मिळणेबाबत</p>
+               
+                <p>मा.महोदय,</p>
+                <p style="text-indent: 5em; ">	मी अर्जदार श्री .{{user.uname}}      मेसर्स   {{user.firmName}}   या अर्ज प्रमाणे आपणास विनंती म्हणून मी हा अर्ज करीत आहे.<br> नवीन अनुज्ञप्ती करीत लागणारी आवश्यक कागदपत्रे मी खालील प्रमाणे जोडली आहेत.  	
+                <br>१. मूळ ठेकेदार परवाना<br>
+                    २. मूळ पर्यवेक्षक परवाना	<br>				
+                    ३. मूळ कामगार नोंद वही (मस्टर )		<br>			
+                    ४. मूळ चलन				<br>	
+                    ५. नमुना एस  मेगर परीक्षण	<br>				
+                    ६. नमुना टी अर्थ टेस्टर परीक्षण		<br>			
+                    ७.  नमुना यु प्रमाणपत्र व परवाना पडताळणी अहवाल	<br>				
+                    ८. मालक व पर्यवेक्षक प्रतिज्ञापत्र					<br>
+                    ९. तसेच आवश्यक कागद पत्रांच्या झेरॉक्स स्वयंसाक्षांकीत		<br>
+                <br>	
+                     वरील आवश्यक कागदपत्रे जोडली असून माझा परवाना नूतनीकरण मिळावा म्हणून 					
+मी हा अर्ज करीत आहे .	</p>				
+
+                <div class="row content">
+                    <table class="table text-center city-table">
+                
+                        <tbody>
+                            <tr>
+                                <td> </td>
+                                <td></td>
+                                <td class="text-center" style="margin-left: 100px;"><p  style="margin-left:30px ;">आपला विश्वासू 
+                                    <br> <br> <br>
+                                      श्री./श्रीमती: {{user.uname}} <br>
+                                       {{user.firmName}} </p></td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+                    
+                <br>
+
+            </div>
+            <br>
+            <br>
+            <div class="col-md-12 text-center">
+                <a href="/wireman-namuna12m"> <button  type="submit"class="btn btn-lg btn-primary printPage next-btn" >Next</button></a>
+                {{!-- <button  type="submit"class="btn btn-lg btn-primary printPage next-btn" >Next</button> --}}
+        </div>
+           
+    </form>
+</div>
+
+<div class="container" style="width: 100%;">
+    <!-- NAMUNA S -->
+     <form class="form-horizontal" method="post" role="form" id="namuna-e">
+         <p style="text-indent:10em">महाराष्ट्र शासन राजपत्र असाधारण भाग चार अ जानेवारी ३ २०१७/पौष १३ शके १९३८      &nbsp; 	 &nbsp; 	 &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 	३७</p>
+              <p style="text-indent:25em">"नमुना-एस"</p>
+           <p style="text-indent:25em">(नियम ३५ व ३९ पहा</p>
+           <p style="text-indent:24em">        मेगर परीक्षण तपासणी अहवाल 	</p>
+            <p style="text-indent:10em">     (शासकीय अधिसूचना, उद्द्योग. ऊर्जा व कामगार विभाग, क्रमांक संकीर्ण-२०१६/प्रा.क्र..१२३/ऊर्जा-५ 	</p>
+             <p style="text-indent:23em">       दिनांक २ जानेवारी,२०१७ द्वारे प्राधिकृत) 	</p
+            </div>
+         
+            
+           <div class="container">
+                           <p style="text-indent: 5em;"> प्रमाणित करण्यात येते कि मेसर्स {{user.firmName}} <br>
+ अनुज्ञप्ती क्र. म. ठे .{{user.firmRegNo}}   दिनांक {{user.sanctionDate}}नवीन अनुज्ञाचे अर्जदार <br> श्री/श्रीमती		{{user.ownerName}}		
+ (विद्युत पर्यवेक्षकाचे नाव:{{user.supervisorName}}	),<br> विद्दुत पर्यवेक्षक परवाना क्र.म.प.  {{user.supervisorLicenseNo}}				
+दिनांक {{user.supervisorLicenseDate}}	  <br>     यांच्या आधारावर दिलेल्या नवीन/नूतनीकरण अनुज्ञप्तीसाठी त्यांच्या					
+मालकीचे मेगाराचे     {{user.megarRenewalPeriod}}  <br>         ह्या वर्ष करीता परीक्षण मी दिनांक.....................					
+रोजी       {{user.place}} (ठिकाण) <br> येथे केले. त्याचा तपशील खालील प्रमाणे आहे.  					
+</p>          
+        <div class="row content">
+                    <div class="col-sm">
+                        <table class="" style="text-indent: 7em; ">
+                            <tr>
+                                <td>१ . बनावट: </td>
+                                <td>{{user.megarMake}}</td>
+                            </tr>
+                            <tr>
+                                <td>२ . यंत्राचा क्रमांक  : </td>
+                                <td>{{user.megarNo}}</td>
+                            </tr>
+                            <tr>
+                                    <td>३ .आवरणाचा तपशील  : </td>
+                                    <td>धातू/अधातू /प्लास्टिक</td>
+                               </tr>
+                              <tr>
+                            <tr>
+                                <td>४ . प्रकार:</td>
+                                <td>हाताने फिरवणारे/इलेक्ट्रॉनिक</td>
+                             </tr>
+                             <tr>
+                               <td>५ .कार्यदाब </td>
+                                <td>*५००/ १००० वोल्ट</td>
+                             </tr>
+                             <tr>
+                                <td>६. तबकडील परिमाण </td>
+                                <td>० ते २०० मेगा ओहमस इन्फिनिटी</td>
+                             </tr>
+                             <tr>
+                                <td> ७ . सर्वसाधारण स्थिती</td>
+                                <td>*चांगली/समाधानकारक /असमाधानकारक</td>
+                             </tr>
+                             <tr>
+                                <td>८ . कार्यस्थिती  </td>
+                                <td>*चांगली/समाधानकारक /असमाधानकारक</td>
+                             </tr>
+                            <tr>
+                               <td> ९ . शेरा   </td>
+                                <td></td>
+                             </tr>
+                            </table>
+                            </div>
+                            </div>   
+            
+                <p style="text-indent: 5em; ">सदर यंत्र चांगल्या कार्यस्थितीत आढळून आले.</p>
+           
+        
+                <div class="form-row align-items-center">
+                    <table class="table text-center city-table" style="width:75%">
+                    
+                            <tbody>
+                                <tr>
+                                    <td>ठिकाण : {{user.place}} <br>दिनांक</td>
+                                    <td style="width: 300px;"></td>
+                                    <td style="float-left">स्वाक्षरी <br>नाव:- <br> पद :- सहाय्यक विद्दुत निरीक्षक <br> विद्दुत निरीक्षक यांचे कार्यालय</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                
+                </div> 
+                <br>
+                <p style="text-indent: 5em; ">*लागू नसलेले खोडावे .</p>
+                
+                    </div>
+            <br>
+            <br>    
+            <div class="col-md-12 text-center">
+                <a href="/wireman-prapatrab"> <button type="submit" class="btn btn-lg btn-primary printPage next-btn" >Next</button></a>
+            </div>
+    </form>
+</div>
+
+
+{{!-- NAMUNA T --}}
+<div class="container" style="width: 100%;">
+    <form class="form-horizontal" method="post" role="form" id="namuna-e">
+           <div class="container">
+ <p style="text-indent:10em">महाराष्ट्र शासन राजपत्र असाधारण भाग चार अ जानेवारी ३ २०१७/पौष १३ शके १९३८      &nbsp; 	 &nbsp; 	 &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ३९</p>
+              <p style="text-indent:25em">(नमुना -टीु)</p>
+           <p style="text-indent:25em">(नियम ३५ व ३९ पहा</p>
+           <p style="text-indent:15em"> विद्दुत ठेकेदार अनुज्ञप्ती नवीन/नूतनीकरण करीत मालक व विद्दुत पर्यवेक्षक  	</p>
+           <p style="text-indent:15em"> 
+               यांच्या नमुना स्वाक्षरी , छायाचित्र तसेच प्रमाणपत्र व परवान्याची पडत पडताळणी अहवाल	
+            <p style="text-indent:10em">     (शासकीय अधिसूचना, उद्द्योग. ऊर्जा व कामगार विभाग, क्रमांक संकीर्ण-२०१६/प्रा.क्र..१२३/ऊर्जा-५ 	</p>
+             <p style="text-indent:23em">       दिनांक २ जानेवारी,२०१७ द्वारे प्राधिकृत) 	</p
+            </div>
+         
+         
+            <br>
+                  <p style="text-indent: 5em;"> प्रमाणित करण्यात येते कि मेसर्स {{user.firmName}} <br>
+                अनुज्ञप्ती क्र. म. ठे .{{user.firmRegNo}}   दिनांक     {{user.sanctionDate}}नवीन अनुज्ञाचे अर्जदार <br> श्री/श्रीमती		{{user.ownerName}}		
+                (विद्युत पर्यवेक्षकाचे नाव:{{user.supervisorName}}	),<br> विद्दुत पर्यवेक्षक परवाना क्र.म.प.  {{user.supervisorLicenseNo}}				
+                दिनांक {{user.supervisorLicenseDate}}	 <br>      यांच्या आधारावर दिलेल्या नवीन/नूतनीकरण अनुज्ञप्तीसाठी त्यांच्या					
+                अर्थ टेस्टरचे       {{user.earthTesterRenewalPeriod}}  <br>   ह्या वर्ष करीता परीक्षण मी दिनांक	...................				
+                रोजी       {{user.place}} (ठिकाण) येथे केले. त्याचा तपशील खालील प्रमाणे आहे.  					
+                </p>
+             
+                <div class="row content">
+                    <div class="col-sm">
+                        <table class="" style="text-indent: 7em; ">
+                            <tr>
+                                <td>१ . बनावट: </td>
+                                <td>{{user.earthTesterMake}}</td>
+                            </tr>
+                            <tr>
+                                <td>२ . यंत्राचा क्रमांक  : </td>
+                                <td>{{user.earthTesterNo}}</td>
+                            </tr>
+                            <tr>
+                                    <td>३ .आवरणाचा तपशील  : </td>
+                                    <td>धातू/अधातू /प्लास्टिक</td>
+                               </tr>
+                              <tr>
+                            <tr>
+                                <td>४ . प्रकार:</td>
+                                <td>हाताने फिरवणारे/इलेक्ट्रॉनिक</td>
+                             </tr>
+                             <tr>
+                               <td>५ .कार्यदाब </td>
+                                <td>-</td>
+                             </tr>
+                             <tr>
+                                <td>६. तबकडील परिमाण </td>
+                                <td>०-१०/१०० मेगा ओहमस इन्फिनिटी</td>
+                             </tr>
+                             <tr>
+                                <td> ७ . सर्वसाधारण स्थिती</td>
+                                <td>चांगली/समाधानकारक /असमाधानकारक</td>
+                             </tr>
+                             <tr>
+                                <td>८ . कार्यस्थिती  </td>
+                                <td>चांगली/समाधानकारक /असमाधानकारक</td>
+                             </tr>
+                            <tr>
+                               <td> ९ . शेरा   </td>
+                                <td></td>
+                             </tr>
+                            </table>
+                            </div>
+                            </div>   
+                <p style="text-indent: 5em; ">सदर यंत्र चांगल्या कार्यस्थितीत आढळून आले.</p>
+                
+                 <div class="form-row align-items-center">
+                    <table class="table text-center city-table" style="width:75%">
+                    
+                            <tbody>
+                                <tr>
+                                    <td>ठिकाण : {{user.place}} <br>दिनांक:</td>
+                                    <td style="width: 300px;"></td>
+                                    <td style="float-left">स्वाक्षरी <br>नाव <br> पद :- सहाय्यक विद्दुत निरीक्षक <br> विद्दुत निरीक्षक यांचे कार्यालय</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                
+                </div> 
+                <br>
+ <p style="text-indent: 5em; ">*लागू नसलेले खोडावे .</p>
+                
+                    </div>
+            <br>
+            <br>    
+            <div class="col-md-12 text-center">
+                <a href="/wireman-prapatrab"> <button type="submit" class="btn btn-lg btn-primary printPage next-btn" >Next</button></a>
+            </div>
+    </form>
+</div>
+<br>
+
+
+{{!-- NAMUNA U --}}
+
+<div class="container" style="width: 100%;">
+    <form class="form-horizontal" method="post" role="form" id="namuna-e">
+    <div class="form-row align-items-center">
+        <p style="text-indent:10em">महाराष्ट्र शासन राजपत्र असाधारण भाग चार अ जानेवारी ३ २०१७/पौष १३ शके १९३८      &nbsp; 	 &nbsp; 	 &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ३९</p>
+              <p style="text-indent:25em">(नमुना - यु)</p>
+           <p style="text-indent:25em">(नियम ३५ व ३९ पहा</p>
+           <p style="text-indent:15em"> विद्दुत ठेकेदार अनुज्ञप्ती नवीन/नूतनीकरण करीत मालक व विद्दुत पर्यवेक्षक  	</p>
+           <p style="text-indent:15em"> 
+               यांच्या नमुना स्वाक्षरी , छायाचित्र तसेच प्रमाणपत्र व परवान्याची पडत पडताळणी अहवाल	
+            <p style="text-indent:10em">     (शासकीय अधिसूचना, उद्द्योग. ऊर्जा व कामगार विभाग, क्रमांक संकीर्ण-२०१६/प्रा.क्र..१२३/ऊर्जा-५ 	</p>
+             <p style="text-indent:23em">       दिनांक २ जानेवारी,२०१७ द्वारे प्राधिकृत) 	</p
+            </div>
+         
+         
+            
+        <div class="container">
+           
+            <div class="row content ">
+                    <div class="col-sm">
+                        <p class="float-left">विद्दुत ठेकेदाराचे नांव (मालक) :- श्री/श्रीमती  {{user.ownerName}} <br>						
+                                    अनुज्ञप्ती क्रमांक म.ठे.क्र.नवीन  दिनांक	{{user.sanctionDate}}                                                                   
+                                    <br>					
+                                    संस्थेचे नांव व पत्ता: <br>					
+                                        मेसर्स:    {{user.firmName}}<br>		
+                                        पत्ता:	{{user.ownerAddress}}<br>				
+                                                            
+                                        ई मेल आय डी:  {{user.ownerMobile}} <br>					
+                                        मोबाइल क्र.:  {{user.ownerEmail}}</p>
+
+                    </div>
+                    <div class="col-sm">
+                        <div class="row content" style="margin-left:45rem">
+                                        <div class="col-sm"></div>
+                                        <div class="col-sm">
+                                            <div style="height:130px; width:130px; border:1px solid black" >
+
+                                            </div>
+                                            
+                                        </div>
+                        
+                    </div>
+            </div>
+            
+        </div>
+           <br>
+         
+        <div class="container">
+            <div class="row content ">
+                    <div class="col-sm">
+                      <table >
+                            <tr>
+                                <td style=" text-indent: 2em;">विद्दुत ठेकेदाराची (मालक) स्वाक्षरी....................	</td>
+                                <td style=" text-indent: 17em;"> 	माझ्या समक्ष स्वाक्षरी केली . 		
+                                      </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td style=" text-indent: 17em;">स्वाक्षरी </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td style=" text-indent: 17em;"> नांव :-	</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td style=" text-indent: 17em;">विद्दुत निरीक्षक </td>
+                            </tr>
+                            
+                        </table>    
+                    </div>
+                        
+            </div>
+        </div>  
+         <br>
+           <br>
+           <br>
+          
+        <div class="container">
+           <div class="row content ">
+                    <div class="col-sm">
+                        <p class="float-left"> विद्दुत पर्यवेक्षकाचे नांव:- श्री/श्रीमती{{user.supervisorName}}	<br>
+                                    विद्दुत पर्यवेक्षक परवाना क्रमांक म.प. क्र.	{{user.supervisorLicenseNo}} दिनांक	{{user.supervisorLicenseDate}}
+                                    <br> विद्दुत पर्यवेक्षक पत्ता  	{{user.supervisorAddress}}   <br>			
+                                                            
+                                    ई मेल आय डी: {{user.supervisorEmail}} <br>					
+                                            मोबाइल क्र.:  {{user.supervisorMobile}} 
+                    </div>
+                    <div class="col-sm">
+                        <div class="row content" style="margin-left:45rem">
+                                        <div class="col-sm"></div>
+                                        <div class="col-sm">
+                                            <div style="height:130px; width:130px; border:1px solid black" >
+
+                                            </div>
+                                            
+                                        </div>
+                        
+                    </div>
+            </div>
+            
+        </div>
+                  <br>
+          
+         
+           <div class="row content">
+                <table>
+                    <tr>
+                        <td>विद्युत् पर्यवेक्षकांची स्वाक्षरी...................	</td>
+                        <td style=" text-indent: 17em;"> मूळ प्रमाणपत्र व परवाना मी तपासले व  </td>	
+                                        		
+                                    </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td style=" text-indent: 17em;">माझ्या समक्ष स्वाक्षरी केली </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td style=" text-indent: 17em;">स्वाक्षरी</td>
+                        
+                    </tr>
+                    <tr><td></td>
+                        <td style=" text-indent: 17em;">नांव :-</td>
+                        </tr>
+                    <tr>
+                        <td></td>
+                        <td style=" text-indent: 17em;">विद्दुत निरीक्षक</td>
+                    </tr>
+                </table>
+        </div>
+        
+            <br>
+            <br>    
+            <div class="col-md-12 text-center">
+                <a href="/wireman-prapatrab"> <button type="submit" class="btn btn-lg btn-primary printPage next-btn" >Next</button></a>
+            </div>
+    </form>
+
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> <br><br><br>
+<br>
+
+{{!-- NAMUNA U2 --}}
+
+<div class="container" style="width: 100%;">
+    <form class="form-horizontal" method="post" role="form" id="namuna-e">
+        <div class="form-row align-items-center">
+ <p style="text-indent:10em">महाराष्ट्र शासन राजपत्र असाधारण भाग चार अ जानेवारी ३ २०१७/पौष १३ शके १९३८      &nbsp; 	 &nbsp; 	 &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ३९</p>
+              <p style="text-indent:25em">(नमुना - यु)</p>
+           <p style="text-indent:25em">(नियम ३५ व ३९ पहा</p>
+           <p style="text-indent:15em"> विद्दुत ठेकेदार अनुज्ञप्ती नवीन/नूतनीकरण करीत मालक व विद्दुत पर्यवेक्षक  	</p>
+           <p style="text-indent:15em"> 
+               यांच्या नमुना स्वाक्षरी , छायाचित्र तसेच प्रमाणपत्र व परवान्याची पडत पडताळणी अहवाल	
+            <p style="text-indent:10em">     (शासकीय अधिसूचना, उद्द्योग. ऊर्जा व कामगार विभाग, क्रमांक संकीर्ण-२०१६/प्रा.क्र..१२३/ऊर्जा-५ 	</p>
+             <p style="text-indent:23em">       दिनांक २ जानेवारी,२०१७ द्वारे प्राधिकृत) 	</p
+            </div>
+         
+         
+            
+            </div>
+         
+          
+        <div class="container">
+           
+            <div class="row content ">
+                    <div class="col-sm">
+                        <p class="float-left">विद्दुत ठेकेदाराचे नांव (मालक) :- श्री/श्रीमती  {{user.ownerName}} <br>						
+                                    अनुज्ञप्ती क्रमांक म.ठे.क्र.नवीन  दिनांक	{{user.sanctionDate}}                                                                   
+                                    <br>					
+                                    संस्थेचे नांव व पत्ता:  {{user.firmName}}<br>		
+                                        पत्ता:	{{user.ownerAddress}}<br>				
+                                                            
+                                        ई मेल आय डी:  {{user.ownerMobile}} <br>					
+                                        मोबाइल क्र.:  {{user.ownerEmail}}</p>
+
+                    </div>
+                    <div class="col-sm">
+                         <div class="row content" style="margin-left:45rem">
+                                        <div class="col-sm"></div>
+                                        <div class="col-sm">
+                                            <div style="height:130px; width:130px; border:1px solid black" >
+
+                                            </div>
+                                            
+                                        </div>
+                        
+                    </div>
+            </div>
+            
+        </div>
+          
+           <br>
+        <div class="container">
+            <div class="row content ">
+                    <div class="col-sm">
+                      <table >
+                            <tr>
+                                <td style=" text-indent: 2em;">विद्दुत ठेकेदाराची (मालक) स्वाक्षरी....................	</td>
+                                <td style=" text-indent: 17em;"> 	माझ्या समक्ष स्वाक्षरी केली . 		
+                                      </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td style=" text-indent: 17em;">स्वाक्षरी </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td style=" text-indent: 17em;"> नांव :-	</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td style=" text-indent: 17em;">विद्दुत निरीक्षक </td>
+                            </tr>
+                            
+                        </table>    
+                    </div>
+                        
+            </div>
+        </div>  
+         <br>
+           <br>
+           <br>
+         
+        <div class="container">
+           
+            <div class="row content ">
+                    <div class="col-sm">
+                     
+                        <p class="float-left">विद्दुत ठेकेदाराचे नांव (भागीदार) :- श्री/श्रीमती  {{user.partnerName}} <br>						
+                                    अनुज्ञप्ती क्रमांक म.ठे.क्र.नवीन  दिनांक	{{user.sanctionDate}}                                                                   
+                                    <br>					
+                                    संस्थेचे नांव व पत्ता:  {{user.firmAddress}}<br>					
+                                        मेसर्स:    {{user.firmName}}<br>		
+                                        पत्ता:	{{user.partnerAddress}}<br>				
+                                                            
+                                        ई मेल आय डी:  {{user.partnerEmail}} <br>					
+                                        मोबाइल क्र.:  {{user.partnerMobile}}</p>
+
+                    </div>
+                    <div class="col-sm">
+                         <div class="row content" style="margin-left:45rem">
+                                        <div class="col-sm"></div>
+                                        <div class="col-sm">
+                                            <div style="height:130px; width:130px; border:1px solid black" >
+
+                                            </div>
+                                            
+                                        </div>
+                    </div>
+            </div>
+            
+        </div>
+          
+           <br>
+        <div class="container">
+            <div class="row content ">
+                    <div class="col-sm">
+                      <table >
+                            <tr>
+                                <td style=" text-indent: 2em;">विद्दुत ठेकेदाराची (भागीदार) स्वाक्षरी....................	</td>
+                                <td style=" text-indent: 17em;"> 	माझ्या समक्ष स्वाक्षरी केली . 		
+                                      </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td style=" text-indent: 17em;">स्वाक्षरी </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td style=" text-indent: 17em;"> नांव :-	</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td style=" text-indent: 17em;">विद्दुत निरीक्षक </td>
+                            </tr>
+                            
+                        </table>    
+                    </div>
+                        
+            </div>
+        </div>  
+         <br>
+           <br>
+           <br>
+         
+        <div class="container">
+           <div class="row content ">
+                    <div class="col-sm">
+                        <p class="float-left"> विद्दुत पर्यवेक्षकाचे नांव:- श्री/श्रीमती{{user.supervisorName}}	<br>
+                                    विद्दुत पर्यवेक्षक परवाना क्रमांक म.प. क्र.	{{user.supervisorLicenseNo}}	<br> दिनांक	{{user.supervisorLicenseDate}}
+                                    <br>  पत्ता  	{{user.supervisorAddress}}   <br>			
+                                                            
+                                    ई मेल आय डी: {{user.supervisorEmail}} <br>					
+                                            मोबाइल क्र.:  {{user.supervisorMobile}} 
+                    </div>
+                    <div class="col-sm">
+                         <div class="row content" style="margin-left:45rem">
+                                        <div class="col-sm"></div>
+                                        <div class="col-sm">
+                                            <div style="height:130px; width:130px; border:1px solid black" >
+
+                                            </div>
+                                            
+                                        </div>
+                    </div>
+            </div>
+            
+        </div>
+                  <br>
+           
+         
+           <div class="row content">
+                <table>
+                    <tr>
+                        <td style=" text-indent: 2em;">विद्दुत पर्यवेक्षकाची  स्वाक्षरी..................	</td>
+                        <td style=" text-indent: 17em;"> मूळ प्रमाणपत्र व परवाना मी तपासले व  </td>	
+                                        		
+                                    </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td style=" text-indent: 17em;">माझ्या समक्ष स्वाक्षरी केली </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td style=" text-indent: 17em;">स्वाक्षरी</td>
+                        
+                    </tr>
+                    <tr><td></td>
+                        <td style=" text-indent: 17em;">नांव :-</td>
+                        </tr>
+                    <tr>
+                        <td></td>
+                        <td style=" text-indent: 17em;">विद्दुत निरीक्षक</td>
+                    </tr>
+                </table>
+        </div>
+        
+            <br>
+            <br>    
+            <div class="col-md-12 text-center">
+                <a href="/wireman-prapatrab"> <button type="submit" class="btn btn-lg btn-primary printPage next-btn" >Next</button></a>
+            </div>
+    </form>
+
+</div>
+
+{{!-- NAMUNA X --}}
+ <div class="container" style="width: 100%;">
+       <form class="form-horizontal" method="post" role="form" id="namuna-e">
+          
+           
+           <div class="container">
+               <p style="text-indent:10em">महाराष्ट्र शासन राजपत्र असाधारण भाग चार अ जानेवारी ३ २०१७/पौष १३ शके १९३८      &nbsp; 	 &nbsp; 	 &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;४०</p>
+               
+                <p style="text-indent:25em"> (नमुना - एक्स)</p>
+           <p style="text-indent:25em">(नियम ३५ व ३९ पहा</p>
+           
+           <p style="text-indent:18em"> विद्युत पर्यवेक्षक स्वतः मालक असतानाचे प्रतिज्ञापत्र		
+            <p style="text-indent:10em">     (शासकीय अधिसूचना, उद्द्योग. ऊर्जा व कामगार विभाग, क्रमांक संकीर्ण-२०१६/प्रा.क्र..१२३/ऊर्जा-५ 	</p>
+             <p style="text-indent:23em">       दिनांक २ जानेवारी,२०१७ द्वारे प्राधिकृत) 
+              <p style="text-indent:23em">     (रुपये १००/- स्टॅम्प पेपरवर टंकलिखित)		
+             
+              
+                    <p>
+                        मी श्री / श्रीमती {{user.ownerName}}  असे जाहीर करतो /करते						
+                    कि मी, <br> मेसर्स  {{user.firmName}} दि {{user.sanctionDate}}   या नावाची संस्था <br> सुरु करत असून त्याचा						
+                    एकमेव मालक आणि पर्यवेक्षक{{user.supervisorName}}  <br>	 परवाना क्रमांक {{user.supervisorLicenseNo}}    दिनांक   {{user.supervisorLicenseDate}} 	      आहे. 						
+                    <br>मी माझी शेवटची नोकरी मेसर्स {{user.lastFirm}} <br>  पत्ता {{user.lastFirmAddress}}    म . ठे . क्र . {{user.lastFirmNo}}   						
+                    मध्ये दिनांक  {{user.firmPeriodFrom}}  पासून <br> ते दिनांक   {{user.firmPeriodTo}}   पर्यंत केली आहे . तसेच नोकरी सोडल्याच्या						
+                    दिनांका पासून आजपर्यंत<br> कोणाकडेही  म्हणून नव्हतो/ नव्हते. या काळात मी स्वतंत्रपणे इतर 						
+                    काम करीत होतो / होते . त्याप्रमाणे  मी<br>  असे जाहीर करतो / करते, कि मी इतर कोणत्याही						
+                    कंपनीत कोणत्याही पदावर व भागीदार म्हणून काम करीत नाही . <br>						
+                    ठेकेदार अनुज्ञप्ती मिळण्याकरिता / नूतनीकरण करीत मी हे प्रतिज्ञापत्र सादर करीत आहे .	
+                    <br>					
+                    वरील सर्व माहिती खरी आहे खोटी निघाल्यास, मी भारतीय दंड संहिता आणि / किंवा 						
+                    त्यास <br>लागू असलेल्या कोणत्याही कायद्यान्वये खटला भरण्यास पात्र असेल याची 						
+                    मला जाणीव आहे						
+                                            
+
+                    </p>
+                    <br>
+                    <div class="row content">
+                        <div class="col-sm">
+                            <div class="col-sm float-left" style="height:150px; width:150px; border:1px solid black" ></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div> 
+                
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+            <div class="container">
+                <div class="row content">
+                    <table class="table text-center city-table">
+                
+                        <tbody>
+                            <tr>
+                                <td> </td>
+                                <td></td>
+                                <td class="text-center" style="margin-left: 100px;"><p  style="margin-left:30px ;">स्वाक्षरी <br>
+                                    विद्दुत पर्यवेक्षक व अनुज्ञाप्तीधारक <br>
+                                    श्री/श्रीमती : {{user.ownerName}}<br>
+                                         दिनांक   {{user.date}}
+                                     </p></td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+                      <br>
+                <br>
+                <br>
+                <br>
+               
+                <p>टीप : -शेवटच्या नोकरी सोडल्यानंतरचा खंडित काळ एक महिन्यापेक्षा जास्त असेल तर शेवटच्या काळात 						
+                    काय केले सविस्तर खुलासा द्याव्या 	</p>
+                    
+            </div>   
+            <br>
+            <br>    
+            <div class="col-md-12 text-center">
+                <a href="/wireman-prapatrab"> <button type="submit" class="btn btn-lg btn-primary printPage next-btn" >Next</button></a>
+            </div>
+    </form>
+ </div>
+
+{{!-- NAMUNA V --}}
+ <div class="container" style="width: 100%;">
+       <form class="form-horizontal" method="post" role="form" id="namuna-e">
+           <div class="form-row align-items-center">
+               
+                 <p style="text-indent:10em">महाराष्ट्र शासन राजपत्र असाधारण भाग चार अ जानेवारी ३ २०१७/पौष १३ शके १९३८      &nbsp; 	 &nbsp; 	 &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;४०</p>
+              <p style="text-indent:25em">((नमुना - व्ही)</p>
+           <p style="text-indent:25em">(नियम ३५ व ३९ पहा</p>
+           
+           <p style="text-indent:18em">   विद्युत पर्यवेक्षाचे  प्रतिज्ञापत्र  </p>	
+            <p style="text-indent:10em">     (शासकीय अधिसूचना, उद्द्योग. ऊर्जा व कामगार विभाग, क्रमांक संकीर्ण-२०१६/प्रा.क्र..१२३/ऊर्जा-५ 	</p>
+             <p style="text-indent:23em">       दिनांक २ जानेवारी,२०१७ द्वारे प्राधिकृत) 	</p
+            </div>
+         
+          
+               
+                    <p>मी, श्री/श्रीमती	{{user.supervisorName}}						
+                    वय   {{user.supervisorAge}}  वर्षे  <br>  राहणार {{user.supervisorAddress}}	  असे जाहीर करतो/करते कि, मी	<br>								
+                    मेसर्स  {{user.firmName}}   	 म. ठे. क्र . {{user.firmRegNo}}  यांच्या कडे 	<br>							
+                    दिनांक {{user.sanctionDate}}  पासून काम करीत आहे. माझा पर्यवेक्षक<br> परवाना क्रमांक {{user.supervisorLicenseNo}} 									  
+                        दिनांक {{user.supervisorLicenseDate}}    <br>   असा आहे . माझी शेवटची नोकरी मेसर्स 	  {{user.lastFirm}}  मध्ये दिनांक   {{user.firmPeriodFrom}}<br>    पासून दिनांक {{user.firmPeriodTo}}				
+                    पर्यंत केली.  मी नोकरी सोडल्याच्या दिनांक पासून आज पर्यंत कोणत्याही कंपनीत कोणत्याच	<br>								
+                    पदावर/पर्यवेक्षक म्हणून सेवेत नव्हतो/नव्हते.  या काळात मी स्वतंत्रपणे इतर काम करीत 	<br>								
+                    होतो/ होते. तसेच मी कोणत्याही फर्म मध्ये कामगार अथवा भागीदार नव्हतो . <br>									
+                    वरील सर्व माहिती खरी आहे . खोटी निघाल्यास,मी भारतीय दंड संहिता आणि / किंवा त्यास 	<br>								
+                    लागू असलेल्या कोणत्याही कायद्यान्वये खटला भरण्यास आणि शिक्षेस पात्र असेल, याची 		<br>							
+                    मला जाणीव आहे 										
+
+                    </p>
+                    <br>
+                    <div class="row content">
+                        <div class="col-sm">
+                            <div class="col-sm float-left" style="height:150px; width:150px; border:1px solid black" ></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div> 
+                
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                
+            <div class="container">
+                <div class="row content">
+                    <table class="table text-center city-table">
+                
+                        <tbody>
+                            <tr>
+                                <td> </td>
+                                <td></td>
+                                <td class="text-center" style="margin-left: 100px;"><p  style="margin-left:30px ;">स्वाक्षरी <br>
+                                    विद्दुत पर्यवेक्षक  <br>
+                                    श्री/श्रीमती : {{user.supervisorName}}<br>
+                                         दिनांक   {{user.date}}
+                                     </p></td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+                
+                <br>
+                <br>
+                <br>
+               
+                <p>टीप : -शेवटच्या नोकरी सोडल्यानंतरचा खंडित काळ एक महिन्यापेक्षा जास्त असेल तर शेवटच्या काळात 						
+                    काय केले सविस्तर खुलासा द्याव्या 	</p>
+                    
+            </div>   
+            <br>
+            <br>    
+            <div class="col-md-12 text-center">
+                <a href="/wireman-prapatrab"> <button type="submit" class="btn btn-lg btn-primary printPage next-btn" >Next</button></a>
+            </div>
+    </form>
+ </div>
+
+
+{{!-- NAMUNA W --}}
+ <div class="container" style="width: 100%;">
+       <form>
+           <div class="container">
+                 <div class="container">
+               <p style="text-indent:10em">महाराष्ट्र शासन राजपत्र असाधारण भाग चार अ जानेवारी ३ २०१७/पौष १३ शके १९३८      &nbsp; 	 &nbsp; 	 &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;४१</p>
+               
+                <p style="text-indent:25em">(नमुना - डब्लू)</p>
+           <p style="text-indent:25em">(नियम ३५ व ३९ पहा</p>
+           
+           <p style="text-indent:18em">     विद्युत ठेकेदाराचे प्रतिज्ञापत्र		</P>
+            <p style="text-indent:10em">     (शासकीय अधिसूचना, उद्द्योग. ऊर्जा व कामगार विभाग, क्रमांक संकीर्ण-२०१६/प्रा.क्र..१२३/ऊर्जा-५ 	</p>
+             <p style="text-indent:23em">       दिनांक २ जानेवारी,२०१७ द्वारे प्राधिकृत) 
+              <p style="text-indent:23em">     (रुपये १००/- स्टॅम्प पेपरवर टंकलिखित)		
+             
+              
+                    <p>
+               
+               
+             
+                    <p>मी श्री/श्रीमती    {{user.ownerName}}        				
+                    वय         {{user.ownerAge}}      					
+                    राहणार      {{user.ownerAddress}}           <br>					
+                    असे जाहीर करतो / करते कि मी मेसर्स 	  {{user.firmName}}               <br>				
+                    म ठे क्र {{user.firmRegNo}}  दिनांक {{user.sanctionDate}}             				
+                    या संस्थेचा एकमेव मालक असून मी इतर कोणत्याही <br> कंपनीत पदावर व भागीदार 					
+                    म्हणून काम करीत नाही 			
+                    श्री/श्रीमती       {{user.supervisorName}}       <br>					
+                    विद्युत पर्यवेक्षक परवाना क्रमांक म प क्र       {{user.supervisorLicenseNo}}      				
+                    दिनांक            {{user.supervisorLicenseDate}}      <br>           यांना माझ्या वरील संस्थेत पूर्ण वेळ पर्यवेक्षक 					
+                    म्हणून दिनांक              {{user.sanctionDate}}       <br>        पासून नेमले आहे . ते कोणत्याही कंपनीत कोणत्याही पदावर व 					
+                    भागीदार म्हणून काम करीत नाही . <br> तसेच काही कारणास्तव त्यांची सेवा नको असल्यास अथवा					
+                    त्यांना सेवामुक्त व्हावयाचे <br>
+                    असल्यास आम्ही उभयंता एकमेकांस किमान एक महिनाच आगाऊ लेखीसूचना					
+                    अनुज्ञापक मंडळाच्या माहितीसह देऊ											
+
+                    </p>
+                    <br>
+                    <div class="row content">
+                        <div class="col-sm">
+                            <div class="col-sm float-left" style="height:150px; width:150px; border:1px solid black" ></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div> 
+                
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+            <div class="container">
+                <div class="row content">
+                    <table class="table text-center city-table">
+                
+                        <tbody>
+                            <tr>
+                                <td> </td>
+                                <td></td>
+                                <td class="text-center" style="margin-left: 100px;"><p  style="margin-left:30px ;">स्वाक्षरी <br>
+                                    विद्दुत अनुज्ञाप्तीधारक  <br>
+                                    श्री/श्रीमती : {{user.supervisorName}}<br>
+                                         दिनांक   {{user.date}}
+                                     </p></td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+                
+                      <br>
+                <br>
+                <br>
+                <br>
+               
+                <p>टीप : -शेवटच्या नोकरी सोडल्यानंतरचा खंडित काळ एक महिन्यापेक्षा जास्त  असेल तर शेवटच्या काळात 						
+                    काय केले सविस्तर खुलासा द्याव्या 	</p>
+                    
+            </div>   
+            <br>
+            <br>    
+            <div class="col-md-12 text-center">
+                <a href="/wireman-prapatrab"> <button type="submit" class="btn btn-lg btn-primary printPage next-btn" >Next</button></a>
+            </div>
+    </form>
+ </div>
+
+{{!-- NAMUNA Y --}}
+ <div class="container" style="width: 100%;">
+       <form class="form-horizontal" method="post" role="form" id="namuna-e">
+           
+           <p style="text-indent:10em">महाराष्ट्र शासन राजपत्र असाधारण भाग चार अ जानेवारी ३ २०१७/पौष १३ शके १९३८      &nbsp; 	 &nbsp; 	 &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;४०</p>
+              <p style="text-indent:25em">(नमुना -वाय)</p>
+           <p style="text-indent:25em">(नियम ३५ व ३९ पहा</p>
+           
+           <p style="text-indent:22em"> 
+        भागीदारी फार्मचे प्रतिज्ञापत्र 	</p>	
+            <p style="text-indent:10em">     (शासकीय अधिसूचना, उद्द्योग. ऊर्जा व कामगार विभाग, क्रमांक संकीर्ण-२०१६/प्रा.क्र..१२३/ऊर्जा-५ 	</p>
+             <p style="text-indent:23em">       दिनांक २ जानेवारी,२०१७ द्वारे प्राधिकृत  </p>
+                <p style="text-indent:23em">     (रुपये १००/- स्टॅम्प पेपरवर टंकलिखित)		
+                     <p style="text-indent:25em">   भागीदाराचे प्रमाणपत्र      
+           </p>
+            
+         
+                   <p>
+    आम्ही खाली सही करणारे <br>
+    १)  श्री/श्रीमती  {{user.ownerName}} <br>
+    २) श्री/श्रीमती  {{user.supervisorName}} <br>
+    ३) श्री/श्रीमती  {{user.partnerName}}
+</p>
+<p>असे जाहीर करतो कि , आम्ही मेसर्स {{user.firmName}}						
+चे भागीदार असून आम्ही इतर कोणत्याही <br> कंपनीत कोणत्याच पदावर व भागीदार 					
+म्हणून काम करीत नाही . <br> आम्ही पुढे असे जाहीर करतो की श्री 	{{user.supervisorName}}				
+विद्युत पर्यवेक्षक , <br> परवाना क्रमांक   	{{user.supervisorLicenseNo}}				
+दिनांक      {{user.supervisorLicenseDate}}         धारक हे वरील कंपनीत पूर्णवेळ कामगार असून ते इतर 					
+कोणत्याही कंपनीत <br> पदावर व भागीदार म्हणून काम करीत नाही .तसेच काही कारणास्तव 					
+त्यांची सेवा नको असल्यास अथवा त्यांना<br> सेवामुक्त व्हावयाचे असल्यास आम्ही उभयंता 					
+एकमेकास एक महिन्याची  आगाऊ लेखी सूचना अनुज्ञापक मंडळाच्या <br>माहितीसह देऊ 					
+</p>
+
+
+<br>
+
+<div class="row content">
+    <table>
+                    <tr>
+                        <td><div class="col-sm float-right">
+                            <div style="height:150px; width:150px; border:1px solid black" >
+                                    फोटो
+                            </div>
+                            <div style="height:50px; width:150px; border:1px solid black" >
+                                        भागीदार क्र १	
+
+                            </div>
+                    </div></td>
+                        <td > <div class="col-sm float-right">
+                            <div style="height:150px; width:150px; border:1px solid black" >
+                                    फोटो
+                            </div>
+                            <div style="height:50px; width:150px; border:1px solid black" >
+                                        भागीदार क्र २	
+
+                            </div>
+                    </div></td>	
+                              <td>
+                                  <div class="col-sm float-right">
+                            <div style="height:150px; width:150px; border:1px solid black" >
+                                    फोटो
+                            </div>
+                            <div style="height:50px; width:150px; border:1px solid black" >
+                                        भागीदार क्र ३	
+                            </div>
+                    </div>
+                              </td>
+                    </tr>
+                </table>
+</div>
+                         <br>
+                         <div class="container">
+                <div class="row content">
+                    <table class="table text-center city-table">
+                
+                        <tbody>
+                            <tr>
+                                <td> </td>
+                                <td></td>
+                                <td class="text-center" style="margin-left: 100px;"><p  style="margin-left:30px ;">भागीदाराची स्वाक्षऱ्या <br>
+                                    १) ................................  <br>
+                                    २) ................................<br>
+                                    ३)  ................................ 
+  
+                                            <br><br>अनुज्ञाप्तीधारक
+                                     </p></td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+                
+                      <br>
+                <br>
+                <br>
+                <br>
+               
+                
+            </div>
+            <br>
+            <br>    
+            <div class="col-md-12 text-center">
+                <a href="/wireman-prapatrab"> <button type="submit" class="btn btn-lg btn-primary printPage next-btn" >Next</button></a>
+            </div>
+    </form>
+</div>
+
+{{!-- NAMUNA Q --}}
+ <div class="container-fluid" style="width: 100%;"> 
+       <form class="form-horizontal" method="POST" role="form" id="index"> 
+            
+              
+                       <p class="text-center">(नमुना - क्यू)<br>  (नियम ३५ व ३९ पहा)<br>     कंत्राट नोंदवही 		<br>					
+           (शासकीय अधिसूचना, उद्योग, ऊर्जा इ कामगार विभाग ,क्रमांक संकीर्ण-२०१६/प्र .क्र -१२३/ऊर्जा-५ <br>						
+             (दिनांक २ जानेवारी , २०१७ द्वारे प्राधिकृत )				
+</p>  
+            <div class="container-fluid">
+                 <div class="row">
+                     <div class="col-sm">
+                        <div class="col-sm">
+                         <p>संस्थेचे नाव:-{{user.firmName}} </p>
+                          <p>म.ठे.क्र:- {{user.firmRegNo}} </p>
+                          <p>जिल्हा {{user.district}} </p>
+                     </div>
+                 </div>
+             </div>
+           <br>
+          
+            <table class="table table-bordered" style="width:50%;  margin-right:70px">
+               
+                    <tbody>
+                         <tr>
+                             <td  style="font-size:10px">अ . क्र .</td>
+                        <td  style="font-size:10px">ग्राहकाचे नांव</td>
+                        <td  style="font-size:10px">ग्राहकाचा पत्ता  </td>
+                        <td  style="font-size:10px">काम सुरु केल्याचा दिनांक </td>
+                        <td  style="font-size:10px">काम पूर्ण  केल्याचा  दिनांक  </td>
+                        <td  style="font-size:10px">तारतंत्री व शिकाऊ उमेदवाराचे नांव</td>
+                        <td  style="font-size:10px">चाचणी अहवालाचा दिनांक</td>
+                        <td  style="font-size:10px">पुरवठा कंपनीचे नांव  </td>
+                        <td  style="font-size:10px">वीज पुरवठा सुरु केल्याचा दिनांक</td>
+                        <td  style="font-size:10px">वीज पुरवठा सुरु कारणाच्या वेळी त्या त्याठिकाणी उपस्थित असलेल्या व्यक्तीचे नांव </td>
+                        <td  style="font-size:10px">देयक क्रमांक व  विद्युत संच मांडणी पूर्ण केल्याचा दिनांक</td>
+                        <td  style="font-size:10px"> शेरा  </td>
+                    </tr>
+                    <tr>
+                        <td  style="font-size:10px">१ </td>
+                        <td  style="font-size:10px">२</td>
+                        <td  style="font-size:10px">३</td>
+                        <td  style="font-size:10px">४ </td>
+                        <td  style="font-size:10px">५</td>
+                        <td  style="font-size:10px">६</td>
+                        <td  style="font-size:10px">७ </td>
+                        <td  style="font-size:10px">८</td>
+                        <td  style="font-size:10px">९</td>
+                        <td  style="font-size:10px">१०</td>
+                        <td  style="font-size:10px">११ </td>
+                        <td  style="font-size:10px">१२</td>
+                    </tr>
+                  
+                    <tr><td>१ </td>
+                        <td  style="font-size:10px">{{user.customerName1}}</td>
+                        <td  style="font-size:10px">{{user.customerAddress1}}</td>
+                        <td  style="font-size:10px">{{user.workStartDate1}}</td>
+                        <td  style="font-size:10px">{{user.workEndDate1}}</td>
+                        <td  style="font-size:10px">{{user.wiremanName1}}</td>
+                        <td  style="font-size:10px">{{user.reportDate1}}</td>
+                        <td  style="font-size:10px">{{user.supplyCompanyName1}}</td>
+                        <td  style="font-size:10px">{{user.powerSupplyDate1}}</td>
+                        <td  style="font-size:10px">{{user.powerSupplyPerson1}}</td>
+                       <td  style="font-size:10px">{{user.powerSupplyNo1}}</td>
+                        <td  style="font-size:10px">{{user.shera1}}</td>
+                        </tr>
+                    <tr><td>२ </td>
+                    <td  style="font-size:10px">{{user.customerName2}}</td>
+                        <td  style="font-size:10px">{{user.customerAddress2}}</td>
+                        <td  style="font-size:10px">{{user.workStartDate2}}</td>
+                        <td  style="font-size:10px">{{user.workEndDate2}}</td>
+                        <td  style="font-size:10px">{{user.wiremanName2}}</td>
+                        <td  style="font-size:10px">{{user.reportDate2}}</td>
+                        <td  style="font-size:10px">{{user.supplyCompanyName2}}</td>
+                        <td  style="font-size:10px">{{user.powerSupplyDate2}}</td>
+                        <td  style="font-size:10px">{{user.powerSupplyPerson2}}</td>
+                        <td  style="font-size:10px">{{user.powerSupplyNo2}}</td>
+                        <td  style="font-size:10px">{{user.shera2}}</td>
+                    </tr>
+                    <tr><td>३ </td>
+                     <td  style="font-size:10px">{{user.customerName3}}</td>
+                        <td  style="font-size:10px">{{user.customerAddress3}}</td>
+                        <td  style="font-size:10px">{{user.workStartDate3}}</td>
+                        <td  style="font-size:10px">{{user.workEndDate3}}</td>
+                        <td  style="font-size:10px">{{user.wiremanName3}}</td>
+                        <td  style="font-size:10px">{{user.reportDate3}}</td>
+                        <td  style="font-size:10px">{{user.supplyCompanyName3}}</td>
+                        <td  style="font-size:10px">{{user.powerSupplyDate3}}</td>
+                        <td  style="font-size:10px">{{user.powerSupplyPerson3}}</td>
+                        <td  style="font-size:10px">{{user.powerSupplyNo3}}</td>
+                        <td  style="font-size:10px">{{user.shera3}}</td>
+                 </tr>
+                         
+                            </tbody>
+                            
+                </table>
+                
+            </div>
+             
+               
+            <br>
+            <br>
+             <div class="col-md-12 text-center">
+                <a href="/new-contractor-letter"> <button  type="submit"class="btn btn-lg btn-primary printPage next-btn" >Next</button></a>
+               {{!-- <button  type="submit"class="btn btn-lg btn-primary printPage next-btn" >Next</button> --}}
+            </div>
+    </form>
+       <form class="form-horizontal" method="POST" role="form" id="index"> 
+              
+              
+            
+           <table class="table table-bordered"style="width:50%;  margin-right:500px">
+               
+                    <tbody>
+                        
+                    <tr><td>४ </td>
+                   <td  style="font-size:10px">{{user.customerName4}}</td>
+                        <td  style="font-size:10px">{{user.customerAddress4}}</td>
+                        <td  style="font-size:10px">{{user.workStartDate4}}</td>
+                        <td  style="font-size:10px">{{user.workEndDate4}}</td>
+                        <td  style="font-size:10px">{{user.wiremanName4}}</td>
+                        <td  style="font-size:10px">{{user.reportDate4}}</td>
+                        <td  style="font-size:10px">{{user.supplyCompanyName4}}</td>
+                        <td  style="font-size:10px">{{user.powerSupplyDate4}}</td>
+                        <td  style="font-size:10px">{{user.powerSupplyPerson4}}</td>
+                        <td  style="font-size:10px">{{user.powerSupplyNo4}}</td>
+                        <td  style="font-size:10px">{{user.shera4}}</td>
+                      </tr>
+                    <tr><td>५ </td>
+                    <td  style="font-size:10px">{{user.customerName5}}</td>
+                        <td  style="font-size:10px">{{user.customerAddress5}}</td>
+                        <td  style="font-size:10px">{{user.workStartDate5}}</td>
+                        <td  style="font-size:10px">{{user.workEndDate5}}</td>
+                        <td  style="font-size:10px">{{user.wiremanName5}}</td>
+                        <td  style="font-size:10px">{{user.reportDate5}}</td>
+                        <td  style="font-size:10px">{{user.supplyCompanyName5}}</td>
+                        <td  style="font-size:10px">{{user.powerSupplyDate5}}</td>
+                        <td  style="font-size:10px">{{user.powerSupplyPerson5}}</td>
+                        <td  style="font-size:10px">{{user.powerSupplyNo5}}</td>
+                        <td  style="font-size:10px">{{user.shera5}}</td>
+                       </tr>
+                        <tr><td>६ </td>
+                        <td  style="font-size:10px">{{user.customerName6}}</td>
+                        <td  style="font-size:10px">{{user.customerAddress6}}</td>
+                        <td  style="font-size:10px">{{user.workStartDate6}}</td>
+                        <td  style="font-size:10px">{{user.workEndDate6}}</td>
+                        <td  style="font-size:10px">{{user.wiremanName6}}</td>
+                        <td  style="font-size:10px">{{user.reportDate6}}</td>
+                        <td  style="font-size:10px">{{user.supplyCompanyName6}}</td>
+                        <td  style="font-size:10px">{{user.powerSupplyDate6}}</td>
+                        <td  style="font-size:10px">{{user.powerSupplyPerson6}}</td>
+                        <td  style="font-size:10px">{{user.powerSupplyNo6}}</td>
+                        <td  style="font-size:10px">{{user.shera6}}</td>
+                     </tr> 
+                         <tr><td>७ </td>
+                         <td  style="font-size:10px">{{user.customerName7}}</td>
+                        <td  style="font-size:10px">{{user.customerAddress7}}</td>
+                        <td  style="font-size:10px">{{user.workStartDate7}}</td>
+                        <td  style="font-size:10px">{{user.workEndDate7}}</td>
+                        <td  style="font-size:10px">{{user.wiremanName7}}</td>
+                        <td  style="font-size:10px">{{user.reportDate7}}</td>
+                        <td  style="font-size:10px">{{user.supplyCompanyName7}}</td>
+                        <td  style="font-size:10px">{{user.powerSupplyDate7}}</td>
+                        <td  style="font-size:10px">{{user.powerSupplyPerson7}}</td>
+                        <td  style="font-size:10px">{{user.powerSupplyNo7}}</td>
+                        <td  style="font-size:10px">{{user.shera7}}</td>
+                     </tr>
+                     <tr><td>८ </td>
+                     <td  style="font-size:10px">{{user.customerName8}}</td>
+                        <td  style="font-size:10px">{{user.customerAddress8}}</td>
+                        <td  style="font-size:10px">{{user.workStartDate8}}</td>
+                        <td  style="font-size:10px">{{user.workEndDate8}}</td>
+                        <td  style="font-size:10px">{{user.wiremanName8}}</td>
+                        <td  style="font-size:10px">{{user.reportDate8}}</td>
+                        <td  style="font-size:10px">{{user.supplyCompanyName8}}</td>
+                        <td  style="font-size:10px">{{user.powerSupplyDate8}}</td>
+                        <td  style="font-size:10px">{{user.powerSupplyPerson8}}</td>
+                        <td  style="font-size:10px">{{user.powerSupplyNo8}}</td>
+                        <td  style="font-size:10px">{{user.shera8}}</td>
+                    </tr>
+
+                                
+                            </tbody>
+                            
+                </table>
+                
+            </div>
+             
+               
+            <br>
+            <br>
+             <div class="col-md-12 text-center">
+                <a href="/new-contractor-letter"> <button  type="submit"class="btn btn-lg btn-primary printPage next-btn" >Next</button></a>
+               {{!-- <button  type="submit"class="btn btn-lg btn-primary printPage next-btn" >Next</button> --}}
+            </div>
+    </form>
+</div>
+{{!-- PRAPATRA B for Owner --}}
+<div class="container" style="width: 100%;">
+    <form class="form-horizontal" method="POST" role="form" id="prapatra-b">
+          <p style="text-indent:10em">महाराष्ट्र शासन राजपत्र असाधारण भाग चार अ जानेवारी ३ २०१७/पौष १३ शके १९३८      &nbsp; 	 &nbsp; 	 &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>
+              <p style="text-indent:25em">प्रपत्र - ब)</p>
+           <p style="text-indent:22em">स्वयं - सांक्षांकनासाठी स्वयं घोषणापत्र</p>
+        
+         <p style="text-indent:22em">Prapatra B For Owner</p>
+        <div class="row content float-right" style="margin-right: 150px;">
+                    <div class="col-sm"></div>
+                    <div class="col-sm">
+                         <div style="height:150px; width:150px; border:1px solid black " >
+
+                        </div>
+                        
+                    </div>
+                </div>
+           <br>
+           <br>
+           <br>
+           <br>
+           <br><br>
+           <br>
+           <br>
+       <div class="container">
+            
+            <p> मी श्री . {{user.ownerName}}, श्री . {{user.ownerFname}}, यांचा /यांची <br>
+                मुलगा /मुलगी ,  वय	{{user.ownerAge}} वर्ष व्यवसाय {{user.ownerOccupation}},आधार क्रमांक	{{user.ownerAdharNo}},	<br>
+                राहणार :	{{user.ownerAddress}},				
+                                
+                </p>	
+            <p>	याद्वारे घोषित करतो/करते कि, मी स्वयं साक्षांकित केलेल्या प्रति या मूळ कागदपत्रांच्याच सत्य प्रति आहेत . त्या खोट्या असल्याचे <br> आढळून आल्यास, भारतीय दंड संहिता आणि / किंवा संबंधित कायद्यानुसार माझ्यावर खटला भरला <br> जाईल व त्यानुसार मी शिक्षेस पात्र राहीन याची मला पूर्ण जाणीव आहे.</p>
+            <br>
+            <div class="row content">
+                <table>
+                    <tr>
+                        <td style="">ठिकाण: {{user.place}}</td>
+                        <td style=" text-indent: 15em;"> अर्जदाराची स्वाक्षरी</td>
+                    </tr>
+                    <tr>
+                        <td><td style=" text-indent: 15em;"> अर्जदाराची नाव: {{user.ownerName}} 		
+                        </td></td>
+                    </tr>
+                    <tr>
+                        <td style="">दिनांक: {{user.date}}</td>
+                        <td></td>
+                    </tr>
+                     
+                    <tr>
+                        <td></td>
+                        <td style=" text-indent: 15em;">मोबाईल क्र.: {{user.ownerMobile}}</td>
+                    </tr>
+                   
+                </table>
+        </div>
+        <br>
+        <br>
+</form>
+</div>
+
+{{!-- PRAPATRA B for Supervisor --}}
+<div class="container" style="width: 100%;">
+    <form class="form-horizontal" method="POST" role="form" id="prapatra-b">
+       <p style="text-indent:10em">महाराष्ट्र शासन राजपत्र असाधारण भाग चार अ जानेवारी ३ २०१७/पौष १३ शके १९३८      &nbsp; 	 &nbsp; 	 &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>
+              <p style="text-indent:25em">प्रपत्र - ब)</p>
+          <p style="text-indent:22em">स्वयं - सांक्षांकनासाठी स्वयं घोषणापत्र</p>
+         <p style="text-indent:22em">Prapatra B For Supervisor</p>
+        <div class="row content float-right" style="margin-right: 150px;">
+                    <div class="col-sm"></div>
+                    <div class="col-sm">
+                         <div style="height:150px; width:150px; border:1px solid black" >
+
+                        </div>
+                        
+                    </div>
+                </div>
+           <br>
+           <br>
+           <br>
+           <br>
+           <br><br>
+           <br>
+           <br>
+       <div class="container">
+            
+            <p> मी श्री . {{user.supervisorName}}, श्री . {{user.supervisorFname}}, यांचा /यांची <br>
+                मुलगा /मुलगी ,  वय	{{user.supervisorAge}}, वर्ष ,व्यवसाय {{user.supervisorOccupation}},आधार क्रमांक	{{user.supervisorAdharNo}},	<br>
+                राहणार :	{{user.supervisorAddress}},				
+                                
+           <p>	याद्वारे घोषित करतो/करते कि, मी स्वयं साक्षांकित केलेल्या प्रति या मूळ कागदपत्रांच्याच सत्य प्रति आहेत . त्या खोट्या असल्याचे <br> आढळून आल्यास, भारतीय दंड संहिता आणि / किंवा संबंधित कायद्यानुसार माझ्यावर खटला भरला <br> जाईल व त्यानुसार मी शिक्षेस पात्र राहीन याची मला पूर्ण जाणीव आहे.</p>
+            <br>
+            <div class="row content">
+                <table>
+                    <tr>
+                        <td style=" text-indent: 7em;">ठिकाण: {{user.place}}</td>
+                        <td style=" text-indent: 15em;"> अर्जदाराची स्वाक्षरी</td>
+                    </tr>
+                    <tr>
+                        <td><td style=" text-indent: 15em;"> अर्जदाराची नाव: {{user.supervisorName}} 		
+                        </td></td>
+                    </tr>
+                    <tr>
+                        <td style=" text-indent: 7em;">दिनांक: {{user.date}}</td>
+                        <td></td>
+                    </tr>
+                     
+                    <tr>
+                        <td></td>
+                        <td style=" text-indent: 15em;">मोबाईल क्र.: {{user.supervisorMobile}}</td>
+                    </tr>
+                   
+                </table>
+                </div>
+        </div>
+        <br>
+        <br>
+</form>
+</div>
+
+
+{{!-- PHOTO --}}
+<div class="container" style="width: 100%;">
+     <form class="form-horizontal" method="post" role="form" id="namuna-e">
+               <p style="text-indent:25em">"नमुना"</p>
+
+{{!-- <p>१) मालकी हक्कामध्ये असल्यास:मेसर्स {{user.mesars}}
+    <br>मुखत्यारधारकाचा फोटो:
+     <br>
+      {{user.ownerName}}
+</p>        --}}
+
+
+   <p style="margin-top: 50px;"> १) मालकी हक्कामध्ये असल्यास:मेसर्स {{user.mesars}}
+            </p>   
+             <div class="row content">
+    <table>
+                    <tr>
+                        <td><div class="col-sm float-right">
+                             <p> मुखत्यारधारकाचा फोटो:
+                <br>
+                {{user.ownerName}}</p>
+                            <div style="height:150px; width:150px; border:1px solid black" >
+                                    फोटो
+                            </div>
+                            <div style="height:50px; width:150px; border:1px solid black" >
+                                       	
+
+                            </div>
+                    </div></td>
+                        
+                              <td>
+                                    <p> विद्दुत पर्यवेक्षाचा फोटो
+             <br>{{user.supervisorName}}</p>
+                                  <div class="col-sm float-right">
+                            <div style="height:150px; width:150px; border:1px solid black" >
+                                    फोटो
+                            </div>
+                            <div style="height:50px; width:150px; border:1px solid black" >
+                                        
+                            </div>
+                    </div>
+                              </td>
+                    </tr>
+                </table>
+</div>
+     
+    <p style="margin-top: 50px;"> २) कंपनी/संस्था असल्यास 
+            </p>   
+            <div class="row content">
+    <table>
+                    <tr>
+                        <td><div class="col-sm float-right">
+                              <p>  मालकाचा फोटो  :</p>
+                            <div style="height:150px; width:150px; border:1px solid black" >
+                                    फोटो
+                            </div>
+                            <div style="height:50px; width:150px; border:1px solid black" >
+                                       
+                            </div>
+                    </div></td>
+                        
+                              <td>
+                                  <div class="col-sm float-right">
+                                       <p>  विद्दुत पर्यवेक्षाचा फोटो</p>
+                            <div style="height:150px; width:150px; border:1px solid black" >
+                                    फोटो
+                            </div>
+                            <div style="height:50px; width:150px; border:1px solid black" >
+                                        भागीदार क्र ३	
+                            </div>
+                    </div>
+                              </td>
+                    </tr>
+                </table>
+</div>
+            
+      
+    <p style="margin-top: 50px;">  ३)  भागीदार  असल्यास<br> </p>
+      <div class="row content">
+    <table>
+                    <tr>
+                        <td><div class="col-sm float-right">
+                            <div style="height:150px; width:150px; border:1px solid black" >
+                                    फोटो
+                            </div>
+                            <div style="height:50px; width:150px; border:1px solid black" >
+                                        भागीदार क्र १	
+
+                            </div>
+                    </div></td>
+                        <td > <div class="col-sm float-right">
+                            <div style="height:150px; width:150px; border:1px solid black" >
+                                    फोटो
+                            </div>
+                            <div style="height:50px; width:150px; border:1px solid black" >
+                                        भागीदार क्र २	
+
+                            </div>
+                    </div></td>	
+                              <td>
+                                  <div class="col-sm float-right">
+                            <div style="height:150px; width:150px; border:1px solid black" >
+                                    फोटो
+                            </div>
+                            <div style="height:50px; width:150px; border:1px solid black" >
+                                        भागीदार क्र ३	
+                            </div>
+                    </div>
+                              </td>
+                    </tr>
+                </table>
+</div>
+                  
+            <div class="col-md-12 text-center">
+                <a href="/wireman-prapatrab"> <button type="submit" class="btn btn-lg btn-primary printPage next-btn" >Next</button></a>
+            </div>
+    </form>
+</div>
+
+</body>
+</html>

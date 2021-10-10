@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Easy Form Fill</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+  {{!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> --}}
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <script type="text/javascript" src="/transliteration-input.bundle.js"></script>
+  <style>
+    @media print {
+        /*NOT DISPLAY*/
+       footer, #navbar, #home,.printPage
+        {
+        display: none;
+        }
+        /*DISPLAY*/
+        #printable {
+            display: block;
+        }
+    }
+      /*@media print {
+        html,body {
+        display: none; /* This code will hide whole pages */
+        /*content:"for example";
+        }
+        }
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      background-color: #1B4F72 ;
+      height: 70px;
+      color: white;
+    }
+    footer{
+        /* position: fixed; */
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #1B4F72;
+        color: white;
+        text-align: center;
+        height: 100px;
+    }
+   
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    
+    
+    /* Set gray background color and 100% height */
+    /* .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+    } */
+    
+    /* Set black background color, white text and some padding */
+    
+    .formfill-h2{
+        text-decoration: underline;
+        color: white;
+    }
+    
+    .copy,.facebookicon{
+        font-size: 15px;
+        margin-top: 30px;
+    }
+    .facebookicon{
+        font-size:15px;color:white;
+        text-decoration: none;
+    }
+    .btn-next{
+        background-color: #1B4F72 ;
+        color: white;
+        border-radius: 15px;
+        text-decoration: none;
+            margin-left: 100px;
+    }
+  .wireman-btn{
+        border: 1px solid #888888;
+        background: none;
+        cursor: pointer;
+        color:#1B4F72;
+        box-shadow: 0px 5px 8px #888888;
+        height: 85px;
+    }
+    .banner-image{
+        background-image: url("img/enquiry6.jpg");
+    }
+    .form-span{
+        color:  rgb(240, 210, 40);
+        text-decoration-color: rgb(240, 210, 40);
+        font-weight: bold;
+    }
+    .home{
+        color: rgb(240, 210, 40);
+        font-size: 20px;
+        text-decoration: none;
+        text-align: center;
+    }
+    .loginicon{
+        color: rgb(255, 255, 255);
+        font-size: 20px;
+        text-decoration: none;
+        text-align: center;
+    }
+    .next-btn{
+        width:70% ;
+        border-radius: 30px;
+        background-color: #1B4F72;;
+    }
+    a:hover{
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+} @media print {
+        html,body {
+        display: none; /* This code will hide whole pages */
+        content:"for example";
+        }
+        }
+a{
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+}
+    /* On small screens, set height to 'auto' for sidenav and grid */
+      /* On small screens, set height to 'auto' for sidenav and grid */
+     @media screen and (max-width: 575px) {
+       .wireman-btn{
+          margin-bottom: 10px;
+           height: 35px;
+            width: 285px;
+      }  
+     }
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .wireman-btn{
+          margin-bottom: 10px;
+      }
+      .row.content {height:auto;} 
+    }
+    /* Large devices (laptops/desktops, 992px and up) */
+    @media only screen and (min-width:768px) and (max-width:1198px){
+    .wireman-btn{
+          margin-bottom: 10px;
+           height: 125px;
+      }
+}
+
+@media screen and (min-width: 1000px) and  (max-width: 1199)  {
+    .wireman-btn{
+          margin-bottom: 10px;
+           height: 125px;
+      }
+}@media print {
+        html,body {
+        display: none; /* This code will hide whole pages */
+        content:"for example";
+        }
+        }
+  </style>
+</head>
+<body oncontextmenu="return false;">
+<section  class="navbar-section margin-bottom:20px" id="navbar">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="col-sm-2" ><a class="home" href="/home">Home</a></div>
+        <div class="col-sm-8" >
+                <h3 class="text-center ">EASY<span class="font-weight-bold form-span">FORMFILL</span> </h3>
+            
+        </div>
+        {{#if user}}
+        <div class="col-sm-2"> 
+            <div class="dropdown" style="  height: 59px;">
+                    <button type="button" class="btn" data-toggle="dropdown">
+                  <p style=" color:white"><i class="fa fa-fw fa-user"></i> {{user.uname}}</p>
+                    </button>
+                    <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/profile">Profile</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/logout">Logout</a>
+                    </div>
+                </div>
+        {{else}}
+             <div class="col-sm-2 loginicon" ><a href="/login"><i class="fa fa-fw fa-user"></i> Login</a></div>
+        {{/if}}</div>
+        
+      </nav>
+</section>
+<br>
+<br>
+<div class="container" id="home">
+    <div class="row text-center">
+     <div class="col-sm"><a  href="/wireman-exam"class="btn btn-primary btn-large wireman-btn" > वायरमन परीक्षा फॉर्म</a></div>
+        <div class="col-sm"><a  href="/wireman-suit-exam"class="btn btn-primary btn-large wireman-btn ">वायरमन परीक्षा सूट फॉर्म</a></div>
+        <div class="col-sm"><a  href="/supervisor-exam"class="btn btn-primary btn-large wireman-btn"> सुपरवाईझर परीक्षा  फॉर्म</a></div>
+        <div class="col-sm"><a  href="/supervisor-suit-exam"class="btn btn-primary btn-large wireman-btn"> सुपरवाईझर परीक्षा सूट फॉर्म</a></div>
+        {{!-- <div class="col-sm"><a  href="/"class="btn btn-primary btn-large wireman-btn"> वायरमॅन परीक्षा</a></div> --}}
+        
+        <div class="col-sm"><a  href="/wireman-supervisor-reexam"class="btn btn-primary btn-large wireman-btn"> वायरमॅन/सुपरवाईझर पुनः परीक्षा फॉर्म</a></div>
+        <div class="col-sm"><a  href="/new-contractor-licence"class="btn btn-primary active btn-large wireman-btn">नवीन विद्युत ठेकेदार लायसन्स फॉर्म</a></div>
+        <div class="col-sm"><a  href="/contractor-licence-renewal"class="btn btn-primary btn-large wireman-btn">विद्युत ठेकेदार लायसन्स नूतनीकरण फॉर्म</a></div> </div>
+</div>
+
+<br>
+<br>
+
+<div class="container" style="width: 100%;">
+        <form class="form-horizontal" method="POST" role="form" id="index" autocomplete="off">
+             <div class="row">
+                   <div class="col-sm-10"><p class="" style="text-indent: 10em; ">महाराष्ट्र शासन राजपत्र असाधारण भाग चार अ जानेवारी ३ २०१७/पौष १३ शके १९३८            </div>
+                    <div class="col-sm-2"> ३१</div>
+               </div> <div class="container">
+            <p class="text-center form-horizontal">   "नमुना-एन" <br>(नियम ३५ पहा) <br> विद्युत ठेकेदाराच्या
+ अनुज्ञाप्तीसाठी अर्ज    </p>
+          <div class="container">
+            <br>          
+            <table class="table table-bordered">
+               
+                    <tbody>
+                    <tr>
+                        <td>१ </td>
+                        <td style=" width: 50%;">व्यवसाय संस्थेचे नाव</td>
+                        <td style=" width: 50%;">{{user.firmName}}</td>
+                    </tr>
+                    <tr>
+                        <td>२</td>	
+                        <td>व्यवसाय संस्थेच्य व्यवहाराचा पत्ता (पत्ता खरे असल्याबद्दलचा कागदोपत्री पुरावा आणि त्याची अनुज्ञप्ती नोंदवहीत नोंद करून तो सोबत जोडण्यात येईल</td>
+                        <td><input type="text" class="textarea1" style="width:500px" name="firmAddress" id="textarea1" placeholder="________________________________________________________________" style="border: none;"required/></td>
+                    </tr>
+                    <tr>
+                        <td>३</td>
+                        <td> संपर्क क्रमांक<br>ई मेल पत्ता </td>
+                        <td><input type="text" class="textarea1" name="ownerMobile" id="textarea1" placeholder="________________________________" style="border: none;"required/><br> <input type="text"  name="ownerEmail" id="textarea1" placeholder="________________________________" style="border: none;"required/></td>
+                    </tr>
+                     <tr>
+                        <td>४</td>
+                        <td>ठेकेदार अनुज्ञप्तीची मागणी <br>
+                        व्यक्तिगत/कंपनी/भागीदारी संस्थेसाठी आहे किंवा कसे ? </td>
+                        <td><input type="text" class="textarea1" name="partnership" id="textarea1" placeholder="________________________________" style="border: none;"required/></td>
+                    </tr>
+                     <tr>
+                        <td>५</td>
+                        <td>कंपनी असल्यास तिचे संस्थापन समिलेख आणि संस्थापनण नियमावली किंवा भागीदारी संस्था असल्यास तिचे भागीदारी विळखा जोडण्यात यावे</td>
+                        <td class="text-center">--------</td>
+                    </tr><tr>
+                        <td>६</td>
+                        <td> कंपनी किंवा भागीदारी संस्था असल्यास कंपनी किंवा भागीदार संस्थेचा ठराव आणि निर्गमित झालेले अधिकृत स्वाक्षरीचे प्राधिकृत पत्र मूळपत्र जोडण्यात आले किंवा कसे</td>
+                        <td class="text-center">--------</td>
+                    </tr>
+                     <tr>
+                        <td>७</td>
+                        <td>अर्जदाराचे किंवा संस्थेच्या/कंपनीच्या अधिकृत स्वाक्षरीकर्ता यांची नावे</td>
+                        <td> {{user.ownerName}} </td>
+                    </tr>
+                    <tr>
+                        <td>८</td>
+                        <td>जन्मदिनांक          वय</td>
+                        <td><input type="text" class="textarea1" name="ownerDob" id="textarea1" placeholder="________________________________" style="border: none;"required/>  <br> वय <input type="text"class="textarea1" name="ownerAge" id="textarea1" placeholder="________________________________" style="border: none;"required/> वर्षे 
+                        </td>
+                        
+                    </tr>
+                     <tr>
+                        <td>९</td>
+                        <td> वडिलांचे नाव </td>
+                        <td><input type="text" name="ownerFname" class="textarea1" id="textarea1" placeholder="________________________________" style="border: none;"required/></td>
+                    </tr>
+                     <tr>
+                        <td>१०</td>
+                        <td>शैक्षणिक अर्हता</td>
+                        <td><input type="text" name="ownerEducation" class="textarea1" id="textarea1" placeholder="________________________________" style="border: none;"required/></td>
+                    </tr>
+                      <tr>
+                        <td>११</td>
+                        <td> भागीदारी संस्था असल्यास भागीदारी नांवे व त्याचा   पत्ता</td>
+                        <td class="text-center">
+                             <p style="color: rgb(197, 44, 44);">*भागीदारी संस्था नसल्यास NA लिहावे.
+                                 <br><input type="text" name="ifpartnerName" class="textarea1" id="textarea1" placeholder="________________________________" style="border: none;"required/> 
+                        <br><input type="text" name="ifpartnerAddress" class="textarea1" id="textarea1" placeholder="________________________________" style="border: none;"required/> </td>    </tr>
+                   
+                    <tr>
+                        <td>१२</td>	
+                        <td> शुल्क भरणा तपशील</td>
+                        <td >{{user.chalanNo}}, {{user.chalanDate}}</td>
+                    </tr>
+                    <tr>
+                        <td>१३</td>
+                        <td> बँक खात्याचा तपशील आणि व्यवसाय संस्थेच्या खात्यातील शिल्लक </td>
+                        <td>बॅंक नाव.<input type="text" name="bankName" class="textarea1" id="textarea1" placeholder="________________________________" style="border: none;"required/> <br>
+                        खाते क्र.<input type="text" name="accountNo" class="textarea1" id="textarea1" placeholder="________________________________" style="border: none;"required/>
+                        <br>शिल्लक रककम<input type="text" name="balance" class="textarea1" id="textarea1" placeholder="________________________________" style="border: none;"required/> </td>
+                    </tr>
+                     <tr>
+                        <td>१४</td>
+                        <td> जर , यापुर्वी ठेकेदारास अनुज्ञप्ती दिली असल्यास त्याचा तपशील <br>१. अनुज्ञप्ती क्रमांक <br>२ निर्गमित दिनांक आणि पर्यंत वैधता  <br>३पार पाडण्यात आलेल्या कामांची संख्या सूची जोडावी	<br> ४ मागील ठेकेदार अनुज्ञप्ती रद्द होण्याची करणे	</td>
+                        <td><p style="color: rgb(197, 44, 44);">*भागीदारी संस्था नसल्यास NA लिहावे.<br><input type="text" name="previousLicenseNo"  class="textarea1" id="textarea1" placeholder="________________________________" style="border: none;"required/> <br>
+                        <input type="text" name="licenseValidity" class="textarea1" id="textarea1" placeholder="________________________________" style="border: none;"required/>
+                        <br><input type="text" name="workDetails" class="textarea1" id="textarea1" placeholder="________________________________" style="border: none;"required/> 
+                        <br><input type="text" name="reason" class="textarea1" id="textarea1" placeholder="________________________________" style="border: none;"required/> 
+                   </td>
+                    </tr>
+                     <tr>
+                        <td>१५</td>
+                        <td>ज्या परवान्यावर ठेकेदार अनुद्म्यप्ती अदा केली आहे त्या पर्यवेक्षकाचे नाव व परवाना क्रमांक</td>
+                        <td>{{user.supervisorName}} <br> {{user.supervisorLicenseNo}} <br> दि.{{user.supervisorLicenseDate}} </td>
+                    </tr><tr>
+                        <td>१६</td>
+                        <td>अर्जदाराने ठेवलेल्या विलेखांचा तपशील (सहाय्यक विद्युत निरीक्षकाच्या दर्जाहून कमी दर्जा नसणाऱ्या) विद्युत निरीक्षणालयाच्या अधिकाऱ्याने यथोचितरित्या पडताळणी <br> करून सादर करावयाच्या अर्जदाराने ठेवलेल्या विलेखाची सूची </td>
+                        <td><table class="table table-bordered">
+                            <tbody>
+                                <tr>
+                                    <td> </td>
+                                    <td>मेगर</td>
+                                    <td>अर्थ टेस्टर</td>
+                                </tr>
+                                <tr>
+                                    <td>बनावट </td>
+                                    <td>{{user.megarMake}}</td>
+                                    <td>{{user.earthTesterMake}}</td>
+                                </tr>
+                                <tr>
+                                    <td>क्रमांक </td>
+                                    <td>{{user.megarNo}}</td>
+                                    <td>{{user.earthTesterNo}}</td>
+                                </tr>
+                                <tr>
+                                    <td>व्होल्टेज </td>
+                                    <td>१००० व्होल्ट <br>:२०० <br>मेगा ओहमस
+
+</td>
+                                    <td>०-१०/१०० ओहमस</td>
+                                </tr>
+                               </td>
+                               शॉप नाव: <input type="text" class="textarea1" name="shopName" id="textarea1" placeholder="________________________________" style="border: none;"required/> <br>
+                                बिल क्र. <input type="text" name="billNo" class="textarea1" id="textarea1" placeholder="________________________________" style="border: none;"required/><br>
+                                दिनांक <input type="text" name="billDate" class="textarea1" id="textarea1" placeholder="________________________________" style="border: none;"required/>
+                            </tbody>
+                            
+                            </table>
+                            
+                            </td>
+                            
+                </table>
+            </div>
+            </div>
+            <p style="text-indent:5em">टीप :- अर्जदार सचिव, अनुज्ञापक मंडळाने विहित केल्याप्रमाणे , तारेची कामे करण्यासाठीची त्याची पतदारी आणि त्याच्या क्षमतेचा पुरावा सादर करतील,			
+</p>    
+            <p style="text-indent: 5em;">         मी/आम्ही     {{user.ownerName}}  याद्वारे घोषित करतो			
+कि, वर नमूद केलेला तपशील माझ्या/आमच्या माहितीप्रमाणे बरोबर आहे, आणि ज्या अटी			
+व शर्ती खाली विद्दुत ठेकेदाराची अनुज्ञप्ती दिलेली आहे. त्याचा भंग झाल्यास अनुज्ञप्ती निलंबित			
+करणाऱ्या किंवा काढून घेण्यात लेणाऱ्या अटी व शर्ती मला/आम्हाला पूर्णपणे समजलेल्या आहेत.			
+	</p>
+<p style="text-indent: 5em;">    मी/आम्ही   {{user.ownerName}}    याद्वारे असेही घोषित करतो/करते कि, 			
+विद्दुत पर्यवेक्षक व तारतंत्री यांना क्षमता प्रमाणपत्र व परवाना देण्यासाठी तसेच विद्दुत ठेकेदारांना  			
+अनुज्ञप्ती देण्यासाठी आणि याच्या संबंधित इतर बाबींसाठी "निराम व शर्तीची नवीनतम  प्रत			
+मी.आम्ही सोबत ठेवली आहे.  आणि मी/आम्ही पट्ट्यातील प्रत्येक बदल सचिव, अन्यज्ञापक   			
+मंडळास अधिसूचित करणार आहे/आहोत .			
+</p>	
+<p style="text-indent: 5em;">    मी  {{user.ownerName}}  राहणार    <input type="text" class="textarea1" name="ownerAddress" id="textarea1" placeholder="________________________________" style="border: none;"required/>	
+			
+आधारकार्ड क्रमांक   {{user.adharno}}  याद्वारे घोषित करतो/करते कि , मी			
+केलेल्या साक्षांकित प्रति ह्या मूळ दस्त ऐवजाच्या सत्यप्रती आहेत. 			
+  जर ह्या प्रति खोट्या आढळल्यास , मी भारतीय दंड संहिता आणि.किंवा त्यास लागू असलेल्या			
+कोणत्याही कायद्यान्वये खटला भरण्यास आणि शिक्षेस पात्र असेल, याची मला जाणीव आहे .			
+</p>	
+    			<div class="row content">
+                    <div class="col-sm"><p>ठिकाण :  <input type="text" class="textarea1" name="place" id="textarea1" placeholder="________________________________" style="border: none;"required/>   <br>
+                        दिनांक     {{user.date}}
+</p></div>
+                    <div class="col-sm"><p>	</p></div>
+                    <div class="col-sm"><p> मालक/भागीदारी सही   </p></div>
+            </div>
+
+           
+            <br>
+            <br>
+             <div class="col-md-12 text-center">
+                <a href="/wireman-letter"> <button  type="submit"class="btn btn-lg btn-primary printPage next-btn" >Next</button></a>
+               {{!-- <button  type="submit"class="btn btn-lg btn-primary printPage next-btn" >Next</button> --}}
+            </div>
+    </form>
+</div>
+
+  <br>
+  <br>
+<footer class="container-fluid text-center">
+    <div class="container-fluid text-center">    
+        <div class="row content">
+           <div class="col-sm-8 copy"><p>&#169; 2021 by Easyformfill. Proudly created with <a style="color: rgb(240, 210, 40);" href="https://www.logyana.com/">Logyana Solutions Pvt. Ltd </a></p>
+                
+            </div>
+            <div class="col-sm-4 facebookicon">
+                <i class="fa fa-facebook"></i>
+                <i class="fa fa-twitter"></i>
+                <!-- <a><i class="fa fa-facebook"></i></a>
+                <a><i class="fa fa-twitter"></i></a> -->
+            </div>
+        </div>
+    </div>
+  
+</footer>
+<script type="text/javascript">
+        let textarea1 = document.querySelectorAll(".textarea1");
+        
+        textarea1.forEach(function(userItem){
+            enableTransliteration(userItem, "mr");
+
+        })
+</script>
+</body>
+</html>

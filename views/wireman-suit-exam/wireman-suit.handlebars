@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Easy Form Fill</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+  {{!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> --}}
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <script type="text/javascript" src="/transliteration-input.bundle.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      background-color: #1B4F72 ;
+      height: 70px;
+      color: white;
+    }
+    footer{
+        /* position: fixed; */
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #1B4F72;
+        color: white;
+        text-align: center;
+        height: 100px;
+    }
+   
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    
+    
+    /* Set gray background color and 100% height */
+    /* .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+    } */
+    
+    /* Set black background color, white text and some padding */
+    
+    .formfill-h2{
+        text-decoration: underline;
+        color: white;
+    }
+    
+    .copy,.facebookicon{
+        font-size: 15px;
+        margin-top: 30px;
+    }
+    .facebookicon{
+        font-size:15px;color:white;
+        text-decoration: none;
+    }
+    .btn-next{
+        background-color: #1B4F72 ;
+        color: white;
+        border-radius: 15px;
+        text-decoration: none;
+            margin-left: 100px;
+    }
+    .wireman-btn{
+        border: 1px solid #888888;
+        background: none;
+        cursor: pointer;
+        color:#1B4F72;
+        box-shadow: 0px 5px 8px #888888;
+        height: 85px;
+    }
+    .banner-image{
+        background-image: url("img/enquiry6.jpg");
+    }
+    .form-span{
+        color:  rgb(240, 210, 40);
+        text-decoration-color: rgb(240, 210, 40);
+        font-weight: bold;
+    }
+    .home{
+        color: rgb(240, 210, 40);
+        font-size: 20px;
+        text-decoration: none;
+        text-align: center;
+    }
+    .loginicon{
+        color: rgb(255, 255, 255);
+        font-size: 20px;
+        text-decoration: none;
+        text-align: center;
+    }
+    .next-btn{
+        width:70% ;
+        border-radius: 30px;
+        background-color: #1B4F72;;
+    }
+    a:hover{
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+} @media print {
+        html,body {
+        display: none; /* This code will hide whole pages */
+        content:"for example";
+        }
+        }
+a{
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+}
+    /* On small screens, set height to 'auto' for sidenav and grid */
+     /* On small screens, set height to 'auto' for sidenav and grid */
+     @media screen and (max-width: 575px) {
+       .wireman-btn{
+          margin-bottom: 10px;
+           height: 35px;
+            width: 285px;
+      }  
+     }
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .wireman-btn{
+          margin-bottom: 10px;
+      }
+      .row.content {height:auto;} 
+    }
+    /* Large devices (laptops/desktops, 992px and up) */
+    @media only screen and (min-width:768px) and (max-width:1198px){
+    .wireman-btn{
+          margin-bottom: 10px;
+           height: 125px;
+      }
+}
+
+@media screen and (min-width: 1000px) and  (max-width: 1199)  {
+    .wireman-btn{
+          margin-bottom: 10px;
+           height: 125px;
+      }
+}@media print {
+        html,body {
+        display: none; /* This code will hide whole pages */
+        content:"for example";
+        }
+        }
+  </style>
+</head>
+<body oncontextmenu="return false;">
+<section  class="navbar-section margin-bottom:20px">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="col-sm-2" ><a class="home" href="/home">Home</a></div>
+        <div class="col-sm-8" >
+                <h3 class="text-center ">EASY<span class="font-weight-bold form-span">FORMFILL</span> </h3>
+            
+        </div>
+      {{#if user}}
+        <div class="col-sm-2"> 
+            <div class="dropdown" style="  height: 59px;">
+                    <button type="button" class="btn" data-toggle="dropdown">
+                  <p style=" color:white"><i class="fa fa-fw fa-user"></i> {{user.uname}}</p>
+                    </button>
+                    <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/profile">Profile</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/logout">Logout</a>
+                    </div>
+                </div>
+        {{else}}
+             <div class="col-sm-2 loginicon" ><a href="/login"><i class="fa fa-fw fa-user"></i> Login</a></div>
+        {{/if}}</div>
+      </nav>
+</section>
+<br>
+<br>
+<div class="container">
+    <div class="row text-center">
+        <div class="col-sm"><a  href="/wireman-exam"class="btn btn-primary btn-large wireman-btn" > वायरमन परीक्षा फॉर्म</a></div>
+        <div class="col-sm"><a  href="/wireman-suit-exam"class="btn btn-primary active btn-large wireman-btn ">वायरमन परीक्षा सूट फॉर्म</a></div>
+        <div class="col-sm"><a  href="/supervisor-exam"class="btn btn-primary btn-large wireman-btn"> सुपरवाईझर परीक्षा  फॉर्म</a></div>
+        <div class="col-sm"><a  href="/supervisor-suit-exam"class="btn btn-primary  btn-large wireman-btn"> सुपरवाईझर परीक्षा सूट फॉर्म</a></div>
+        {{!-- <div class="col-sm"><a  href="/"class="btn btn-primary btn-large wireman-btn"> वायरमॅन परीक्षा</a></div> --}}
+        
+        <div class="col-sm"><a  href="/wireman-supervisor-reexam"class="btn btn-primary btn-large wireman-btn"> वायरमॅन/सुपरवाईझर पुनः परीक्षा फॉर्म</a></div>
+        <div class="col-sm"><a  href="/new-contractor-licence"class="btn btn-primary btn-large wireman-btn">नवीन विद्युत ठेकेदार लायसन्स फॉर्म</a></div>
+        <div class="col-sm"><a  href="/contractor-licence-renewal"class="btn btn-primary btn-large wireman-btn">विद्युत ठेकेदार लायसन्स नूतनीकरण फॉर्म</a></div> </div>
+</div>
+<br>
+<div class="container">
+    <h4 class="text-center ">विद्युत तारतंत्री परीक्षा सूट  करिता आवश्यक सूचना </h4>
+</div>
+<div class="container">
+   
+        
+        <p>
+            प्रथम रुपये ४०० परिक्षा  शुल्काचा भरणा www . maharashtra . gov.in या संकत स्थळावर शासनाच्या <br>
+            Gras द्वारे करावे व तो चलन क्रमांक फॉर्म भरते वेळी लिहावा <br>
+            <p style="color: crimson;">
+    GRAS . MAHAKOSH साईट वर चलन भारन्या करिता  आवश्यक माहिती </p>
+   
+प्रथम google search मध्ये Gras.mahakosh type करावे 
+नंतर पुढे pay without registration वर क्लिक करावे 
+नंतर chief electrical Inspector डिपार्टमेंट सिलेक्ट करावे submi केल्या वर 
+Payment Type मध्ये Other Receipt सिलेक्ट करावे 
+सिलेक्ट district मध्ये तुमचा जिल्हा लिहावा 
+पुढे office name मध्ये Electrical Inspector सिलेक्ट करावे 
+Select Scheme मध्ये Examination fees of Licensing Board सिलेक्ट करावे 
+Form Id मध्ये काहीही लिव्हावयाचे नाही 
+पॅनकार्ड क्रमांक लिहावा 
+Department Tax ID मध्ये काहीही लिहायचे नाहि
+नंतर Name मध्ये ज्याच्या नावाने चलन भरायचे ते नांव किंवा तुमच्या 
+फर्मचे नांव लिहावे (ज्या नावाने चलन पाहिजे ते नांव लिहावे )
+नंतर पत्ता पूर्ण लिहावा 
+मोबाइल क्रमांक लिहावा 
+Remark मध्ये ज्या कामासाठी चलन भरायचे ते लिहावे 
+पुढे payment gateway संबंधी माहिती लिहावे व चलन प्रिंट करावे  
+
+</p>
+            १. a ) आय टी आय तारतंत्री + एक वर्षाचा अनुभव <br>
+            b ) आय टी आय इलेक्टरीशियन <br>
+            c ) (एम सी वि सी ) बारावी उच्च माध्यमिक तांत्रिक विषय + एक वर्षाचा अनुभव J ४ J ५ J ६<br>
+            वरील उमेदवारांना परीक्षा सूट करीत अर्ज करता येईल . तसेच (एम सी वि सी ) बारावी उच्च माध्यमिक  <br>                                                                                                             तांत्रिक विषय + एक वर्षाचा अनुभव T १ T २ T ३ उमेदवारांकरिता परीक्षा अनिवार्य आहे (सूट नाही )
+            २.  उमेदवार कडे महाराष्ट्र राज्यातील अधिवास प्रमाणपत्र (Domicile Certificate ) असणे आवश्यक आहे ,<br>
+            ३. निवासी पुरावा (पासपोर्ट/वोटिंग कार्ड /आधार कार्ड यापैकी एक ) असणे आवश्यक . <br>
+            ४. पासपोर्ट आकाराचे अलीकडच्या काळातील (पार्श्वभूमी सफेद ) असलेले किमान ६ रंगीत फोटो आवश्यक .<br>
+            ५.  अर्जदाराचा पत्ता व नांव असलेले रुपये ५ किमतीचे तिकिटे लावलेले ३ लिफाफे जोडण्यात यावे (पोस्ट ऑफिस पाकिटे )<br>
+            ६. अर्जदारास त्याच्या रहिवाशी जिल्ह्याचा समावेश असलेल्या मंडळ कार्यालय अंतर्गत निश्चित केलेल्या केंद्रातूनच परिक्षा     <br>                                    
+            सूट करीत अर्ज करता  येईल . <br>
+            ७. फॉर्म जमा करतेवेळी सर्व ओरिजिनल दाखले व सर्व वर्ष्यांच्या गुणपत्रिका असणे आवश्यक <br>
+            ८. आय टी  आय अंतिम प्रमाणपत्र व सर्व वर्षांच्या गुणपत्रिका असणे आवश्यक . <br>
+             <br>
+            For Detailed syllabus information visit : http://www.cei.maharashtra.gov.in  
+            
+        </p>
+            
+        <p>
+            तारतंत्री परीक्षा सूट  करीत आवश्यक फॉर्म <br>
+            इंडेक्स <br>
+            अर्ज सादर <br>
+            नमुना बी १ <br>
+            नमुना १२ म(ह्या फॉर्म वर special executive magisrate यांची सही व शिक्का घ्यावा 
+तसेच फोटो वर पण  सही व शिक्का घ्यावा ) <br>
+            प्रपत्र ब <br>
+            फोटो जोडपत्र <br>
+            आवश्यक भरलेले चलन <br>
+            </p>  
+           
+    </div>
+</div>
+
+ <div class="container">
+        <h4 class="text-center">नमुना फॉर्म येथे पहा :   <a href="/pdf/wireman-suit.pdf#toolbar=0" target="_blank"> <button type="button" class="btn btn-sm btn-primary" style="border-radius: 30px;">View Sample Form</button></a></h4>
+        
+    </div>
+  <br>
+<br>
+<div class="container ">
+    <div class="col-md-12 text-center">
+        <a href="/wireman-suit-index"> <button type="button" class="btn btn-lg btn-primary next-btn" >Next</button></a>
+        </div>
+   
+</div>
+
+    <br>
+    <br>
+<footer class="container-fluid text-center">
+    <div class="container-fluid text-center">    
+        <div class="row content">
+           <div class="col-sm-8 copy"><p>&#169; 2021 by Easyformfill. Proudly created with <a style="color: rgb(240, 210, 40);" href="https://www.logyana.com/">Logyana Solutions Pvt. Ltd </a></p>
+                
+            </div>
+            <div class="col-sm-4 facebookicon">
+                <i class="fa fa-facebook"></i>
+                <i class="fa fa-twitter"></i>
+                <!-- <a><i class="fa fa-facebook"></i></a>
+                <a><i class="fa fa-twitter"></i></a> -->
+            </div>
+        </div>
+    </div>
+  
+</footer>
+<script> document.oncontextmenu = document.body.oncontextmenu = function() {return false;}</script>
+</body>
+</html>
+

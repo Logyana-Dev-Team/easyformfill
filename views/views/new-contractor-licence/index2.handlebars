@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Easy Form Fill</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+  {{!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> --}}
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script type="text/javascript" src="/transliteration-input.bundle.js"></script>
+  <style>
+    @media print {
+        /*NOT DISPLAY*/
+       footer, #navbar, #home,.printPage
+        {
+        display: none;
+        }
+        /*DISPLAY*/
+        #printable {
+            display: block;
+        }
+    }
+      /*@media print {
+        html,body {
+        display: none; /* This code will hide whole pages */
+        /*content:"for example";
+        }
+        }
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      background-color: #1B4F72 ;
+      height: 70px;
+      color: white;
+    }
+    footer{
+        /* position: fixed; */
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #1B4F72;
+        color: white;
+        text-align: center;
+        height: 100px;
+    }
+   
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    
+    
+    /* Set gray background color and 100% height */
+    /* .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+    } */
+    
+    /* Set black background color, white text and some padding */
+    
+    .formfill-h2{
+        text-decoration: underline;
+        color: white;
+    }
+    
+    .copy,.facebookicon{
+        font-size: 15px;
+        margin-top: 30px;
+    }
+    .facebookicon{
+        font-size:15px;color:white;
+        text-decoration: none;
+    }
+    .btn-next{
+        background-color: #1B4F72 ;
+        color: white;
+        border-radius: 15px;
+        text-decoration: none;
+            margin-left: 100px;
+    }
+    .wireman-btn{
+        border: 1px solid #888888;
+        background: none;
+        cursor: pointer;
+        color:#1B4F72;
+        box-shadow: 0px 5px 8px #888888;
+        height: 85px;
+    }
+    .banner-image{
+        background-image: url("img/enquiry6.jpg");
+    }
+    .form-span{
+        color:  rgb(240, 210, 40);
+        text-decoration-color: rgb(240, 210, 40);
+        font-weight: bold;
+    }
+    .home{
+        color: rgb(240, 210, 40);
+        font-size: 20px;
+        text-decoration: none;
+        text-align: center;
+    }
+    .loginicon{
+        color: rgb(255, 255, 255);
+        font-size: 20px;
+        text-decoration: none;
+        text-align: center;
+    }
+    .next-btn{
+        width:70% ;
+        border-radius: 30px;
+        background-color: #1B4F72;;
+    }
+    a:hover{
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+} @media print {
+        html,body {
+        display: none; /* This code will hide whole pages */
+        content:"for example";
+        }
+        }
+a{
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+}
+    /* On small screens, set height to 'auto' for sidenav and grid */
+     /* On small screens, set height to 'auto' for sidenav and grid */
+     @media screen and (max-width: 575px) {
+       .wireman-btn{
+          margin-bottom: 10px;
+           height: 35px;
+            width: 285px;
+      }  
+     }
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .wireman-btn{
+          margin-bottom: 10px;
+      }
+      .row.content {height:auto;} 
+    }
+    /* Large devices (laptops/desktops, 992px and up) */
+    @media only screen and (min-width:768px) and (max-width:1198px){
+    .wireman-btn{
+          margin-bottom: 10px;
+           height: 125px;
+      }
+}
+
+@media screen and (min-width: 1000px) and  (max-width: 1199)  {
+    .wireman-btn{
+          margin-bottom: 10px;
+           height: 125px;
+      }
+}@media print {
+        html,body {
+        display: none; /* This code will hide whole pages */
+        content:"for example";
+        }
+        }
+  </style>
+</head>
+<body oncontextmenu="return false;" >
+<section  class="navbar-section margin-bottom:20px" id="navbar">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="col-sm-2" ><a class="home" href="/home">Home</a></div>
+        <div class="col-sm-8" >
+                <h3 class="text-center ">EASY<span class="font-weight-bold form-span">FORMFILL</span> </h3>
+            
+        </div>
+       {{#if user}}
+        <div class="col-sm-2"> 
+            <div class="dropdown" style="  height: 59px;">
+                    <button type="button" class="btn" data-toggle="dropdown">
+                  <p style=" color:white"><i class="fa fa-fw fa-user"></i> {{user.uname}}</p>
+                    </button>
+                    <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/profile">Profile</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/logout">Logout</a>
+                    </div>
+                </div>
+        {{else}}
+             <div class="col-sm-2 loginicon" ><a href="/login"><i class="fa fa-fw fa-user"></i> Login</a></div>
+        {{/if}}</div>
+        
+      </nav>
+</section>
+<br>
+<br>
+<div class="container" id="home">
+    <div class="row text-center">
+        <div class="col-sm"><a  href="/wireman-exam"class="btn btn-primary btn-large wireman-btn" > वायरमन परीक्षा फॉर्म</a></div>
+        <div class="col-sm"><a  href="/wireman-suit-exam"class="btn btn-primary btn-large wireman-btn ">वायरमन परीक्षा सूट फॉर्म</a></div>
+        <div class="col-sm"><a  href="/supervisor-exam"class="btn btn-primary btn-large wireman-btn"> सुपरवाईझर परीक्षा  फॉर्म</a></div>
+        <div class="col-sm"><a  href="/supervisor-suit-exam"class="btn btn-primary btn-large wireman-btn"> सुपरवाईझर परीक्षा सूट फॉर्म</a></div>
+        {{!-- <div class="col-sm"><a  href="/"class="btn btn-primary btn-large wireman-btn"> वायरमॅन परीक्षा</a></div> --}}
+        
+        <div class="col-sm"><a  href="/wireman-supervisor-reexam"class="btn btn-primary btn-large wireman-btn"> वायरमॅन/सुपरवाईझर पुनः परीक्षा फॉर्म</a></div>
+        <div class="col-sm"><a  href="/new-contractor-licence"class="btn btn-primary active btn-large wireman-btn">नवीन विद्युत ठेकेदार लायसन्स फॉर्म</a></div>
+        <div class="col-sm"><a  href="/contractor-licence-renewal"class="btn btn-primary btn-large wireman-btn">विद्युत ठेकेदार लायसन्स नूतनीकरण फॉर्म</a></div> </div>
+</div>
+
+<br>
+<br>
+
+<div class="container" style="width: 100%;">
+        <form class="form-horizontal" method="POST" role="form" id="index" autocomplete="off">
+             <div class="alert alert-info">
+                    <strong>इंडेक्स  Instructions!</strong>	
+	 
+	आपणास प्रत्येक फॉर्म भरताना जो इंडेक्स फॉर्म आहे तो केवळ 
+	आपणास काय डॉक्युमेंट आवश्यक आहेत त्यासाठी आहे ,तरी आपण 
+	इंडेक्स फॉर्म ऑफिस कडून घेऊन तो भरून द्यावा 
+
+                </div>
+                <p class="text-center">Supervisor and Owner separate person</p>
+                    <p class="float-right">
+                	विद्दुत निरीक्षण विभाग, {{user.city1}} <br>		
+                    उद्योग व ऊर्जा व कामगार विभाग,	<br>	
+                    महाराष्ट्र ठेकेदार क्रमांक 		<br>
+                    दिनांक:-		
+
+                </p>
+                
+            <br>
+            <br>
+            <br>
+            <br>
+           <div  class="container">
+               
+               <p>	
+                    मेसर्स :      {{user.firmName}}
+                    <br>
+                    वरील संस्थेने नवीन विद्दुत ठेकेदारांची अनुज्ञप्ती मिळण्यासाठी खाली दिलेल्या विद्दुत परवान्याच्या						
+                    आधारे अर्ज सादर केलेला आहे.	<br>
+                       परवाना क्रमांक:   {{user.supervisorLicenseNo}}
+                         दिनांक .  {{user.supervisorLicenseDate}}
+                         पर्यवेक्षकाचे  नाव:   {{user.supervisorName}} <br>
+                         मुखत्यारधारक/भागीदारक/मालक : श्री/श्रीमती.  {{user.ownerName}}<br>				
+                   मेगर बनावट :   {{user.megarMake}}    व्होल्टेज :५००/१०००  क्रमांक :{{user.megarNo}}<br>
+                   अर्थ टेस्टर बनावट :  {{user.earthTesterMake}}  रेंज : ०-१०-१०० ओहम्स 	क्रमांक :  {{user.earthTesterNo}}
+               </p>
+           </div>
+           <br>
+            <div class="container">
+            <br>          
+            <table class="table table-bordered">
+                <thead class="text-center">
+                    <tr>
+                        <th>क्र.</th>
+                        <th>आवश्यक असणारी माहिती</th>
+                        <th>शेरा</th>
+                    </tr>
+                </thead>
+                    <tbody>
+                    <tr>
+                        <td>१ </td>
+                        <td>संबंधित विदुत निरीक्षकाडून मिळालेली संस्थेच्या नावाची मंजुरी जोडली आहे. </td>
+                        <td>जोडले आहे/नाही</td>
+                    </tr>
+                    <tr>
+                        <td>२</td>	
+                        <td>मेगर (नमुना 'एस') व अर्थ टेस्टर (नमुना 'टी') यांचा साहाय्यक विद्दुत निरीक्षक /					
+
+ </td>
+                        <td>जोडले आहे/नाही</td>
+                    </tr>
+                    <tr>
+                        <td>३</td>
+                        <td>विद्दुत ठेकेदार अनुज्ञप्ती नवीन करिता मालक व विद्दुत पर्यवेक्षक यांच्या नमुना स्वाक्षरी 					
+					
+</td>
+                        <td>जोडले आहे/नाही</td>
+                    </tr>
+                     <tr>
+                        <td>४</td>
+                        <td>अर्जदाराने अनुज्ञप्ती शुल्क रुपये २५००/- मिळाले चलन क्रमांक:  {{user.chalanNo}} दि.    {{user.chalanDate}} 					
+</td>
+                        <td>जोडले आहे/नाही</td>
+                    </tr>
+                     <tr>
+                        <td>५</td>
+                        <td>मेगरची पावती मिळाली. पावती क्रमांक :   {{user.megarReceiptNo}}  दिनांक.    {{user.megarReceiptDate}}			
+</td>
+                        <td>जोडले आहे/नाही</td>
+                    </tr><tr>
+                        <td>६</td>
+                        <td>अर्थतटेस्टरची पावती मिळाली. पावती क्रमांक : {{user.earthTesterReceiptNo}}     दिनांक.       {{user.earthTesterReceiptDate}}  
+</td>
+                        <td>जोडले आहे/नाही</td>
+                    </tr>
+                     <tr>
+                        <td>७</td>
+                        <td>कमीत कमी शिलकी बाबतचे बँकेचे प्रमाणपत्र मिळाले/शिल्लकीची पडताळणी केली आहे. 					
+</td>
+                        <td>जोडले आहे/नाही</td>
+                    </tr>
+                    <tr>
+                        <td>८</td>
+                        <td>विद्दुत ठेकेदाराच्या अनुज्ञप्तीसाठी अर्ज जोडले आहे. (नमुना 'एन')					
+</td>
+                        <td>जोडले आहे/नाही</td>
+                    </tr>
+                     <tr>
+                        <td>९</td>
+                        <td>विदुत पर्यवेक्षाचे (नमुना "व्ही") प्रतिज्ञापत्र जोडले आहे. 					
+</td>
+                        <td>जोडले आहे/नाही</td>
+                    </tr>
+                     <tr>
+                        <td>१०</td>
+                        <td>विद्दुत ठेकेदाराचे )नमुना 'डब्लू') प्रतिज्ञापत्र जोडले आहे ,					
+</td>
+                        <td>जोडले आहे/नाही</td>
+                    </tr>
+                     <tr>
+                        <td>११</td>
+                        <td>मालक व विद्दुत पर्यवेक्षक दोन्ही एकाच व्यक्तीचे प्रतिज्ञापत्र जोडले आहे (नमुना 'एक्स')					
+</td>
+                        <td>जोडले आहे/नाही</td>
+                    </tr>
+                    <tr>
+                        <td>१२</td>
+                        <td>भागीदाराची प्रतिज्ञापत्र जोडले आहे (नमुना 'वाय')				
+					
+</td>
+                        <td>जोडले आहे/नाही</td>
+                    </tr>
+                    <tr>
+                        <td>१३</td>
+                        <td>विद्दुत पर्यवेक्षकाची पृवीची नोकरी सोडल्या संबंधीचा दाखल मिळाला. 					
+					
+</td>
+                        <td>जोडले आहे/नाही</td>
+                    </tr>
+                    <tr>
+                        <td>१४</td>
+                        <td>पूर्वीची नोकरी व सध्याची नोकरी यात एक महिन्यापेक्षा रास्त अवधी आहे. 					
+					
+</td>
+                        <td>जोडले आहे/नाही</td>
+                    </tr>
+                    <tr>
+                        <td>१५</td>
+                        <td>विद्दुत पर्यवेक्षक प्रमाणपत्र व परवाना यांच्या स्वयंसाक्षांकीत प्रति . 					
+					
+</td>
+                        <td>जोडले आहे/नाही</td>
+                    </tr>
+<tr>
+                        <td>१६</td>
+                        <td>विद्दुत ठेकेदारी अनुज्ञप्तीच्या उल्लेखिलेल्या नावावर यापूर्वी कुठल्याही संस्थेस दिली गेली आहे काय,  					
+					
+					
+</td>
+                        <td>जोडले आहे/नाही</td>
+                    </tr>
+                    <tr>
+                        <td>१७</td>
+                        <td>विद्दुत ठेकेदारीचा निवासी पुरावा (उदा.पासपोर्ट,ड्रायविंग लायसन्स,.आधार कार्ड,					
+					
+ 					
+					
+</td>
+                        <td>जोडले आहे/नाही</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+                <p class="text-center">अतिरिक्त माहिती		
+</p>
+                  <table class="table table-bordered">
+                    
+                        <tbody>
+                        <tr>
+                            <td>१ </td>
+                            <td>उपरोक्त विद्दुत पर्यवेक्षाची नोंद नोंदवही मध्ये घेतली आहे.</td>
+                            <td>जोडले आहे/नाही</td>
+                        </tr>
+                        <tr>
+                            <td>२</td>	
+                            <td> वरील पर्यवेक्षक परवाना व प्रमाणपत्र क्रमांक  हे यापूर्वी कधीही नव्हते .</td>
+                            <td>जोडले आहे/नाही</td>
+                        </tr>
+                        <tr>
+                            <td>३
+</td>	
+                            <td>सादर विद्दुत ठेकेदाराने अनुज्ञप्ती मिळविण्यासाठी सादर केलेला अर्ज पूर्णपणे नवीन आहे , </td>
+                            <td>जोडले आहे/नाही</td>
+                        </tr>
+                        
+                        </tbody>
+                 </table>
+            </div>
+            <div class="form-row align-items-center">
+                <div class="col-sm my-10 pull-left">
+                    <p> विद्युत निरीक्षक  <br>विद्युत निरीक्षण विभाग ,{{user.city4}} </p>
+                    
+                </div>
+                <div class="col"></div>
+                <div class="col-sm my-2 float-right">
+                    <p> अधीक्षक अभियंता  <br>{{user.city2}} प्रादेशिक विद्युत निरीक्षण मंडळ ,{{user.city4}}</p>
+                     
+                    
+                </div>
+                
+            </div>
+            <div class="form-row align-items-center">
+                <div class="col-sm my-10 float-right">
+                    <p> विद्युत निरीक्षक 	<br>		
+                                (सचिव,अनुज्ञापक व उद्वाहन निरिक्षक)		<br>	
+                                    चेंबूर, मुंबई - ७१ 			
+                    </p>
+                </div>
+                <div class="col"></div>
+                <div class="col-sm my-2 float-right">
+                    <p>
+                        	    अध्यक्ष<br>
+	                        अनुज्ञापक मंडळ <br>
+	                        चेंबूर, मुंबई - ७१ 
+
+                    </p>
+                    
+                </div>
+                
+            </div>
+          
+            </div>
+
+            <br>
+            <br>
+             <div class="col-md-12 text-center">
+                <a href="/new-contractor-letter"> <button  type="submit"class="btn btn-lg btn-primary printPage next-btn" >Next</button></a>
+               {{!-- <button  type="submit"class="btn btn-lg btn-primary printPage next-btn" >Next</button> --}}
+            </div>
+    </form>
+</div>
+
+  <br>
+  <br>
+<footer class="container-fluid text-center">
+    <div class="container-fluid text-center">    
+        <div class="row content">
+           <div class="col-sm-8 copy"><p>&#169; 2021 by Easyformfill. Proudly created with <a style="color: rgb(240, 210, 40);" href="https://www.logyana.com/">Logyana Solutions Pvt. Ltd </a></p>
+                
+            </div>
+            <div class="col-sm-4 facebookicon">
+                <i class="fa fa-facebook"></i>
+                <i class="fa fa-twitter"></i>
+                <!-- <a><i class="fa fa-facebook"></i></a>
+                <a><i class="fa fa-twitter"></i></a> -->
+            </div>
+        </div>
+    </div>
+  
+</footer>
+<script type="text/javascript">
+        let textarea1 = document.querySelectorAll(".textarea1");
+        
+        textarea1.forEach(function(userItem){
+            enableTransliteration(userItem, "mr");
+
+        })
+</script>
+</body>
+</html>

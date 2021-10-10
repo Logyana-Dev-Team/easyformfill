@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Easy Form Fill</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+  {{!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> --}}
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script type="text/javascript" src="/transliteration-input.bundle.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      background-color: #1B4F72 ;
+      height: 70px;
+      color: white;
+    }
+    footer{
+        /* position: fixed; */
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #1B4F72;
+        color: white;
+        text-align: center;
+        height: 100px;
+    }
+   
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    
+    
+    /* Set gray background color and 100% height */
+    /* .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+    } */
+    
+    /* Set black background color, white text and some padding */
+    
+    .formfill-h2{
+        text-decoration: underline;
+        color: white;
+    }
+    
+    .copy,.facebookicon{
+        font-size: 15px;
+        margin-top: 30px;
+    }
+    .facebookicon{
+        font-size:15px;color:white;
+        text-decoration: none;
+    }
+    .btn-next{
+        background-color: #1B4F72 ;
+        color: white;
+        border-radius: 15px;
+        text-decoration: none;
+            margin-left: 100px;
+    }
+    .wireman-btn{
+        border: 1px solid #888888;
+        background: none;
+        cursor: pointer;
+        color:#1B4F72;
+        box-shadow: 0px 5px 8px #888888;
+        height: 85px;
+    }
+    .banner-image{
+        background-image: url("img/enquiry6.jpg");
+    }
+    .form-span{
+        color:  rgb(240, 210, 40);
+        text-decoration-color: rgb(240, 210, 40);
+        font-weight: bold;
+    }
+    .home{
+       color: rgb(240, 210, 40);
+        font-size: 20px;
+        text-decoration: none;
+        text-align: center;
+    }
+    .loginicon{
+        color: rgb(255, 255, 255);
+        font-size: 20px;
+        text-decoration: none;
+        text-align: center;
+    }
+    
+    a:hover{
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+}
+a{
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+}
+    /* On small screens, set height to 'auto' for sidenav and grid */
+       /* On small screens, set height to 'auto' for sidenav and grid */
+     @media screen and (max-width: 575px) {
+       .wireman-btn{
+          margin-bottom: 10px;
+           height: 35px;
+            width: 285px;
+      }  
+     }
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .wireman-btn{
+          margin-bottom: 10px;
+      }
+      .row.content {height:auto;} 
+    }
+    /* Large devices (laptops/desktops, 992px and up) */
+    @media only screen and (min-width:768px) and (max-width:1198px){
+    .wireman-btn{
+          margin-bottom: 10px;
+           height: 125px;
+      }
+}
+
+@media screen and (min-width: 1000px) and  (max-width: 1199)  {
+    .wireman-btn{
+          margin-bottom: 10px;
+           height: 125px;
+      }
+}
+
+@media print {
+        html,body {
+        display: none; /* This code will hide whole pages */
+        content:"for example";
+        }
+        }
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    
+}
+
+    .bg {
+  /* The image used */
+  background-image: url("img/EASYFORMFILL.png");
+  /* Full height */
+  height: 300px; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.navbar h3{
+    font-size:2vw;
+}
+
+  </style>
+</head>
+<body>
+<section  class="navbar-section margin-bottom:20px">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="col-sm-2" ><a class="home" href="/home">Home</a></div>
+        <div class="col-sm-8" >
+                <p class="text-center "><b>EASY<span class="font-weight-bold form-span">FORMFILL</span></b> </p>
+            
+        </div>
+        {{#if user}}
+        <div class="col-sm-2"> 
+            <div class="dropdown" style="  height: 59px;">
+                    <button type="button" class="btn" data-toggle="dropdown">
+                  <p style=" color:white"><i class="fa fa-fw fa-user"></i> {{user.uname}}</p>
+                    </button>
+                    <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/profile">Profile</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/logout">Logout</a>
+                    </div>
+                </div>
+        {{else}}
+             <div class="col-sm-2 loginicon" ><a href="/login"><i class="fa fa-fw fa-user"></i> Login</a></div>
+        {{/if}}</div>
+        {{!-- {{#if login}}
+        <div class="col-sm-2 loginicon" ><i class="fa fa-fw fa-user"></i> {{user.uname}}
+        </div>
+        
+        {{else}}
+        <div class="col-sm-2 loginicon" ><a href="/login"><i class="fa fa-fw fa-user"></i> Login</a></div>
+        {{/if}} --}}
+        
+      </nav>
+</section>
+<br>
+<br>
+<div class="container">
+    <div class="row text-center">
+ 
+        <div class="col-sm"><a  href="/wireman-exam"class="btn btn-primary active btn-large wireman-btn" > वायरमन परीक्षा फॉर्म</a></div>
+        <div class="col-sm"><a  href="/wireman-suit-exam"class="btn btn-primary btn-large wireman-btn ">वायरमन परीक्षा सूट फॉर्म</a></div>
+        <div class="col-sm"><a  href="/supervisor-exam"class="btn btn-primary btn-large wireman-btn"> सुपरवाईझर परीक्षा  फॉर्म</a></div>
+        <div class="col-sm"><a  href="/supervisor-suit-exam"class="btn btn-primary btn-large wireman-btn"> सुपरवाईझर परीक्षा सूट फॉर्म</a></div>
+        {{!-- <div class="col-sm"><a  href="/"class="btn btn-primary btn-large wireman-btn"> वायरमॅन परीक्षा</a></div> --}}
+        
+        <div class="col-sm"><a  href="/wireman-supervisor-reexam"class="btn btn-primary btn-large wireman-btn"> वायरमॅन/सुपरवाईझर पुनः परीक्षा फॉर्म</a></div>
+        <div class="col-sm"><a  href="/new-contractor-licence"class="btn btn-primary btn-large wireman-btn">नवीन विद्युत ठेकेदार लायसन्स फॉर्म</a></div>
+        <div class="col-sm"><a  href="/contractor-licence-renewal"class="btn btn-primary btn-large wireman-btn">विद्युत ठेकेदार लायसन्स नूतनीकरण फॉर्म</a></div>
+    </div>
+</div>
+
+<br>
+<br>
+<div class="bg"></div>
+{{!-- <div class="img-fluid" style="background-image: url(img/formfill-about.jpg); background-repeat: no-repeat;
+  background-size: cover;" >
+ </div> --}}
+
+<br>
+<div class="container">
+    <h2 class="text-center .text-uppercase ">परिचय</h2>
+</div>
+<div class="container">
+    <div class="row content">
+        <p style="text-indent: 5em;">मी संचालक ईझी  फॉर्म फिल स्वतः  विद्युत ठेकेदार असून सध्या बऱ्याच जणांना 
+विद्युत पर्यवेक्षक व तारतंत्री परीक्षे संबांधि अथवा पर्यवेक्षक व  तारतंत्री परीक्षा सूट 
+करीत कोणती माहिती आहे हे माहित नसते त्यामुळे मी या वेबसाइट द्वारे आपणांस 
+सोप्या पद्धतीने फॉर्म कसे भरावे त्यासाठी कोणती परीक्षा पास असावे लागेल तसेच
+नवीन विद्युत ठेकेदार परवान्या करीत कोणती प्रक्रिया असते याची माहिती सर्व जणांना 
+कळावी व सोप्या पद्धतीने फॉर्म भरता यावा  यासाठी हा प्लॅटफॉर्म तयार केला आहे 
+तरी आपण फॉर्म भरण्या पूर्वी दिलेल्या सूचना वाचून आवश्यक ती माहिती भरल्या नंतर 
+आपणांस योग्य ते फॉर्म भरून प्रिंट घेता येईल . 
+</p>
+<p style="color: crimson;">फॉर्म भरण्या अगोदर login करून आवश्यक माहिती भरणे आवश्यक आहे 
+नंतरच आपण फॉर्म भरू शकता </p>
+<p style="text-indent: 5em;">आपण ज्या जिल्ह्यातील असाल तिथे हा फॉर्म भरून आपल्या जवळच्या ऑफिस मध्ये  जमा करावा लागणार आहे ,
+फॉर्म भरण्या पूर्वी आपणास काही प्रक्रिया अगोदर पूर्ण कराव्या लागतील जसे कि परीक्षेस बसणार 
+असणाऱ्या उमेदवारास परवाना धारक विद्युत ठेकेदार कडे कामाचा अनुभव आवश्यक . तसेच 
+जे विद्यार्थी परीक्षा सूट साठी अर्ज करतील त्यांना त्यांच्या शिक्षणा प्रमाणे कामाचा अनुभव आवश्यक असतो 
+तसेच  नवीन विद्युत ठेकेदार परवाना काढण्या करीत स्वतः विद्युत पर्यवेक्षक  असणे अथवा त्यांनी विद्युत पर्यवेक्षक 
+नेमणे  जरुरीचे आहे  .या नंतरच आपण फॉर्म भरू शकता . फॉर्म भरण्या पूर्वी आवश्यक चलन भरल्या नंतरच 
+फॉर्म भरावा कारण त्या फॉर्म मध्ये आपणास चलन क्रमांक नोंद करावी लागते .शक्यतो टायपिंग करतानाच 
+स्पेल्लिंग चेक करावे कारण फॉर्म न चुका करता भरणे आवश्यक आहे कोणत्या प्रकारे फॉर्म वर पेनाने 
+लिहायचे नाही केवळ सही व दिनांक लिहावा सर्व सूचना फॉर्म भरण्या अगोदर दिलेल्या आहेत त्या वाचूनच 
+पुढे फॉर्म भरावा . आपणास काही शंका असल्यास खाली दिलेल्या मोबाईल क्रमांका वर व्हाट्सअँप द्वारा 
+संपर्क साधावा आपणास  व्हाट्सअँप वर आवश्यक माहिती दिली जाईल . 
+</P>
+<p style="color: crimson;">
+    GRAS . MAHAKOSH साईट वर चलन भारन्या करिता  आवश्यक माहिती </p>
+   
+प्रथम google search मध्ये Gras.mahakosh type करावे 
+नंतर पुढे pay without registration वर क्लिक करावे 
+नंतर chief electrical Inspector डिपार्टमेंट सिलेक्ट करावे submi केल्या वर 
+Payment Type मध्ये Other Receipt सिलेक्ट करावे 
+सिलेक्ट district मध्ये तुमचा जिल्हा लिहावा 
+पुढे office name मध्ये Electrical Inspector सिलेक्ट करावे 
+Select Scheme मध्ये Examination fees of Licensing Board सिलेक्ट करावे 
+Form Id मध्ये काहीही लिव्हावयाचे नाही 
+पॅनकार्ड क्रमांक लिहावा 
+Department Tax ID मध्ये काहीही लिहायचे नाहि
+नंतर Name मध्ये ज्याच्या नावाने चलन भरायचे ते नांव किंवा तुमच्या 
+फर्मचे नांव लिहावे (ज्या नावाने चलन पाहिजे ते नांव लिहावे )
+नंतर पत्ता पूर्ण लिहावा 
+मोबाइल क्रमांक लिहावा 
+Remark मध्ये ज्या कामासाठी चलन भरायचे ते लिहावे 
+पुढे payment gateway संबंधी माहिती लिहावे व चलन प्रिंट करावे  
+
+</p>
+    </div>
+</div>
+<div class="container alert alert-success text-center"> 
+    <strong>	खाली दिलेल्या व्हाट्सअँप क्रमांकावर केवळ मेसेज करावा 
+	राजू सर       
+</strong> <br><button type="button" class="btn btn-success"> <p> ९८२२०११०९८</p> <i style="font-size:48px;color:white" class="fa fa-whatsapp btn-success"></i></button> </div>
+  <br>
+<footer class="container-fluid text-center">
+    <div class="container-fluid text-center">    
+        <div class="row content">
+            <div class="col-sm-8 copy"><p>&#169; 2021 by Easyformfill. Proudly created with <a style="color: rgb(240, 210, 40);" href="https://www.logyana.com/">Logyana Solutions Pvt. Ltd </a></p>
+                
+            </div>
+            <div class="col-sm-4 facebookicon">
+                <i class="fa fa-facebook"></i>
+                <i class="fa fa-twitter"></i>
+                <!-- <a><i class="fa fa-facebook"></i></a>
+                <a><i class="fa fa-twitter"></i></a> -->
+            </div>
+        </div>
+    </div>
+  
+</footer>
+
+</body>
+</html>
+

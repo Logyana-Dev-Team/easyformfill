@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Easy Form Fill</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+  {{!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> --}}
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script type="text/javascript" src="/transliteration-input.bundle.js"></script>
+  <style>
+      @media print {
+        /*NOT DISPLAY*/
+       footer, #navbar, #home,.printPage
+        {
+        display: none;
+        }
+        /*DISPLAY*/
+        #printable {
+            display: block;
+        }
+    }
+      /*@media print {
+        html,body {
+        display: none; /* This code will hide whole pages */
+       /* content:"for example";
+        }
+        }
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      background-color: #1B4F72 ;
+      height: 70px;
+      color: white;
+    }
+    footer{
+        /* position: fixed; */
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #1B4F72;
+        color: white;
+        text-align: center;
+        height: 100px;
+    }
+   
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    
+    
+    /* Set gray background color and 100% height */
+    /* .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+    } */
+    
+    /* Set black background color, white text and some padding */
+    
+    .formfill-h2{
+        text-decoration: underline;
+        color: white;
+    }
+    
+    .copy,.facebookicon{
+        font-size: 15px;
+        margin-top: 30px;
+    }
+    .facebookicon{
+        font-size:15px;color:white;
+        text-decoration: none;
+    }
+    .btn-next{
+        background-color: #1B4F72 ;
+        color: white;
+        border-radius: 15px;
+        text-decoration: none;
+            margin-left: 100px;
+    }
+    .wireman-btn{
+        border: 1px solid #888888;
+        background: none;
+        cursor: pointer;
+        color:#1B4F72;
+        box-shadow: 0px 5px 8px #888888;
+        height: 85px;
+    }
+    .banner-image{
+        background-image: url("img/enquiry6.jpg");
+    }
+    .form-span{
+        color:  rgb(240, 210, 40);
+        text-decoration-color: rgb(240, 210, 40);
+        font-weight: bold;
+    }
+    .home{
+        color: rgb(240, 210, 40);
+        font-size: 20px;
+        text-decoration: none;
+        text-align: center;
+    }
+    .loginicon{
+        color: rgb(255, 255, 255);
+        font-size: 20px;
+        text-decoration: none;
+        text-align: center;
+    }
+    .next-btn{
+        width:70% ;
+        border-radius: 30px;
+        background-color: #1B4F72;;
+    }
+    a:hover{
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+}
+a{
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+}
+    /* On small screens, set height to 'auto' for sidenav and grid */
+      /* On small screens, set height to 'auto' for sidenav and grid */
+     @media screen and (max-width: 575px) {
+       .wireman-btn{
+          margin-bottom: 10px;
+           height: 35px;
+            width: 285px;
+      }  
+     }
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .wireman-btn{
+          margin-bottom: 10px;
+      }
+      .row.content {height:auto;} 
+    }
+    /* Large devices (laptops/desktops, 992px and up) */
+    @media only screen and (min-width:768px) and (max-width:1198px){
+    .wireman-btn{
+          margin-bottom: 10px;
+           height: 125px;
+      }
+}
+
+@media screen and (min-width: 1000px) and  (max-width: 1199)  {
+    .wireman-btn{
+          margin-bottom: 10px;
+           height: 125px;
+      }
+} @media print {
+        html,body {
+        display: none; /* This code will hide whole pages */
+        content:"for example";
+        }
+        }
+  </style>
+</head>
+<body oncontextmenu="return false;">
+<section  class="navbar-section margin-bottom:20px" id="navbar">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="col-sm-2" ><a class="home" href="/home">Home</a></div>
+        <div class="col-sm-8" >
+                <h3 class="text-center ">EASY<span class="font-weight-bold form-span">FORMFILL</span> </h3>
+            
+        </div>
+         {{#if user}}
+        <div class="col-sm-2"> 
+            <div class="dropdown" style="  height: 59px;">
+                    <button type="button" class="btn" data-toggle="dropdown">
+                  <p style=" color:white"><i class="fa fa-fw fa-user"></i> {{user.uname}}</p>
+                    </button>
+                    <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/profile">Profile</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/logout">Logout</a>
+                    </div>
+                </div>
+        {{else}}
+             <div class="col-sm-2 loginicon" ><a href="/login"><i class="fa fa-fw fa-user"></i> Login</a></div>
+        {{/if}}</div>
+        
+      </nav>
+</section>
+<br>
+<br>
+<div class="container">
+    <div class="row text-center" id="home">
+       <div class="col-sm"><a  href="/wireman-exam"class="btn btn-primary btn-large wireman-btn" > वायरमन परीक्षा फॉर्म</a></div>
+        <div class="col-sm"><a  href="/wireman-suit-exam"class="btn btn-primary active btn-large wireman-btn ">वायरमन परीक्षा सूट फॉर्म</a></div>
+        <div class="col-sm"><a  href="/supervisor-exam"class="btn btn-primary btn-large wireman-btn"> सुपरवाईझर परीक्षा  फॉर्म</a></div>
+        <div class="col-sm"><a  href="/supervisor-suit-exam"class="btn btn-primary  btn-large wireman-btn"> सुपरवाईझर परीक्षा सूट फॉर्म</a></div>
+        {{!-- <div class="col-sm"><a  href="/"class="btn btn-primary btn-large wireman-btn"> वायरमॅन परीक्षा</a></div> --}}
+        
+        <div class="col-sm"><a  href="/wireman-supervisor-reexam"class="btn btn-primary btn-large wireman-btn"> वायरमॅन/सुपरवाईझर पुनः परीक्षा फॉर्म</a></div>
+        <div class="col-sm"><a  href="/new-contractor-licence"class="btn btn-primary btn-large wireman-btn">नवीन विद्युत ठेकेदार लायसन्स फॉर्म</a></div>
+        <div class="col-sm"><a  href="/contractor-licence-renewal"class="btn btn-primary btn-large wireman-btn">विद्युत ठेकेदार लायसन्स नूतनीकरण फॉर्म</a></div> </div>
+</div>
+
+<br>
+<br>
+
+<div class="container" style="width: 100%;">
+        <form class="form-horizontal" method="post" role="form" id="namuna-12m" autocomplete="off">
+           <div class="container">
+               <br>
+                <div class="row content">
+                    <div class="col-sm">
+                        <P></P>
+                        <p class="text-left form-horizontal">अनुज्ञापक मंडळाने दिलेल्या प्रमाणपत्रासंबंधीचा तपशील</p>
+                        <p class="text-indent:5em" style="text-indent:5em">(अभिलेखार्थ)</p>
+                        <p>१. उमेदवाराचे नांव व आडनाव :</p>
+                        <p>२. उमेदवाराच्या वडिलांचे / पतीचे संपूर्ण नांव :</p>
+                        <p>	३. उमेदवाराचा कायमचा पत्ता :</p>
+                        <p>	मोबाईल क्रमांक :</p>
+                        <p>ई मेल आय डी	</p>
+                        <br><br><br><br><br><br><br>
+                        <p>	४. उमेदवारास कोणते प्रमाणपत्र पाहिजे :</p>
+                        <p>	५. उमेदवारास परीक्षेत प्रवेश दिला असल्यास -	<br>(अ ) परीक्षेस परवानगी दिली त्यावेळी असलेल्या कामाच्या अनुभवाचा कालावधी व ठिकाण <br>(ब ) परीक्षा आसन क्रमांक<br>(क ) परीक्षेचा दिनांक<br> (ड ) परीक्षेचे ठिकाण<br> (ई ) निकाल</p>
+                        <p>	६. उमेदवारास सूट दिली असल्यास -	<br>(अ ) उमेदवार कोणती परीक्षा उत्तीर्ण झाला आहे<br>(ब )प्रत्यक्ष कामाचा अनुभव, कालावधी व ठिकाण	
+                        <p>	७ . उमेदवाराची इतर माहिती -	<br>(अ ) जन्म दिनांक व जन्म ठिकाण<br>(ब )उंची<br>(क) वर्ण<br>(ड ) शरीरावरील ओळख चिन्हे		
+                        <p>मी , याद्वारे असे प्रमाणित करतो कि , वर लिहिलेला तपशील माझ्या संपूर्ण माहितीप्रमाणे व विश्वासाप्रमाणे बरोबर आणि खरा आहे</p>
+                    </div>
+                    <div class="col-sm">
+                        <p>(विशेष - परीक्षण १२ म) <br> महाराष्ट्र तारतंत्री <br> प्रमाणपत्राचा दिनांक:                        
+                        <p style="">श्री./श्रीमती {{user.uname}}</p>
+                        <p style="">श्री. {{user.fname}}</p>
+                        <p style="">{{user.uaddress}}</p>
+                        <p style=""> {{user.mobile}}</p>
+                        <p style="">{{user.email}}</p>
+                        <div class="container">
+                            <div class="row content">
+                                <div class="col-sm"></div>
+                                <div class="col-sm">
+                                    <div class="col-sm float-right" style="height:150px; width:150px; border:1px solid black" ></div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <p>तारतंत्री</p>
+                       <br>
+                        <P>________________________________ <br>
+                        ________________________________ <br>
+                        ________________________________ <br>
+                        ________________________________ <br>
+                        ________________________________</P>
+                        
+                        <br>
+                        <P>{{user.education}} <br>
+                        {{user.duration}}</p>
+                        <br>
+                        <br>
+                         <p style="">{{user.dob}}  <input type="text" name="dobplace" id="dobplace" placeholder="________________________________" style="border: none;" ><br>
+                        <input type="text" name="height"  id="height"  placeholder="________________________________" style="border: none;" required/><br>
+                        <input type="text"name="color" id="color"  placeholder="________________________________" style="border: none;" required/><br>
+                        <input type="text" name="symbol"  id="symbol" placeholder="________________________________" style="border: none;" required/><br>
+                        <p>मी वरील व्यक्तीस ओळखतो . सबब सोबतच्या फोटोवर मी सही केली आहे तसेच उमेदवाराने त्याची सही माझ्या समोर केली आहे .</p> 
+                    </div>
+                </div>
+                     
+            </div>
+            
+            <div class="row content">
+                    <div class="col-sm"><p>उमेदवाराची सही</p></div>
+                    <div class="col-sm"><p>	परीक्षकाची सही</p></div>
+                    <div class="col-sm"><p>विशेष दंडाधिकारी अगर राजपत्रित अधिकाऱ्याची सही </p></div>
+            </div>
+            <br>
+            <div class="row content">
+                    <div class="col-sm"><p>सचिव</p></div>
+                    <div class="col-sm"><p>	अध्यक्ष	</p></div>
+                    <div class="col-sm"><p>पदनाम :</div>
+            </div>	
+            <div class="row content">
+                    <div class="col-sm"><p>अनुज्ञापक मंडळ, मुंबई</p></div>
+                    <div class="col-sm"><p>	अनुज्ञापक मंडळ, मुंबई	</p></div>
+                    <div class="col-sm"><p>रबरी ठसा <br>दिनांक :</p></div>
+            </div>
+            <hr style="border-top:1px dotted #000;">
+            <br>
+            <p >प्रमाणपत्र व परवाना उमेदवारास डाकपोच देय पावतीने ह्या कार्यालयाच्या पत्र क्र . . . . . . . . . .दिनांक. . . . . . . . . .मध्ये  पाठविला आहे / प्रत्यक्ष हस्तांतरित केला आहे व त्याबद्दल त्याची सही घेतली आहे</p>
+            <br>
+            <br>    
+            <div class="col-md-12 text-center">
+                <a href="/wireman-namunae"> <button type="submit" class="btn btn-lg btn-primary printPage printPage next-btn" >Next</button></a>
+            </div>
+               
+    </form>
+</div>
+
+
+  <br>
+  <br>
+
+<footer class="container-fluid text-center">
+    <div class="container-fluid text-center">    
+        <div class="row content">
+          <div class="col-sm-8 copy"><p>&#169; 2021 by Easyformfill. Proudly created with <a style="color: rgb(240, 210, 40);" href="https://www.logyana.com/">Logyana Solutions Pvt. Ltd </a></p>
+                
+            </div>
+            <div class="col-sm-4 facebookicon">
+                <i class="fa fa-facebook"></i>
+                <i class="fa fa-twitter"></i>
+                <!-- <a><i class="fa fa-facebook"></i></a>
+                <a><i class="fa fa-twitter"></i></a> -->
+            </div>
+        </div>
+    </div>
+
+</footer>
+<script type="text/javascript">
+        let dobplace = document.getElementById("dobplace");
+        enableTransliteration(dobplace, "mr");
+        let height = document.getElementById("height");
+        enableTransliteration(height, "mr");
+        let color = document.getElementById("color");
+        enableTransliteration(color, "mr");
+         let symbol = document.getElementById("symbol");
+        enableTransliteration(symbol, "mr");
+</script>
+</body>
+</html>

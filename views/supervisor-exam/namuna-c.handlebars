@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Easy Form Fill</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+  {{!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> --}}
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <script type="text/javascript" src="/transliteration-input.bundle.js"></script>
+  <style>
+      @media print {
+        /*NOT DISPLAY*/
+       footer, #navbar, #home,.printPage
+        {
+        display: none;
+        }
+        /*DISPLAY*/
+        #printable {
+            display: block;
+        }
+    }
+      /*@media print {
+        html,body {
+        display: none; /* This code will hide whole pages */
+       /* content:"for example";
+        }
+        }
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      background-color: #1B4F72 ;
+      height: 70px;
+      color: white;
+    }
+    footer{
+        /* position: fixed; */
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #1B4F72;
+        color: white;
+        text-align: center;
+        height: 100px;
+    }
+   
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    
+    
+    /* Set gray background color and 100% height */
+    /* .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+    } */
+    
+    /* Set black background color, white text and some padding */
+    
+    .formfill-h2{
+        text-decoration: underline;
+        color: white;
+    }
+    
+    .copy,.facebookicon{
+        font-size: 15px;
+        margin-top: 30px;
+    }
+    .facebookicon{
+        font-size:15px;color:white;
+        text-decoration: none;
+    }
+    .btn-next{
+        background-color: #1B4F72 ;
+        color: white;
+        border-radius: 15px;
+        text-decoration: none;
+            margin-left: 100px;
+    }
+   .wireman-btn{
+        border: 1px solid #888888;
+        background: none;
+        cursor: pointer;
+        color:#1B4F72;
+        box-shadow: 0px 5px 8px #888888;
+        height: 85px;
+    }
+    .banner-image{
+        background-image: url("img/enquiry6.jpg");
+    }
+    .form-span{
+        color:  rgb(240, 210, 40);
+        text-decoration-color: rgb(240, 210, 40);
+        font-weight: bold;
+    }
+    .home{
+        color: rgb(240, 210, 40);
+        font-size: 20px;
+        text-decoration: none;
+        text-align: center;
+    }
+    .loginicon{
+        color: rgb(255, 255, 255);
+        font-size: 20px;
+        text-decoration: none;
+        text-align: center;
+    }
+    .next-btn{
+        width:70% ;
+        border-radius: 30px;
+        background-color: #1B4F72;;
+    }
+    a:hover{
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+} @media print {
+        html,body {
+        display: none; /* This code will hide whole pages */
+        content:"for example";
+        }
+        }
+a{
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+}
+    /* On small screens, set height to 'auto' for sidenav and grid */
+      /* On small screens, set height to 'auto' for sidenav and grid */
+     @media screen and (max-width: 575px) {
+       .wireman-btn{
+          margin-bottom: 10px;
+           height: 35px;
+            width: 285px;
+      }  
+     }
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .wireman-btn{
+          margin-bottom: 10px;
+      }
+      .row.content {height:auto;} 
+    }
+    /* Large devices (laptops/desktops, 992px and up) */
+    @media only screen and (min-width:768px) and (max-width:1198px){
+    .wireman-btn{
+          margin-bottom: 10px;
+           height: 125px;
+      }
+}
+
+@media screen and (min-width: 1000px) and  (max-width: 1199)  {
+    .wireman-btn{
+          margin-bottom: 10px;
+           height: 125px;
+      }
+}@media print {
+        html,body {
+        display: none; /* This code will hide whole pages */
+        content:"for example";
+        }
+        }
+  </style>
+</head>
+<body oncontextmenu="return false;">
+<section  class="navbar-section margin-bottom:20px" id="navbar">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="col-sm-2" ><a class="home" href="/home">Home</a></div>
+        <div class="col-sm-8" >
+                <h3 class="text-center ">EASY<span class="font-weight-bold form-span">FORMFILL</span> </h3>
+            
+        </div>
+           {{#if user}}
+        <div class="col-sm-2"> 
+            <div class="dropdown" style="  height: 59px;">
+                    <button type="button" class="btn" data-toggle="dropdown">
+                  <p style=" color:white"><i class="fa fa-fw fa-user"></i> {{user.uname}}</p>
+                    </button>
+                    <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/profile">Profile</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/logout">Logout</a>
+                    </div>
+                </div>
+        {{else}}
+             <div class="col-sm-2 loginicon" ><a href="/login"><i class="fa fa-fw fa-user"></i> Login</a></div>
+        {{/if}}</div>
+        
+        
+      </nav>
+</section>
+<br>
+<br>
+<div class="container">
+    <div class="row text-center" id="home">
+       <div class="col-sm"><a  href="/wireman-exam"class="btn btn-primary  btn-large wireman-btn" > वायरमन परीक्षा फॉर्म</a></div>
+        <div class="col-sm"><a  href="/wireman-suit-exam"class="btn btn-primary  btn-large wireman-btn ">वायरमन परीक्षा सूट फॉर्म</a></div>
+        <div class="col-sm"><a  href="/supervisor-exam"class="btn btn-primary active btn-large wireman-btn"> सुपरवाईझर परीक्षा  फॉर्म</a></div>
+        <div class="col-sm"><a  href="/supervisor-suit-exam"class="btn btn-primary  btn-large wireman-btn"> सुपरवाईझर परीक्षा सूट फॉर्म</a></div>
+        {{!-- <div class="col-sm"><a  href="/"class="btn btn-primary btn-large wireman-btn"> वायरमॅन परीक्षा</a></div> --}}
+        
+        <div class="col-sm"><a  href="/wireman-supervisor-reexam"class="btn btn-primary btn-large wireman-btn"> वायरमॅन/सुपरवाईझर पुनः परीक्षा फॉर्म</a></div>
+        <div class="col-sm"><a  href="/new-contractor-licence"class="btn btn-primary btn-large wireman-btn">नवीन विद्युत ठेकेदार लायसन्स फॉर्म</a></div>
+        <div class="col-sm"><a  href="/contractor-licence-renewal"class="btn btn-primary btn-large wireman-btn">विद्युत ठेकेदार लायसन्स नूतनीकरण फॉर्म</a></div> </div>
+  </div>
+</div>
+
+<br>
+<br>
+										
+										
+
+<div class="container" style="width: 100%;">
+        <form class="form-horizontal" method="post" role="form" id="namuna-12m" autocomplete="off">
+           <div class="container">
+               <div class="row">
+                   <div class="col-sm-10"><p  style="text-indent: 10em; ">महाराष्ट्र शासन राजपत्र असाधारण भाग चार अ जानेवारी ३ २०१७/पौष १३ शके १९३८            </div>
+                    <div class="col-sm-2"> १८</div>
+               </div><br>
+               <p class="text-center">"नमुना-सी"</p>
+               <p class="text-center">(नियम १६ पहा )</p>
+               <div class="row content">
+                    <div class="col-sm-10"></div>
+                    <div class="col-sm float-right">
+                        <div style="height:150px; width:150px; border:1px solid black" >
+
+                        </div>
+                         <div style="height:50px; width:150px; border:1px solid black" >
+                                    
+                        </div>
+                    </div>
+                </div>
+               <br>
+               <p class="text-center">विद्दुत पर्यवेक्षकाच्या किंवा तारतंत्रीच्या परीक्षेच्या प्रवेशासाठी अर्ज						
+</p>
+               <p class="text-center">(मराठीत, इंग्रजीत,  हिंदीत (टंकलिखित) भरावयाचा  आहे) </p>
+               
+               <br>
+               <br>
+                <div class="row content">									
+                     <div class="col-sm">
+                        <p>१. अर्जदाराचे पूर्ण नांव :</p>
+                        <p>पत्ता :</p>
+                        <p>	मोबाईल क्रमांक :</p>
+                        <p>ई मेल आय डी	</p>
+                        <p>२. जन्मदिनांक आणि वय</p> 
+                        <p>(शाळा सोडल्याच्या दाखल्याची <br>	स्वयंसाक्षांकीत प्रत सादर करावी</p>
+                      
+                        <p>३. अर्हता (शैक्षणिक पात्रता )</p>
+                        <p>(प्रमाणपत्राच्या स्वयंसाक्षांकीत  <br>	प्रति सादर कराव्यात)</p>
+                        
+                        <p>४.  मागील विद्यमान सेवेचा तपशील	</p>
+                        <p>(प्रत्येक सेवा नियुक्ती व सेवासमाप्तीचा द्यावा <br>मूळ दाखले आणि त्यांच्या प्रति सादर कराव्यात)</p>
+                        
+                        <p>५.  विद्दुत पर्यवेक्षकाच्या / तारतंत्रीच्या प्रवेश परीक्षेसाठी जाहिरातीत विहित केलेले शुल्क </p>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br><br><br>
+                        <p>६. विद्दुत पर्यक्षकाचे /तारतंत्रीचे परीक्षा केंद्र :</p>
+                       
+                       
+                        <p> ७. ज्या भाषेत उमेदवारास परीक्षा देण्याची इच्छा आहे ति <br>उमेदवारांना मराठी ./ हिंदी / इंग्रजी यापैकी कोणत्याही <br>भाषेत परीक्षा देता येईल .  </p>
+                        
+                                          </div>
+                    <div class="col-sm">
+                                <p style="">{{user.uname}} </p>
+                                <p style=""> {{user.uaddress}}</p>
+                                <p style=""> {{user.mobile}}</p>
+                                <p style="">{{user.email}}</p>
+                                <p style=""> <p> {{user.dob}}   वय  {{user.age}}  वर्ष </p>
+                                <br><br><br>
+                                <p style=""> <input style="width:500px;" type="text" name="education" class="textarea1" placeholder="________________________________________________________________" style="border: none;"required/></p>
+                               <br>
+                               
+                               <br>
+                                <p style=""> <input  style="width:500px;"  type="text" name="companyname" class="textarea1" placeholder="________________________________________________________________" style="border: none;"required/>
+                                <br>
+                                <br><input type="text"  style="width:500px;"  name="period" class="textarea1" placeholder="________________________________________________________________" style="border: none;"required/></p>
+                                
+                                <br><br>
+                                <p style=""> चलन क्र .<input type="text" class="textarea1" name="chalanno" placeholder="________________________________" style="border: none;"required/></p>
+                               <p style="">चलान भरल्याचा  दिनांक . <input  class="textarea1" type="text" placeholder="dd/mm/yy" name="chalandate" data-date-format="dd/mm/yy" required/></p>
+                                <p style=""> रक्कम रुपये. <input type="text" class="textarea1" name="rupee" value="500"  placeholder="500" style="border: none;"required/></p>
+                                {{!-- <p style=""> <input type="text" name="place" id="" placeholder="________________________________" style="border: none;"required/></p> --}}
+                                <p><p style="">ठिकाण   <input type="text" class="textarea1" name="chalanplace" id="" placeholder="________________________________" style="border: none;"required/></p>
+                                 <p>(मूळ चलन सादर करावे)</p>
+                                 <p style="">   <input type="text" class="textarea1" name="examcenter" id="" placeholder="________________________________" style="border: none;"required/></p>
+                               
+                                <br><label class="radio-inline"><input type="radio" class="textarea1" value="इंग्लिश" name="language" checked>इंग्लिश</label>
+                                <label class="radio-inline"><input type="radio" class="textarea1" value="हिंदी" name="language">हिंदी</label>
+                                <label class="radio-inline"><input type="radio" class="textarea1" value="मराठी" name="language">मराठी</label>
+                            </div>
+                </div>
+               <br>
+               <br>
+               <br>
+                        <div class="row">
+                   <div class="col-sm-10"><p  style="text-indent: 10em; ">महाराष्ट्र शासन राजपत्र असाधारण भाग चार अ जानेवारी ३ २०१७/पौष १३ शके १९३८            </div>
+                    <div class="col-sm-2"> १९</div>
+               </div>
+                <hr>
+                     
+                        <p style="text-indent: 5em; ">मी याद्वारे  घोषित करतो कि , मी नमूद केलेला तपशील माझ्या संपूर्ण माहितीप्रमाणे बरोबर आणि खरा आहे. </p><p style="text-indent: 5em; "> मी श्री . {{user.uname}} श्री .{{user.fname}}  यांचा /यांची 
+	                मुलगा /मुलगी , <p>वय	{{user.age}} वर्ष ,आधार क्रमांक {{user.adharno}} ,व्यवसाय	<input type="text" name="occupation" class="textarea1"  placeholder="________________________________" style="border: none;"required/>	</p>	
+	                राहणार : {{user.uaddress}}					
+									
+	                </p>
+                    <p>याद्वारे, असे घोषित करते/करतो कि, मी स्वयंसाक्षिकीत केलेल्या प्रति या मूळ कागदपत्रांच्या सत्यप्रती आहेत. मला वस्तुस्थितीची पूर्ण जाणीव आहे कि, जर प्रति खोट्या असल्याचे आढळून आले तर, मी भारतीय दंड संहितेअन्वये आणि/किंवा त्यासाठी लागू असलेल्या इतर कोणत्याही कायद्यान्वये खटला चालविण्यासाठी आणि शिक्षेसाठी पात्र असेल.</p>
+					<br>
+                    <br>
+                    <div class="row content">
+                    <div class="col-sm"> <p style=""> ठिकाण :<input type="text" class="textarea1" name="place" id="" placeholder="________________________________" style="border: none;"required/></p>
+                         <p style="">दिनांक : {{user.date}} </p>
+                    </div>
+                    <div class="col-sm"><br> <br> <p>अर्जदाराची सही</p></div>  </div>
+
+                    <br>
+                    <p>टीप :</p>
+                    <p>१. अर्जात नमूद केलेल्या प्रमाणपत्रांच्या स्वयंसाक्षांकीत प्रति अर्जासोबत सादर कराव्यात .</p>
+                    <p>२.  छायाचित्र असलेल्या ओळखपत्रांच्या (पारपत्र / पासपोर्ट /पॅनकार्ड / आधारकार्ड) स्वयंसाक्षांकीत प्रति .  </p>
+                    <p>३. अर्जासोबत अर्जदाराच्या अलीकडच्या पासपोर्ट आकाराच्या छायाचित्राच्या (त्या छायाचित्राच्या मागील बाजूस नांव लिहिलेल्या) तीन प्रति .  </p>
+                    <p>४. परीक्षेसाठी प्रवेश घेण्याच्या उद्देशाने एखाद्या व्यक्तीने खोटी निवेदने केल्यास त्याच्यावर खटला चालविण्यासाठी तो पात्र ठरेल . </p>
+                    <p>५. मागील आणि विद्यमान सेवेचं तपशील (प्रत्येक नियुक्तीच्या प्रारंभाचा दिनांक आणि समाप्तीचा दिनांक देण्यात यावा .</p>
+                    <p>६. खाणकाम पर्यवेक्षाच्या परीक्षेला बसणाऱ्या उमेदवाराने अर्जाच्या नमुन्यात सर्वात वरच्या भागात आणि तळाला पर्यवेक्षक खाणकाम असे नमूद करावे .</p>
+                    <p>७. अपूर्ण अर्ज नाकारण्यात येतील . </p>
+                    
+               </div>
+            <br>
+            <br>    
+            <div class="col-md-12 text-center">
+                <a href="/wireman-namuna12m"> <button type="submit" class="btn btn-lg btn-primary printPage printPage next-btn" >Next</button></a>
+            </div>
+               
+    </form>
+</div>
+
+
+  <br>
+  <br>
+
+<footer class="container-fluid text-center">
+    <div class="container-fluid text-center">    
+        <div class="row content">
+           <div class="col-sm-8 copy"><p>&#169; 2021 by Easyformfill. Proudly created with <a style="color: rgb(240, 210, 40);" href="https://www.logyana.com/">Logyana Solutions Pvt. Ltd </a></p>
+                
+            </div>
+            <div class="col-sm-4 facebookicon">
+                <i class="fa fa-facebook"></i>
+                <i class="fa fa-twitter"></i>
+                <!-- <a><i class="fa fa-facebook"></i></a>
+                <a><i class="fa fa-twitter"></i></a> -->
+            </div>
+        </div>
+    </div>
+
+</footer>
+<script type="text/javascript">
+        let textarea1 = document.querySelectorAll(".textarea1");
+        
+        textarea1.forEach(function(userItem){
+            enableTransliteration(userItem, "mr");
+
+        })
+</script>
+</body>
+</html>

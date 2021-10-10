@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Easy Form Fill</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+  {{!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> --}}
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <script type="text/javascript" src="/transliteration-input.bundle.js"></script>
+  <style>
+    @media print {
+        /*NOT DISPLAY*/
+       footer, #navbar, #home,.printPage
+        {
+        display: none;
+        }
+        /*DISPLAY*/
+        #printable {
+            display: block;
+        }
+    }
+      /*@media print {
+        html,body {
+        display: none; /* This code will hide whole pages */
+        /*content:"for example";
+        }
+        }
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      background-color: #1B4F72 ;
+      height: 70px;
+      color: white;
+    }
+    footer{
+        /* position: fixed; */
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #1B4F72;
+        color: white;
+        text-align: center;
+        height: 100px;
+    }
+   
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    
+    
+    /* Set gray background color and 100% height */
+    /* .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+    } */
+    
+    /* Set black background color, white text and some padding */
+    
+    .formfill-h2{
+        text-decoration: underline;
+        color: white;
+    }
+    
+    .copy,.facebookicon{
+        font-size: 15px;
+        margin-top: 30px;
+    }
+    .facebookicon{
+        font-size:15px;color:white;
+        text-decoration: none;
+    }
+    .btn-next{
+        background-color: #1B4F72 ;
+        color: white;
+        border-radius: 15px;
+        text-decoration: none;
+            margin-left: 100px;
+    }
+    .wireman-btn{
+        border: 1px solid #888888;
+        background: none;
+        cursor: pointer;
+        color:#1B4F72;
+        box-shadow: 0px 5px 8px #888888;
+        height: 85px;
+    }
+    .banner-image{
+        background-image: url("img/enquiry6.jpg");
+    }
+    .form-span{
+        color:  rgb(240, 210, 40);
+        text-decoration-color: rgb(240, 210, 40);
+        font-weight: bold;
+    }
+    .home{
+        color: rgb(240, 210, 40);
+        font-size: 20px;
+        text-decoration: none;
+        text-align: center;
+    }
+    .loginicon{
+        color: rgb(255, 255, 255);
+        font-size: 20px;
+        text-decoration: none;
+        text-align: center;
+    }
+    .next-btn{
+        width:70% ;
+        border-radius: 30px;
+        background-color: #1B4F72;;
+    }
+    a:hover{
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+}
+a{
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+}
+    /* On small screens, set height to 'auto' for sidenav and grid */
+        /* On small screens, set height to 'auto' for sidenav and grid */
+     @media screen and (max-width: 575px) {
+       .wireman-btn{
+          margin-bottom: 10px;
+           height: 35px;
+            width: 285px;
+      }  
+     }
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .wireman-btn{
+          margin-bottom: 10px;
+      }
+      .row.content {height:auto;} 
+    }
+    /* Large devices (laptops/desktops, 992px and up) */
+    @media only screen and (min-width:768px) and (max-width:1198px){
+    .wireman-btn{
+          margin-bottom: 10px;
+           height: 125px;
+      }
+}
+
+@media screen and (min-width: 1000px) and  (max-width: 1199)  {
+    .wireman-btn{
+          margin-bottom: 10px;
+           height: 125px;
+      }
+} @media print {
+        html,body {
+        display: none; /* This code will hide whole pages */
+        content:"for example";
+        }
+        }
+  </style>
+</head>
+<body oncontextmenu="return false;" >
+<section  class="navbar-section margin-bottom:20px" id="navbar">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="col-sm-2" ><a class="home" href="/home">Home</a></div>
+        <div class="col-sm-8" >
+                <h3 class="text-center ">EASY<span class="font-weight-bold form-span">FORMFILL</span> </h3>
+            
+        </div>
+        {{#if user}}
+        <div class="col-sm-2"> 
+            <div class="dropdown" style="  height: 59px;">
+                    <button type="button" class="btn" data-toggle="dropdown">
+                  <p style=" color:white"><i class="fa fa-fw fa-user"></i> {{user.uname}}</p>
+                    </button>
+                    <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/profile">Profile</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/logout">Logout</a>
+                    </div>
+                </div>
+        {{else}}
+             <div class="col-sm-2 loginicon" ><a href="/login"><i class="fa fa-fw fa-user"></i> Login</a></div>
+        {{/if}}</div>
+        
+        
+      </nav>
+</section>
+<br>
+<br>
+<div class="container" id="home">
+    <div class="row text-center">
+         <div class="col-sm"><a  href="/wireman-exam"class="btn btn-primary  btn-large wireman-btn" > वायरमन परीक्षा फॉर्म</a></div>
+        <div class="col-sm"><a  href="/wireman-suit-exam"class="btn btn-primary  btn-large wireman-btn ">वायरमन परीक्षा सूट फॉर्म</a></div>
+        <div class="col-sm"><a  href="/supervisor-exam"class="btn btn-primary  btn-large wireman-btn"> सुपरवाईझर परीक्षा  फॉर्म</a></div>
+        <div class="col-sm"><a  href="/supervisor-suit-exam"class="btn btn-primary active btn-large wireman-btn"> सुपरवाईझर परीक्षा सूट फॉर्म</a></div>
+        {{!-- <div class="col-sm"><a  href="/"class="btn btn-primary btn-large wireman-btn"> वायरमॅन परीक्षा</a></div> --}}
+        
+        <div class="col-sm"><a  href="/wireman-supervisor-reexam"class="btn btn-primary btn-large wireman-btn"> वायरमॅन/सुपरवाईझर पुनः परीक्षा फॉर्म</a></div>
+        <div class="col-sm"><a  href="/new-contractor-licence"class="btn btn-primary btn-large wireman-btn">नवीन विद्युत ठेकेदार लायसन्स फॉर्म</a></div>
+        <div class="col-sm"><a  href="/contractor-licence-renewal"class="btn btn-primary btn-large wireman-btn">विद्युत ठेकेदार लायसन्स नूतनीकरण फॉर्म</a></div> </div>
+  </div>
+</div>
+
+<br>
+<br>
+
+<div class="container" style="width: 100%;">
+    <div class="alert alert-info">
+                    <strong>इंडेक्स  Instructions!</strong>	
+	 
+	आपणास प्रत्येक फॉर्म भरताना जो इंडेक्स फॉर्म आहे तो केवळ 
+	आपणास काय डॉक्युमेंट आवश्यक आहेत त्यासाठी आहे ,तरी आपण 
+	इंडेक्स फॉर्म ऑफिस कडून घेऊन तो भरून द्यावा 
+
+                </div>
+        <form class="form-horizontal" method="POST" role="form" id="index" autocomplete="off">
+            <p class="text-center form-horizontal">विद्दुत पर्यवेक्षक सूट अर्ज<br> माहितीसाठी व मान्यतेसाठी सादर </p>
+            <br>
+            <p style="text-indent: 5em; ">श्री./श्रीमती {{user.uname}} यांना विद्दुत पर्यवेक्षक परीक्षा सूट करिता परीक्षा सूट करीत विहित नमुन्यात अर्ज सादर केलेला आहे .								
+</p>
+            <div class="container">
+            <br>          
+            <table class="table table-bordered">
+                <thead class="text-center">
+                    <tr>
+                        <th>क्र.</th>
+                        <th>आवश्यक असणारी माहिती</th>
+                        <th>शेरा</th>
+                    </tr>
+                </thead>
+                    <tbody>
+                    <tr>
+                        <td>१ </td>
+                        <td>नमुना "ए" परिपूर्ण (टंकलिखित) भरलेला तसेच छायाचित्र स्वयंसाक्षांकीत करणे .</td>
+                        <td>जोडले आहे/नाही</td>
+                    </tr>
+                    <tr>
+                        <td>२</td>	
+                        <td>अर्जा सोबत पासपोर्ट आकाराचे तीन अलीकडील काळातील फोटो जोडणे </td>
+                        <td>जोडले आहे/नाही</td>
+                    </tr>
+                    <tr>
+                        <td>३</td>
+                        <td>आवश्यक शुल्क भरलेले आहे. </td>
+                        <td>जोडले आहे/नाही</td>
+                    </tr>
+                     <tr>
+                        <td>४</td>
+                        <td>"नमुना ""ई"" नुसार एक वर्ष प्रात्यक्षिक अनुभव आज इ अर्जदार ज्या जिल्ह्यात कार्यरत  आहे त्या जिल्ह्यातील विद्दुत निरीक्षक कार्यालयाकडून सेवा पडताळणी झालेली आहे . "</td>
+                        <td>जोडले आहे/नाही</td>
+                    </tr>
+                     <tr>
+                        <td>५</td>
+                        <td>"पर्यवेक्षक प्रमाणपत्र सुटीसाठी मान्यतापात्र विद्दुत ठेकेदाराकडे किंवा कंपनी यांचेकडील मूळ कामगार नोंदवहीमध्ये परवानाधारक पर्यक्षकाच्या हाताखाली एक वर्षाचा अनुभव असणे आवश्यक (एका पर्यवेकाखाली एक शिकाऊ अभियंताचा  अनुभव ग्राह्य)
+					</td>
+                        <td>जोडले आहे/नाही</td>
+                    </tr><tr>
+                        <td>६</td>
+                        <td>"विद्दुत शाखेतील पदवी/पदविका उत्तीर्ण झाल्याबाबतचे तसेच अंतिम प्रमाणपत्र साक्षांकित 
+सर्व वर्षाच्या गुणपत्रिका जोडलेल्या आहेत . 
+"						
+</td>
+                        <td>जोडले आहे/नाही</td>
+                    </tr>
+                     <tr>
+                        <td>७</td>
+                        <td>स्वयंसाक्षांकनासाठी स्वयं घोषणापत्र (प्रपत्र ब).						
+</td>
+                        <td>जोडले आहे/नाही</td>
+                    </tr>
+                    <tr>
+                        <td>८</td>
+                        <td>महाराष्ट्र अधिवास प्रमाणपत्र (डोमेसाइल प्रमाणपत्र )						
+</td>
+                        <td>जोडले आहे/नाही</td>
+                    </tr>
+                     <tr>
+                        <td>९</td>
+                        <td>राहण्याचा पत्ता व जन्मतारखेचा साक्षांकित दाखला जोडला आहे . 						
+</td>
+                        <td>जोडले आहे/नाही</td>
+                    </tr>
+                     <tr>
+                        <td>१०</td>
+                        <td>शासकीय- निमशासकीय उमेदवाराचा अर्ज आस्थापने मार्फत सादर केलेला आहे  . 						
+</td>
+                        <td>जोडले आहे/नाही</td>
+                    </tr>
+                     <tr>
+                        <td>११</td>
+                        <td>स्वतःचा पत्ता व पोस्टल स्टॅम्प (१० रुपयाची तिकिटे ) लावलेले ३ लिफाफे 						
+</td>
+                        <td>जोडले आहे/नाही</td>
+                    </tr>
+                     <tr>
+                        <td>१२</td>
+                        <td>	अर्जासोबत 'जुना १२ म ' अर्ज सादर करणे . 						
+						
+</td>
+                        <td>जोडले आहे/नाही</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <p class="text-center">आंतरराज्य उमेदवारांसाठी 						
+</p>
+                <table class="table table-bordered">
+                    
+                        <tbody>
+                        <tr>
+                            <td>१ </td>
+                            <td>आंतरराज्य उमेदवारांनी नमुना "बी" भरणे आवश्यक .						
+</td>
+                            <td>जोडले आहे/नाही</td>
+                        </tr>
+                        <tr>
+                            <td>२</td>	
+                            <td>१०० रु . स्टॅम्प पेपर वर नोटराईज करून घेणे . 						
+</td>
+                            <td>जोडले आहे/नाही</td>
+                        </tr>
+                        </tbody>
+                 </table>
+                 <p class="text-center">आय. टी. आय. /अँप्रेन्टिस (वीजतंत्री) एन. सी. टी. व्ही . टी .  उमेदवाराकरिता								
+						
+</p>
+            <table class="table table-bordered">
+                    
+                        <tbody>
+                        <tr>
+                            <td>१ </td>
+                            <td>"औद्दोगिक प्रशिक्षण संस्थेची उत्तीर्ण झाल्याबाबत तसेच राष्ट्रीय व्यवसाय प्रशिक्षण पूर्ण 
+केल्याबाबतचे पात्र स्वयंसाक्षांकीत करून जोडले आहे.
+"						
+						
+</td>
+                            <td>जोडले आहे/नाही</td>
+                        </tr>
+                        <tr>
+                            <td>२</td>	
+                            <td>एन. सी. टी. व्ही . टी . उत्तीर्ण गुणपत्रीका तसेच कारखाना / कंपनीचे पात्र व्यवसाय प्रक्षिक्षण पूर्ण केल्याबाबतचे पात्र स्वरंसाक्षांकीत करून जोडले आज . 						
+						
+</td>
+                            <td>जोडले आहे/नाही</td>
+                        </tr>
+                        <tr>
+                            <td>३
+</td>	
+                            <td>तारतंत्री परवाना प प्रमाणपत्र  स्वयंसाक्षांकीत केलेली छायाप्रत . 						
+
+						
+</td>
+                            <td>जोडले आहे/नाही</td>
+                        </tr>
+                        <tr>
+                            <td>४
+
+</td>	
+                            <td>कारखाना /कंपनी/ विद्दुत ठेकेदारांकडील नोंदवहीची  स्वयंसाक्षांकीत छायाप्रत जोडले आहे . 						
+						
+
+						
+</td>
+                            <td>जोडले आहे/नाही</td>
+                        </tr>
+                        </tbody>
+                 </table>
+                
+            </div>
+            <P>विद्युत निरीक्षक कार्यालय जावक .......................दिनांक.......................</P>
+           <div class="form-row align-items-center">
+                <div class="col-sm my-10 pull-left">
+                    <p>शाखा/सहा.अभियंता <br> विद्दुत निरीक्षण विभाग, <input type="text" name="city1" class="textarea1" id="textarea1" placeholder="________________________________" style="border: none;"required/> </p>
+                </div>
+                <div class="col"></div>
+                <div class="col-sm my-2 pull-right">
+                    <p>विद्दुत निरीक्षक <br>विद्दुत निरीक्षण विभाग,<input type="text" name="city2" class="textarea1" placeholder="________________________________" style="border: none;"required/> </p>
+                    
+                </div>
+                
+            </div>
+            <div class="form-row align-items-center">
+                <div class="col"></div>
+                <div class="col-sm my-10 pull-left">
+                    <p>सहाय्यक विद्दुत निरीक्षक <br>विद्दुत निरीक्षण विभाग, <input type="text" name="city3" class="textarea1" placeholder="________________________________" style="border: none;"required/> </p>
+                </div>
+                <div class="col"></div>
+            </div>
+
+            <br>
+            <br>
+             <div class="col-md-12 text-center">
+                <a href="/wireman-suit-letter"> <button  type="submit"class="btn btn-lg btn-primary printPage next-btn" >Next</button></a>
+               {{!-- <button  type="submit"class="btn btn-lg btn-primary printPage next-btn" >Next</button> --}}
+            </div>
+    </form>
+</div>
+
+
+  <br>
+  <br>
+<footer class="container-fluid text-center">
+    <div class="container-fluid text-center">    
+        <div class="row content">
+        <div class="col-sm-8 copy"><p>&#169; 2021 by Easyformfill. Proudly created with <a style="color: rgb(240, 210, 40);" href="https://www.logyana.com/">Logyana Solutions Pvt. Ltd </a></p>
+                
+            </div>
+            <div class="col-sm-4 facebookicon">
+                <i class="fa fa-facebook"></i>
+                <i class="fa fa-twitter"></i>
+                <!-- <a><i class="fa fa-facebook"></i></a>
+                <a><i class="fa fa-twitter"></i></a> -->
+            </div>
+        </div>
+    </div>
+  
+</footer>
+<script type="text/javascript">
+        let textarea1 = document.querySelectorAll(".textarea1");
+        
+        textarea1.forEach(function(userItem){
+            enableTransliteration(userItem, "mr");
+
+        })
+</script>
+</body>
+</html>

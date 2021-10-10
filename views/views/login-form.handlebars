@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<style>
+    body {font-family: Arial, Helvetica, sans-serif;}
+    .admin-login{
+        width: 60%;
+        margin-top: 150px;
+    }
+    .login-img{
+        background-image: url("img/admin-login.svg");
+        background-repeat: no-repeat;
+        background-size:cover ;
+        background-color: #F77DA6;
+    }
+    .login-btn{
+        color: white;
+        border-radius: 30px;
+        background-color:#af4c7d;
+    }
+    .login-btn:hover {
+    opacity: 0.8;
+    background-color: #f59910d5;
+    color: white;
+    }
+</style>
+<body>
+    <div class="container admin-login">
+    
+        <div class="d-flex  bg-white">  
+            <div class="col-sm-6 login-img">
+                {{!-- <img src="img/enquiry6.jpg" class="img" alt="Cinque Terre"> --}}
+            </div>
+            <div class="col-sm-6 login-form">
+                <div class="container ">
+                    <h2 class="text-center">Admin Login</h2>
+                    <form method="post" >
+                        <label for="uname"><b>Username</b></label>
+                        <br>
+                        <input type="text" placeholder="Enter Username" name="user_uname" required>
+                        <br>
+                        <br>
+                        <label for="password"><b>Password</b></label>
+                        <br>
+                        <input type="text" placeholder="Enter Email" name="user_pswd" required>
+                        <br>
+                        <br>
+                        <input type="submit" class="login-btn" >
+                            {{!-- <input type="button" value="Display" onclick="window.location='display'"> --}}
+                        
+                        {{!-- <button type="submit">Login</button> --}}
+                        {{!-- <input type="button" value="Display" onclick="window.location='display'"> --}}
+                        </div>
+                    </form>
+                </div>
+        </div>
+  </div>
+</div>
+</body>
+</html>

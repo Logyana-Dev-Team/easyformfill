@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Easy Form Fill</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+  
+  <style>
+  *{
+      font-family: 'Noto Sans', sans-serif; font-size: 12px; padding-right:70px;
+  }
+    @media print {
+        /*NOT DISPLAY*/
+       footer, #navbar, #home,.printPage
+        {
+        display: none;
+        }
+        /*DISPLAY*/
+        #printable {
+            display: block;
+        }
+    }
+      /*@media print {
+        html,body {
+        display: none; /* This code will hide whole pages */
+        /*content:"for example";
+        }
+        }
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      background-color: #1B4F72 ;
+      height: 70px;
+      color: white;
+    }
+    footer{
+        /* position: fixed; */
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #1B4F72;
+        color: white;
+        text-align: center;
+        height: 100px;
+    }
+   
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    
+    
+    /* Set gray background color and 100% height */
+    /* .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+    } */
+    
+    /* Set black background color, white text and some padding */
+    
+    .formfill-h2{
+        text-decoration: underline;
+        color: white;
+    }
+    
+    .copy,.facebookicon{
+        font-size: 15px;
+        margin-top: 30px;
+    }
+    .facebookicon{
+        font-size:15px;color:white;
+        text-decoration: none;
+    }
+    .btn-next{
+        background-color: #1B4F72 ;
+        color: white;
+        border-radius: 15px;
+        text-decoration: none;
+            margin-left: 100px;
+    }
+    .wireman-btn{
+        border: none;
+        background: none;
+        cursor: pointer;
+        color:#1B4F72;
+    }
+    .banner-image{
+        background-image: url("img/enquiry6.jpg");
+    }
+    .form-span{
+        color:  rgb(240, 210, 40);
+        text-decoration-color: rgb(240, 210, 40);
+        font-weight: bold;
+    }
+    .home{
+        color: rgb(240, 210, 40);
+        font-size: 20px;
+        text-decoration: none;
+        text-align: center;
+    }
+    .loginicon{
+        color: rgb(255, 255, 255);
+        font-size: 20px;
+        text-decoration: none;
+        text-align: center;
+    }
+    .next-btn{
+        width:70% ;
+        border-radius: 30px;
+        background-color: #1B4F72;;
+    }
+    a:hover{
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+}
+a{
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+}
+form { display: block; page-break-after: always; }
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;} 
+    }
+    .city-table td{
+        border: none;
+    }
+  </style>
+</head>
+<body >
+<section  class="navbar-section margin-bottom:20px" id="navbar">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="col-sm-2" ><a class="home" href="/home">Home</a></div>
+        <div class="col-sm-8" >
+                <h3 class="text-center ">EASY<span class="font-weight-bold form-span">FORMFILL</span> </h3>
+            
+        </div>
+         {{#if user}}
+        <div class="col-sm-2"> 
+            <div class="dropdown" style="  height: 59px;">
+                    <button type="button" class="btn" data-toggle="dropdown">
+                  <p style=" color:white"><i class="fa fa-fw fa-user"></i> {{user.uname}}</p>
+                    </button>
+                    <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/profile">Profile</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/logout">Logout</a>
+                    </div>
+                </div>
+        {{else}}
+             <div class="col-sm-2 loginicon" ><a href="/login"><i class="fa fa-fw fa-user"></i> Login</a></div>
+        {{/if}}</div>
+        
+        
+      </nav>
+</section>
+<br>
+<br>
+<div class="container" id="home">
+    <div class="row text-center">
+        <div class="col-sm"><a  href="/wireman-exam"class="btn btn-primary btn-large wireman-btn" > वायरमॅन परीक्षा</a></div>
+        <div class="col-sm"><a  href="/wireman-suit-exam"class="btn btn-primary btn-large wireman-btn "> वायरमॅन सूट परीक्षा</a></div>
+        <div class="col-sm"><a  href="/supervisor-exam"class="btn btn-primary btn-large wireman-btn"> सुपरवाईझर परीक्षा</a></div>
+        <div class="col-sm"><a  href="/supervisor-suit-exam"class="btn btn-primary btn-large wireman-btn"> सुपरवाईझर सूट परीक्षा</a></div>
+         <div class="col-sm"><a  href="/wireman-supervisor-reexam"class="btn btn-primary btn-large wireman-btn">  वायरमॅन/सुपरवाईझर री-एक्साम</a></div>
+        <div class="col-sm"><a  href="/new-contractor-licence"class="btn btn-primary btn-large wireman-btn"> नीव कॉन्ट्रॅक्टर लायसन्स</a></div>
+        <div class="col-sm"><a  href="/contractor-licence-renewal"class="btn btn-primary btn-large wireman-btn">कॉन्ट्रॅक्टर लायसन्स रिन्यूअल</a></div>
+     </div>
+</div>
+
+
+<div class="container" style="width: 8%;">
+    <!-- WIREMAN INDEX -->
+        <form class="form-horizontal" method="POST" role="form" id="index">
+            <!-- <p class="text-center form-horizontal">विद्दुत तारतंत्री परीक्षेचे अर्ज <br> माहितीसाठी व मान्यतेसाठी सादर </p> -->
+            <p class="text-center form-horizontal">विद्दुत पर्यवेक्षक सूट अर्ज<br> माहितीसाठी व मान्यतेसाठी सादर </p>
+            <br>
+            <p style="text-indent: 5em; ">श्री./श्रीमती {{user.uname}}  यांना विद्दुत तारतंत्री परीक्षेकरिता प्रवेशासाठीचा   विहित नमुन्यात अर्ज सादर केलेला आहे .</p>
+            <div class="container">
+                 
+                <table>
+                <thead class="text-center">
+                    <tr>
+                        <th>क्र.</th>
+                        <th>आवश्यक असणारी माहिती</th>
+                        <th>शेरा</th>
+                    </tr>
+                </thead>
+                    <tbody>
+                    <tr>
+                        <td>१ </td>
+                        <td>नमुना "ए" परिपूर्ण (टंकलिखित) भरलेला तसेच छायाचित्र स्वयंसाक्षांकीत करणे .</td>
+                        <td>जोडले आहे/नाही</td>
+                    </tr>
+                    <tr>
+                        <td>२</td>	
+                        <td>अर्जा सोबत पासपोर्ट आकाराचे तीन अलीकडील काळातील फोटो जोडणे </td>
+                        <td>जोडले आहे/नाही</td>
+                    </tr>
+                    <tr>
+                        <td>३</td>
+                        <td>आवश्यक शुल्क भरलेले आहे. </td>
+                        <td>जोडले आहे/नाही</td>
+                    </tr>
+                     <tr>
+                        <td>४</td>
+                        <td>"नमुना ""ई"" नुसार एक वर्ष प्रात्यक्षिक अनुभव आज इ अर्जदार ज्या जिल्ह्यात कार्यरत <br> आहे त्या जिल्ह्यातील विद्दुत निरीक्षक कार्यालयाकडून सेवा पडताळणी झालेली आहे . "</td>
+                        <td>जोडले आहे/नाही</td>
+                    </tr>
+                     <tr>
+                        <td>५</td>
+                        <td>"पर्यवेक्षक प्रमाणपत्र सुटीसाठी मान्यतापात्र विद्दुत ठेकेदाराकडे किंवा कंपनी यांचेकडील <br> मूळ कामगार नोंदवहीमध्ये परवानाधारक पर्यक्षकाच्या हाताखाली एक वर्षाचा अनुभव असणे<br> आवश्यक (एका पर्यवेकाखाली एक शिकाऊ अभियंताचा  अनुभव ग्राह्य)
+					</td>
+                        <td>जोडले आहे/नाही</td>
+                    </tr><tr>
+                        <td>६</td>
+                        <td>"विद्दुत शाखेतील पदवी/पदविका उत्तीर्ण झाल्याबाबतचे तसेच अंतिम प्रमाणपत्र <br>  साक्षांकित 
+सर्व वर्षाच्या गुणपत्रिका जोडलेल्या आहेत . 
+"						
+</td>
+                        <td>जोडले आहे/नाही</td>
+                    </tr>
+                     <tr>
+                        <td>७</td>
+                        <td>स्वयंसाक्षांकनासाठी स्वयं घोषणापत्र (प्रपत्र ब).						
+</td>
+                        <td>जोडले आहे/नाही</td>
+                    </tr>
+                    <tr>
+                        <td>८</td>
+                        <td>महाराष्ट्र अधिवास प्रमाणपत्र (डोमेसाइल प्रमाणपत्र )						
+</td>
+                        <td>जोडले आहे/नाही</td>
+                    </tr>
+                     <tr>
+                        <td>९</td>
+                        <td>राहण्याचा पत्ता व जन्मतारखेचा साक्षांकित दाखला जोडला आहे . 						
+</td>
+                        <td>जोडले आहे/नाही</td>
+                    </tr>
+                     <tr>
+                        <td>१०</td>
+                        <td>शासकीय- निमशासकीय उमेदवाराचा अर्ज आस्थापने मार्फत सादर केलेला आहे  . 						
+</td>
+                        <td>जोडले आहे/नाही</td>
+                    </tr>
+                     <tr>
+                        <td>११</td>
+                        <td>स्वतःचा पत्ता व पोस्टल स्टॅम्प (१० रुपयाची तिकिटे ) लावलेले ३ लिफाफे 						
+</td>
+                        <td>जोडले आहे/नाही</td>
+                    </tr>
+                     <tr>
+                        <td>१२</td>
+                        <td>	अर्जासोबत 'जुना १२ म ' अर्ज सादर करणे . 						
+						
+</td>
+                        <td>जोडले आहे/नाही</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <p style="text-indent:5em">आंतरराज्य उमेदवारांसाठी 						
+</p>
+                <table>
+                    
+                        <tbody>
+                        <tr>
+                            <td>१ </td>
+                            <td>आंतरराज्य उमेदवारांनी नमुना "बी" भरणे आवश्यक .						
+</td>
+                            <td>जोडले आहे/नाही</td>
+                        </tr>
+                        <tr>
+                            <td>२</td>	
+                            <td>१०० रु . स्टॅम्प पेपर वर नोटराईज करून घेणे . 						
+</td>
+                            <td>जोडले आहे/नाही</td>
+                        </tr>
+                        </tbody>
+                 </table>
+                <p style="text-indent:5em">आय. टी. आय. /अँप्रेन्टिस (वीजतंत्री) एन. सी. टी. व्ही . टी .  उमेदवाराकरिता								
+						
+</p>
+            <table>
+                    
+                        <tbody>
+                        <tr>
+                            <td>१ </td>
+                            <td>"औद्दोगिक प्रशिक्षण संस्थेची उत्तीर्ण झाल्याबाबत तसेच राष्ट्रीय व्यवसाय प्रशिक्षण पूर्ण <br>
+केल्याबाबतचे पात्र स्वयंसाक्षांकीत करून जोडले आहे.
+"						
+						
+</td>
+                            <td>जोडले आहे/नाही</td>
+                        </tr>
+                        <tr>
+                            <td>२</td>	
+                            <td>एन. सी. टी. व्ही . टी . उत्तीर्ण गुणपत्रीका तसेच कारखाना / कंपनीचे पात्र व्यवसाय प्रक्षिक्षण पूर्ण <br> केल्याबाबतचे पात्र स्वरंसाक्षांकीत करून जोडले आज . 						
+						
+</td>
+                            <td>जोडले आहे/नाही</td>
+                        </tr>
+                        <tr>
+                            <td>३
+</td>	
+                            <td>तारतंत्री परवाना प प्रमाणपत्र  स्वयंसाक्षांकीत केलेली छायाप्रत . 						
+
+						
+</td>
+                            <td>जोडले आहे/नाही</td>
+                        </tr>
+                        <tr>
+                            <td>४
+
+</td>	
+                            <td>कारखाना /कंपनी/ विद्दुत ठेकेदारांकडील नोंदवहीची  स्वयंसाक्षांकीत छायाप्रत जोडले आहे . 						
+						
+
+						
+</td>
+                            <td>जोडले आहे/नाही</td>
+                        </tr>
+                        </tbody>
+                 </table>
+                
+            </div>
+            <P>विद्युत निरीक्षक कार्यालय जावक  .........................दिनांक.......................</P>
+                <div class="form-row align-items-center">
+               <table class="table text-center city-table">
+                
+                    <tbody>
+                        <tr>
+                            <td><p >शाखा/सहा.अभियंता <br>विद्दुत निरीक्षण विभाग,{{user.city1}}</p> </td>
+                            <td></td>
+                            <td><p>सहाय्यक विद्दुत निरीक्षक <br>विद्दुत निरीक्षण विभाग, {{user.city2}}</p></td>
+                        </tr>
+                        <tr>
+                            <td> </td>
+                            <td><p> विद्दुत निरीक्षक <br>विद्दुत निरीक्षण विभाग,{{user.city3}} </p></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+              </div>
+
+            </div>
+                        {{!-- <div class="col-md-12 text-center">
+               <button  type="submit"class="btn btn-lg btn-primary printPage next-btn" >Next</button>
+            </div> --}}
+    </form>
+</div>
+<div class="container" style="width: 100%;" >
+    <!-- WIREMAN LETTER -->
+    <form class="form-horizontal" method="POST" role="form" id="letter">
+       <div class="container">
+           <div class="row content">
+                    <table class="table text-center city-table">
+                
+                        <tbody>
+                            <tr>
+                                <td> </td>
+                                <td></td>
+                                <td class="text-center" style="margin-left: 100px;"> 
+                    <p style="text-indent: 15em; ">श्री./श्रीमती: {{user.uname}} </p>
+                
+                    <p style="text-indent: 15em; ">पत्ता: {{user.uaddress}}</p>
+                    <p style="text-indent: 15em; ">दिनांक: {{user.date}}</pp></td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            <p>प्रति,</p>
+            <p style="text-indent: 5em; ">मा. विद्युत निरीक्षक,</p>
+            <p style="text-indent: 5em; ">विद्युत निरीक्षण विभाग</p>
+            <p style="text-indent: 5em; "> उद्योग, ऊर्जा व कामगार खाते</p>
+            <p  style="text-indent: 5em; ">{{user.office_city}}</p>
+            <br>
+            <p style="text-indent: 10em; " >विषय : विद्युत तारतंत्री/पर्यवेक्षक परीक्षा/सूट  अर्ज सादर करणे बाबत</p>
+            <br>
+            <p>महोदय,</p>
+            <p style="text-indent: 5em;  "  >वरील विषयास अनुसरून मी माझा विद्युत पर्यवेक्षक/तारतंत्री परीक्षा/सूट  साठी विहित नमुना अर्ज आवश्यक कागदपत्रासह पुढील योग्य <br> त्या कार्यवाहीसाठी सविनय सादर करीत
+                 . </p>					
+	         
+              <div class="row content">
+                    <table class="table text-center city-table">
+                
+                        <tbody>
+                            <tr>
+                                <td> </td>
+                                <td></td>
+                                <td class="text-center" style="margin-left: 100px;"><p  style="margin-left:30px ;">आपला विश्वासू 
+                                    <br> <br> <br>
+                                      श्री./श्रीमती: {{user.uname}} <br>
+                                        मोबाईल क्र.: {{user.mobile}} </p></td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            
+            <br>
+
+        </div>
+        <br>
+        <br>
+        {{!-- <div class="col-md-12 text-center">
+            <button  type="submit"class="btn btn-lg btn-primary printPage next-btn" >Next</button>
+        </div> --}}
+       
+</form>
+</div>
+
+<div class="container" style="width: 100%;">
+    <!-- WIREMAN NAMUNA A -->
+    <form class="form-horizontal" method="post" role="form" id="namuna-c">
+       <div class="container">
+            <p style="text-indent:10em">महाराष्ट्र शासन राजपत्र असाधारण भाग चार अ जानेवारी ३ २०१७/पौष १३ शके १९३८      &nbsp; 	 &nbsp; 	 &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 	१४</p>
+          
+           
+           <p style="text-indent:25em">"नमुना-ए"</p>
+           <p style="text-indent:25em">(नियम १५ पहा )</p>
+           <tr>
+                                 <td></td>
+                                 <td>
+                                     <div class="row content" style="margin-left:45rem">
+                                        <div class="col-sm"></div>
+                                        <div class="col-sm">
+                                           <div style="height:130px; width:130px; border:1px solid black" >
+
+                                            </div>
+                                             <div style="height:50px; width:130px; border:1px solid black" >
+                                                        
+                                            </div> 
+                                            
+                                        </div>
+                                    </div>
+                                </td>
+                             </tr>
+                             <br>
+            <div class="row content">
+               <p style="text-indent:18em">विद्दुत पर्यवेक्षक परीक्षेतून सूट मिळण्याकरिता अर्जाचा नमुना <br>
+              <p style="text-indent:18em"> (मराठीत, इंग्रजीत,  हिंदीत (टंकलिखित) भरावयाचा  आहे) </p>
+           
+           </div>
+           
+            
+           <br>
+           <br>
+            <div class="row content">			
+                <div class="col-sm">
+                    <table class="" >
+                        
+                        <tr>
+                            <td>१. अर्जदाराचे पूर्ण नांव </td>
+                            <td><p>:  {{user.uname}}</p></td>
+                           </tr>
+                          <tr>
+                        <tr>
+                          <td>पत्ता </td>
+                          <td><p style="margin-right:70px;">:  {{user.uaddress}} </p></td>
+                           
+                         </tr>
+                         <tr>
+                             <td>मोबाईल क्रमांक </td>
+                             <td><p>:  {{user.mobile}}</p>
+                             </td>
+                         </tr>
+                         <tr>
+                            <td>ई मेल आय डी</td>
+                            <td><p>:  {{user.email}}</p></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>२. जन्मदिनांक आणि वय
+                                <ul style="list-style-type:none;">
+                                    <li>(शाळा सोडल्याच्या दाखल्याची </li>
+                                    <li>	स्वयंसाक्षांकीत प्रत सादर करावी)</li>
+                                </ul>
+                            </td>
+                            <td><p style=""> <p>:  {{user.dob}}   वय   {{user.age}}    वर्ष</p></td>
+                        </tr>
+                        <tr>
+                            <td>३. अर्हता (शैक्षणिक पात्रता )
+                                <ul style="list-style-type:none;">
+                                    <li>(प्रमाणपत्राच्या स्वयंसाक्षांकीत </li>
+                                    <li>प्रति सादर कराव्यात)</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <p>:  {{user.education}}</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>४.  मागील विद्यमान सेवेचा तपशील	
+                                <ul style="list-style-type:none;">
+                                    <li>(प्रत्येक सेवा नियुक्ती व सेवासमाप्तीचा  </li>
+                                    <li>द्यावा स्वयंसाक्षांकीत प्रत सादर करावी)</li>
+                                </ul>
+                            </td>
+                            <td>
+                               <p style="margin-right:70px;">:  {{user.companyname}} </p>
+                                <p style="margin-right:70px;">:  {{user.period}}</p>
+                        </tr>    
+                          
+                        <tr>
+                            <td>५.  नियम ४५ मध्ये विहित केल्याप्रमाणे शुल्क विद्युत पर्यवेक्षक परीक्षेतून सूट 
+                               
+                                
+                            </td>
+                            <td>
+                            </td>
+                        
+                        </tr>  
+                        <tr>
+                            <td>मिळवण्यासाठी शुल्क </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>चलन क्र  {{user.chalanno}}</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>चलान भरल्याचा  दिनांक  {{user.chalandate}}</td>
+                        </tr>
+                        
+                        <tr>
+                            <td></td>
+                            <td>रक्कम रुपये  {{user.rupee}}</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>ठिकाण  {{user.chalanplace}}</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>(मूळ चलन सादर करावे)</td>
+                        </tr>
+                        
+                      </table>
+                    </div>						
+
+            </div>
+            <br>
+            <br>
+            <p style="text-indent: 15em; "> महाराष्ट्र राज्यात विद्युत पर्यवेक्षक परवाना यातून सूट मिळण्याबाबत घोषणा</p><p style="text-indent: 12em; ">
+मी याद्वारे घोषित करतो कि, मी महाराष्ट्र राज्याने किंवा इतर कोणत्याही राज्याने दिलेला कोणताही </p>
+<p style="text-indent: 12em; ">पर्यवेक्षक परवाना धारण केला नाही . मी खोटी माहिती दिल्यास माझ्यावर खटला चालविण्यास मी पात्र आहे . </p>        
+     </div>
+        
+           
+</form>
+<form action="">
+    <br>
+    <br>
+     <div class="form-row align-items-center">
+               <p style="text-indent:10em">महाराष्ट्र शासन राजपत्र असाधारण भाग चार अ जानेवारी ३ २०१७/पौष १३ शके १९३८      &nbsp; 	 &nbsp; 	 &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 	१७</p>
+              
+            </div>
+    <hr width="100%" style="border: 1px dashed rgb(36, 35, 35)">
+							
+                         <p >मी याद्वारे  घोषित करतो कि , मी नमूद केलेला तपशील माझ्या संपूर्ण माहितीप्रमाणे बरोबर आणि खरा आहे.									
+                        </p>
+                        <br>
+    <p style="text-indent: 5em; "> मी श्री. {{user.uname}} श्री. {{user.fname}} यांचा /यांची <br
+        मुलगा /मुलगी, <br> वय {{user.age}}  वर्ष ,आधार क्रमांक	{{user.adharno}},  व्यवसाय {{user.occupation}} <br>	
+        राहणार: {{user.uaddress}}</p>
+        <p> <br> याद्वारे, असे घोषित करते/करतो कि, मी स्वयंसाक्षिकीत केलेल्या प्रति या मूळ कागदपत्रांच्या सत्यप्रती आहेत. <br> मला वस्तुस्थितीची पूर्ण जाणीव आहे कि, जर प्रति खोट्या असल्याचे आढळून <br> आले तर, मी भारतीय दंड संहितेअन्वये आणि/किंवा त्यासाठी लागू असलेल्या इतर <br> कोणत्याही कायद्यान्वये खटला चालविण्यासाठी आणि शिक्षेसाठी पात्र असेल.
+        <br>
+        <br>
+        <div class="row content">
+        <div class="col-sm">ठिकाण : {{user.place}} <br>
+             दिनांक : {{user.date}}
+        </div>
+        <div class="row content">
+                    <table class="table text-center city-table">
+                
+                        <tbody>
+                            <tr>
+                                <td> </td>
+                                <td></td>
+                                <td class="text-center" style="margin-left: 100px;"><p  style="margin-left:30px ;"> 
+                                    <br> <br> <br>
+                                      अर्जदाराची सही </p></td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+        <br>
+        <td>टीप :
+            <ul style="list-style-type:none;">
+                <li>१.  सर्व प्रमाणपत्रांच्या स्वयंसाक्षांकीत प्रति सादर कराव्यात .</li>
+                <li>२.  छायाचित्र असलेल्या ओळखपत्रांच्या (पासपोर्ट /पॅनकार्ड /आधारकार्ड ) </li>
+                <li>३.  अर्जासोबत अर्जदाराच्या अलीकडच्या पासपोर्ट आकाराच्या छायाचित्राच्या (त्या छायाचित्राच्या मागील बाजूस नाव लिहिलेल्या ) तीन प्रति </li>
+                <li>४.  विद्युत पर्यवेक्षक परीक्षेतून सूट मिळवण्याच्या उद्देशाने खोटी निवेदने सादर करणारी कोणतीही व्यक्ती तिच्यावर खटला चालवण्यासाठी पात्र ठरेल . 
+                    चालविण्यासाठी तो पात्र ठरेल .</li>
+                <li>५.  मागील आणि विद्यमान सेवेचा तपशील )प्रत्येक नियुक्तीच्या प्रारंभाचा आणि समाप्तीचा दिनांक देण्यात लावा)</li>
+                <li>६.  अपूर्ण अर्ज नाकारण्यात येतील . </li>
+            </ul>
+        </td>
+
+</form>
+</div>
+<br>
+<br>
+<div class="container" style="width: 100%;">
+    <!-- NAMUNA E -->
+    <form class="form-horizontal" method="post" role="form" id="namuna-e">
+       <div class="container">
+             <p style="text-indent:10em">महाराष्ट्र शासन राजपत्र असाधारण भाग चार अ जानेवारी ३ २०१७/पौष १३ शके १९३८      &nbsp; 	 &nbsp; 	 &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 	२२</p>
+          
+           
+           <p style="text-indent:25em">"नमुना -ई "</p>
+           <p style="text-indent:25em">(नियम १६ पहा )</p>
+           <p style="text-indent:15em">विद्युत तारतंत्री आणि पर्यवेक्षक यांना परीक्षेला प्रवेश/सूट देण्यासाठी विद्युत कर्मचारी वर्गाला द्यावयाचे</p>
+           
+                      <br>
+            <div class="row content">
+                <div class="col-sm">
+                    <table class="" >
+                        
+                        <tr>
+                            <td>१ . नांव:</td>
+                            <td>{{user.uname}}</p></td>
+                        </tr>
+                        <tr>
+                            <td>२ . पदनाम  :</td>
+                            <td>{{user.designation}}</p></td>
+                        </tr>
+                        <tr>
+                            <td>३ . प्रवेशाचा दिनांक :</td>
+                            <td>{{user.joiningdate}}</td>
+                           </tr>
+                          <tr>
+                        <tr>
+                          <td>४ . कामाचे स्वरूप :</td>
+                          <td><p style="margin-right:70px;">{{user.worktype}}</p></td>
+                           
+                         </tr>
+                         <tr>
+                             <td>५ . काम सोडल्याचा दिनांक </td>
+                             <td>{{user.livingdate}}
+                             </td>
+                         </tr>
+                         <tr>
+                            <td>६. उपस्थिस्ती</td>
+                            <td><p>नियमित</p></td>
+                        </tr>
+                        <tr>
+                            <td>७ . वर्तणूक</td>
+                            <td><p>चांगली</p></td>
+                        </tr>
+                        <tr>
+                            <td>८ . विद्युत पर्यवेक्षक/ विद्युत अभियंता यांचे नांव,आणि परवाना क्रमांक
+                                <ul style="list-style-type:none;">
+                                    <li>किंवा तांत्रिक अर्हता ज्याच्या अंतर्गत काम केले त्याचा</li>
+                                    <li>अभिप्राय . अर्हता ज्याच्या अंतर्गत काम केले त्याचा अभिप्राय .</li>
+                                   
+                                </ul>
+                            </td>
+                            <td>
+                                <p>{{user.supervisorname}} </p><p>{{user.licenseno}}</p></td>
+                        </tr>
+                         <tr>
+                            <td>९ . विद्युत ठेकेदारीचा अनुज्ञप्ती क्रमांक किंवा कारखाना नोंदणी क्रमांक</td>
+                            <td><p style="margin-right:70px;">{{user.companyname}}</p> <p style="margin-right:70px;">{{user.period}}</p>
+                        </tr>
+                        <tr>
+                            <td>१० . शेरा</td>
+                            <td><p>पर्यवेक्षक पदाकरिता शिफारस करण्यात येत आहे </p></td>
+                        </tr>
+                           
+                       
+                      </table>
+                   
+                </div>                                                                                                                                          	
+
+            </div>
+           <p style="text-indent: 5em; ">	मी, याद्वारे घोषित करतो कि,वर दिलेला तपशील बरोबर आणि सत्य  आहे .</p> 
+            
+            <div>
+            <table>
+               
+               <tr>
+                   <td><p>दिनांक: {{user.date}}</p> </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                   
+               </tr>
+               <tr>
+                   <td> मुद्रा:</td>
+                   
+                   <td> </td>
+                   
+                   <td></td>
+                   
+               </tr>
+               <br>
+               <br>
+               <tr>
+              
+               <tr>
+               <td><p> </p> </td>
+                            <td ><p >विदुयत पर्यक्षेक सही </p></td>
+                                  <td > <p> मालक किंवा प्रतिज्ञाधारक  <br>विद्युत ठेकेदाराची स्वाक्षरी </p>  </td></tr>
+                 <tr>
+                 
+                
+            </table>
+            
+              
+              </div>
+             
+            <br>
+
+                  <P>टीप - १ :- हे प्रमाणपत्र केवळ विद्युत तारेची आणि संचमांडणीची प्रत्यक्ष कामे करत असणाऱ्या व्यक्तींना देण्यात येईल आणि ज्यांच्या नावाची नोंद प्रत्येक <br> विद्युत अनुज्ञाप्तीधारक ठेकेदाराने ठेवलेल्या तारकामे करणाऱ्या कर्मचारी वर्गाच्या नोंदवहीत असावी .</P>          
+                           <P>टीप-२:- खोटे प्रमाणपत्र अनुज्ञप्तीधारक कंत्राटदाराला परत करण्यात येईल आणि संबंधित व्यक्ती सक्षम प्रमाणपत्र पर्यवेक्षक आणि तारतंत्री परवाना तसेच <br> विद्युत ठेकेदाराची अनुज्ञप्ती देण्याचा नियम व शर्तीन्वये कारवाई करण्यास पात्र ठरेल </P>             
+                             <P>टीप-३ :- मालक किंवा विद्युत अनुज्ञप्ती मिळालेल्या विद्युत ठेकेदार सचिव, अनुज्ञापक मंडळ / विद्युत निरीक्षक यांना अर्जदाराच्या सेवायोजनाच्या संबंधात दस्तऐवज <br> पुरावा सार करण्यास जबाबदार असेल</P>   जबाबदार असेल</P>                     									
+        </div>
+        <br>
+        <br>    
+        
+</form>
+</div>
+
+<div class="container" style="width: 100%;">
+    <!-- WIREMAN NANUNA-12M -->
+        <form class="form-horizontal" method="post" role="form" id="namuna-12m">
+           <div class="container">
+                 <tr>
+                                 <td></td>
+                                 <td>
+                                     <div class="row content" style="margin-left:45rem">
+                                        <div class="col-sm"></div>
+                                        <div class="col-sm">
+                                            <div style="height:130px; width:130px; border:1px solid black" >
+
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </td>
+                             </tr>
+                             <br>
+
+                <div class="row content">
+                    <div class="col-sm">
+                        <table class="" >
+                            <tr>
+                                <td></td>
+                                <td>(विशेष - परीक्षण १२ म)</td>
+                            </tr>
+                            <tr>
+                                <td>अनुज्ञापक मंडळाने दिलेल्या प्रमाणपत्रासंबंधीचा तपशील</td>
+                                <td>महाराष्ट्र तारतंत्री / पर्यवेक्षक</td>
+                            </tr>
+                            <tr>
+                                <td>(अभिलेखार्थ)</td>
+                                <td>प्रमाणपत्राचा दिनांक:  {{user.date}}</p></td>
+                            </tr>
+                            <tr>
+                                <td>१. उमेदवाराचे नांव व आडनाव </td>
+                                <td>:  श्री/श्रीमती. {{user.uname}}</td>
+                               </tr>
+                              <tr>
+                            <tr>
+                              <td>२. उमेदवाराच्या वडिलांचे / पतीचे संपूर्ण नांव :  </td>
+                              <td>:  श्री. {{user.fname}}</td>
+                               
+                             </tr>
+                             <tr>
+                                 <td>३. उमेदवाराचा कायमचा पत्ता</td>
+                                 <td style="margin-right:70px;" >:<p>  {{user.uaddress}}</p>
+                                 </td>
+                             </tr>
+                              <tr>
+                                 <td>मोबाईल क्रमांक </td>
+                                 <td>:  {{user.mobile}}
+                                 </td>
+                             </tr>
+                              <tr>
+                                 <td>ई मेल आय डी  </td>
+                                 <td>:  {{user.email}}
+                                 </td>
+                             </tr>
+                             
+                             <tr>
+                                <td>४. उमेदवारास कोणते प्रमाणपत्र पाहिजे   </td>
+                                <td>:  पर्यवेक्षक</td>
+                            </tr>
+                            <tr>
+                                <td>५. उमेदवारास परीक्षेत प्रवेश दिला असल्यास -
+                                    <ul style="list-style-type:none;">
+                                        <li>(अ ) परीक्षेस परवानगी दिली त्यावेळी  </li>
+                                        <li>असलेल्या कामाच्या अनुभवाचा कालावधी व ठिकाण</li>
+                                        <li>(ब ) परीक्षा आसन क्रमांक</li>
+                                        <li>(क ) परीक्षेचा दिनांक</li>
+                                        <li>(ड ) परीक्षेचे ठिकाण</li>
+                                        <li>(ई ) निकाल</li>
+                                    </ul>
+                                </td>
+                                {{!-- <td>
+                                    <ul style="list-style-type:none;">
+
+                                        <li>:{{user.companyname}}</li>
+                                        <li>:{{user.period}}</li>
+                                        <li>:{{user.seatno}}</li>
+                                        <li>:{{user.date}}</li>
+                                        <li>:{{user.examplace}}</li>
+                                        <li>:{{user.result}}</li>
+                                    </ul>
+
+                                </td> --}}
+                                <td>
+                                    <ul style="list-style-type:none;">
+                                       <li>  ________________________________</li>
+                                        <li>  ________________________________</li>
+                                        <li>  ________________________________ </li>
+                                        <li>  ________________________________</li>
+                                        <li> ________________________________</li>
+                                        <li>  ________________________________</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>६. उमेदवारास सूट दिली असल्यास -	
+                                    <ul style="list-style-type:none;">
+                                        <li>(अ ) उमेदवार कोणती परीक्षा उत्तीर्ण झाला आहे </li>
+                                        <li>(ब )प्रत्यक्ष कामाचा अनुभव, कालावधी व ठिकाण	</li>
+                                    </ul>
+                                {{!-- <td><ul style="list-style-type:none;">
+                                    <li>{{user.examname}}</li>
+                                      <li>{{user.companyname}}</li>
+                                        <li>{{user.period}}</li>
+                                    
+                                </ul></td> --}}
+                                <td><ul style="list-style-type:none;">
+                                    <li>: {{user.examname}} </li>
+                                    <li>:  {{user.experience}} </li>
+                                    <li>:{{user.examPeriod}}</li>
+                                    
+                                </ul></td>
+                            </tr>
+                            <tr>
+                                <td>७ . उमेदवाराची इतर माहिती -	
+                                    <ul style="list-style-type:none;">
+                                        <li>(अ ) जन्म दिनांक व जन्म ठिकाण</li>
+                                        <li>(ब )उंची</li>
+                                        <li>(क ) वर्ण</li>
+                                        <li>(ड )  शरीरावरील ओळख चिन्हे</li>
+                                    </ul>
+                                <td>
+                                    <ul style="list-style-type:none;">
+                                        <li>{{user.dobplace}}, &nbsp;&nbsp;{{user.dob}}</li>
+                                        <li>{{user.height}}</li>
+                                        <li>{{user.color}}</li>
+                                        <li>{{user.symbol}}</li>   
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                             <tr>
+                                <td><p>मी , याद्वारे असे प्रमाणित करतो कि , वर लिहिलेला तपशील <br> माझ्या संपूर्ण माहितीप्रमाणे व विश्वासाप्रमाणे बरोबर आणि <br> खरा आहे</p></td>
+                                <td><p>मी वरील व्यक्तीस ओळखतो, सबब सोबतच्या फोटोवर मी सही केली <br> आहे तसेच उमेदवाराने त्याची सही माझ्यासमोर केली आहे.   </p></td>
+                            </tr>
+                          </table>
+                         
+                    </div>
+             <table style="width:75%;" >
+               
+               <tr>
+                   <td>उमेदवाराची सही</td>
+                   
+                   <td>परीक्षकाची सही </td>
+                   
+                  <td style=""><p>विशेष दंडाधिकारी अगर राजपत्रित अधिकाऱ्याची सही</p></td>
+               </tr>
+               <tr>
+                   <td></td>
+                   
+                   <td> </td>
+                   
+                   <td>पदनाम</td>
+                   
+               </tr>
+               <br>
+               <br>
+               <tr><td>	सचिव</td>
+                    <td>अध्यक्ष</td>
+                    <td>रबरी ठसा</td>
+            </tr>
+               <tr>
+                   <td>अनुज्ञापक मंडळ,मुंबई</td>
+                    <td>अनुज्ञापक मंडळ,मुंबई</t
+                   <td>दिनांक:</td>
+                 
+                </tr>
+                
+           </table>
+                
+            </div>
+           
+
+            <hr style="border-top:1px dotted #000;">
+           <p>प्रमाणपत्र व परवाना उमेदवारास डाकपोच देय पावतीने ह्या कार्यालयाच्या पत्र क्र . . . . . . . . . .दिनांक. . . . . . . . . .
+                न्वये पाठविला आहे / प्रत्यक्ष हस्तांतरित केला आहे <br> व त्याबद्दल त्याची सहीली आहे</p>
+            
+           
+               
+    </form>
+</div>
+<div class="container" style="width: 100%;">
+    <form class="form-horizontal" method="POST" role="form" id="prapatra-b">
+         <p style="text-indent:18em">शासन निर्णय क्रमांक प्रसुधा १६१४/३४५/प्र . क्र </p>
+          <br>
+          <hr style="border-top:1px dotted #000;">
+            <br>
+             <p style="text-indent:25em">प्रपत्र - ब</p>
+           <p style="text-indent:20em">स्वयं - सांक्षांकनासाठी स्वय घोषणापत्र</p>
+        <br>
+        <div class="row content "style="margin-left:45rem" >
+                    <div class="col-sm"></div>
+                    <div class="col-sm">
+                         <div style="height:130px; width:130px; border:1px solid black" >
+
+                        </div>
+                        
+                    </div>
+                </div>
+           <br>
+         
+
+       <div class="container">
+            
+             <p> मी श्री . {{user.uname}},    श्री .{{user.fname}}  यांचा /यांची  मुलगा /मुलगी , <br> वय  {{user.age}} वर्ष ,  आधार क्रमांक {{user.adharno}}, व्यवसाय {{user.occupation}} <br>	राहणार :	{{user.uaddress}}	<br>	याद्वारे घोषित करतो/करते कि, मी स्वयं साक्षांकित केलेल्या प्रति या मूळ कागदपत्रांच्याच सत्य प्रति <br> आहेत . त्या खोट्या असल्याचे आढळून आल्यास, भारतीय दंड संहिता आणि / किंवा संबंधित <br> कायद्यानुसार माझ्यावर खटला भरला जाईल व त्यानुसार मी शिक्षेस पात्र राहीन याची <br> मला पूर्ण जाणीव आहे.</p>
+                <br>
+            <div class="row content">
+                <table>
+                    <tr>
+                        <td style=" ">ठिकाण: {{user.place}}</td>
+                        <td style=" text-indent: 15em;"> अर्जदाराची स्वाक्षरी</td>
+                    </tr>
+                    <tr>
+                        <td><td style=" text-indent: 15em;"> अर्जदाराची नाव: {{user.uname}} 		
+                        </td></td>
+                    </tr>
+                    <tr>
+                        <td style=" ">दिनांक: {{user.date}}</td>
+                        <td></td>
+                    </tr>
+                     
+                    <tr>
+                        <td></td>
+                        <td style=" text-indent: 15em;">मोबाईल क्र.: {{user.mobile}}</td>
+                    </tr>
+                   
+                </table>
+        </div>
+        <br>
+        <br>
+        {{!-- <div class="col-md-12 text-center">
+            <a href="/wireman-photo"> <button type="submit" class="btn btn-lg btn-primary printPage printPage next-btn" >Next</button></a>
+            
+        </div> --}}
+</form>
+</div>
+<br>
+ <form class="form-horizontal" method="POST" role="form" id="photo-format">
+       <div class="container">
+             <p style="text-indent:25em">जोडपत्र </p>
+              <p style="text-indent:20em"> विद्दुत पर्यवेक्षक / तारतंत्री परवाना करिता अर्ज</p>
+           
+            <div class="row content">
+                <div class="col-sm"><p style="">नांव: {{user.uname}}</p>
+                    <p style=""> आवक क्रमांक/दिनांक:
+                        <br><br>
+                   <p style="">जन्म दिनांक: {{user.dob}}
+                   <p style="">शैक्षणिक अर्हता: {{user.education}}
+                  
+                <div class="col-sm">
+                </div>
+            </div>
+            <br>
+            <p>सही</p>
+             <div class="row content" style="margin-left:45rem" >
+                    <div class="col-sm">
+                         <div style="height:150px; width:150px; border:1px solid black" >
+
+                        </div>
+                            
+                    </div>
+                    <div class="col-sm">
+                         <div style="height:150px; width:150px; " >
+
+                        </div>
+                            
+                    </div>
+                    <br>
+                    <div class="col-sm">
+                         <div style="height:150px; width:150px; border:1px solid black" >
+
+                        </div>
+                        
+                    </div>
+                </div>
+           <br>
+           <br>
+           <br>
+          
+            </div>
+                
+            </div>
+            <br><br>
+            <p>कार्यालयीन माहिती साठी फक्त</p>
+           <p>तारतंत्री/पर्यवेक्षक परवाना क्र.</p>  
+            <p>दिनांक :</p>                									
+        </div>
+        <br>
+        <br>
+        
+</form>
+
+
+
+
+</body>
+</html>
